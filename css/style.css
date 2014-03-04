@@ -1176,6 +1176,7 @@ fieldset legend {
   background: #dbdbdb;
   border: 1px solid #ccc;
   border-bottom: none;
+   overflow:auto;
   color: #3b3b3b;
   display: block;
   height: 2em;
