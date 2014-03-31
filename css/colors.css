@@ -52,6 +52,7 @@ a:active {
 }
 .sidebar .block {
   background-color: #ffffff;
+  border-style:none;
 }
 #page-wrapper
 {
@@ -67,4 +68,11 @@ a:active {
 #name-and-slogan a,
 #secondary-menu-links li a {
   color: #ffffff;
+}
+
+tr.odd {
+	background-color: #efefef;
+}
+tr.even{
+	background-color: #dbdbdb;
 }
