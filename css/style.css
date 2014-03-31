@@ -906,7 +906,6 @@ ul.links {
 	margin: 0;
 	overflow: hidden;
 	border: none;
-	background: transparent url(../images/tabs-border.png) repeat-x left bottom;
 }
 .tabs ul.primary li {
 	display: block;
@@ -1057,7 +1056,7 @@ fieldset {
 	background: #ffffff;
 	border: 1px solid #cccccc;
 	margin-top: 10px;
-	margin-bottom: 32px;
+	//margin-bottom: 32px;
 	padding: 0 0 15px;
 	position: relative;
 	top: 12px; /* Offsets the negative margin of legends */
@@ -1553,4 +1552,28 @@ div.admin-panel .description {
 }
 #footer-wrapper .poll .bar .foreground {
 	background-color: #ddd;
+}
+
+.region-content.region
+{
+	  display:  table;
+	   width:80%;
+	  background-color:#ffffff;
+      border:1px solid  #666666;
+      border-spacing:5px;/*cellspacing:poor IE support for  this*/
+       /* border-collapse:separate;*/
+}
+.field .fieldset-legend{
+	 display:table-row;
+     width:100%;
+       padding:0px;
+ 
+      
+}
+.field-label .field-items{
+	 float:left;/*fix for  buggy browsers*/
+        display:table-column;
+      width:100%;
+        background-color:#ccc;
+
 }

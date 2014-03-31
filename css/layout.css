@@ -8,7 +8,6 @@ body,
 }
 #page-wrapper {
   min-height: 100%;
-  min-width: 960px;
 
 }
 #header div.section,
@@ -18,9 +17,23 @@ body,
 #triptych,
 #footer-columns,
 #footer {
-  width: 960px;
-  margin-right: auto;
+}
+#main, #header{
+  min-width: 80%;
+ 
+}
+#content{
 
+	
+}
+.region.region-content{
+	  min-width: 80%;
+}
+.sidebar{
+float:left;
+min-width: 15%;
+#max-width: 15%;
+margin-top:20px;
 }
 #header div.section {
   position: relative;
@@ -39,11 +52,11 @@ body,
   position: absolute;
   right: 0; /* LTR */
   top: 0;
-  width: 480px;
+ 
 }
 #content
 {
-	float: right;
+	
 }
 #sidebar-first,
 #sidebar-second,
@@ -55,29 +68,34 @@ body,
 .region-footer-thirdcolumn,
 .region-footer-fourthcolumn {
   display: inline;
-  float: left; /* LTR */
+
 
 }
+
+.sidebar{
+	float:left;
+}
 .one-sidebar #content {
-  width: 720px;
+
 }
 .two-sidebars #content {
-  width: 480px;
+
 }
 .no-sidebars #content {
-  width: 960px;
+ 
   float: none;
 }
 #sidebar-first,
 #sidebar-second {
-  width: 240px;
+
 }
 #main-wrapper {
-  min-height: 300px;
+
 }
 #content .section,
 .sidebar .section {
   padding: 0 15px;
+
 }
 #breadcrumb {
   margin: 0 15px;
@@ -86,7 +104,6 @@ body,
 .region-triptych-middle,
 .region-triptych-last {
   margin: 20px 20px 30px;
-  width: 280px;
 }
 #footer-wrapper {
   padding: 35px 5px 30px;
@@ -96,9 +113,11 @@ body,
 .region-footer-thirdcolumn,
 .region-footer-fourthcolumn {
   padding: 0 10px;
-  width: 220px;
 }
 #footer {
-  width: 940px;
-  min-width: 920px;
+
+}
+
+table{
+	min-width:100%;
 }
