@@ -3,8 +3,7 @@
 
 body,
 body.overlay {
-  //color: #3b3b3b;
-  background-image: -moz-linear-gradient(center top , #CCCCCC 0%, #FFFFFF 100%);
+ 
 }
 .comment .comment-arrow {
   border-color: #ffffff;
@@ -12,18 +11,22 @@ body.overlay {
 #page,
 #main-menu-links li a.active,
 #main-menu-links li.active-trail a {
-  background-color: #cccccc;
+ // background-color: #cccccc;
 }
 #main-wrapper {
-  background-color: #ffffff;
-  
+ 
+ 
+}
+#page-title, #breadcrumb a
+{
+	color:#000000;
 }
 #messages
 {
   background:#ffffff;
 }
 #main {
-  background: #ffffff;
+ //background-image: -moz-linear-gradient(center top , #CCCCCC 0%, #FFFFFF 100%);
   size:auto;
 }
 .tabs ul.primary li a.active {
@@ -48,10 +51,13 @@ a:active {
   color: #23aeff;
 }
 .sidebar .block {
-  background-color: #f6f6f2;
-  border-color: #f9f9f9;
+  //background-color: #f6f6f2;
+ // border-color: #f9f9f9;
 }
-#page-wrapper,
+#page-wrapper
+{
+	
+}
 #footer-wrapper {
   background:#757575;
 }
@@ -61,5 +67,5 @@ a:active {
 #name-and-slogan,
 #name-and-slogan a,
 #secondary-menu-links li a {
-  color: #fffeff;
+  color: #ffffff;
 }
