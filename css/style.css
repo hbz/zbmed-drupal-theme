@@ -33,10 +33,8 @@ p {
 del {
 	text-decoration: line-through;
 }
-/*
-tr.odd {
-	background-color: #dddddd;
-}*/
+
+
 img {
 	outline: 0;
 }
@@ -121,7 +119,8 @@ blockquote:after {
 	line-height: 0.1em;
 	vertical-align: -.45em;
 }
-blockquote > p:first-child {
+blockquote > p:first-chil
+  background-color: #ffffff;d {
 	display: inline;
 }
 a.feed-icon {
@@ -132,10 +131,10 @@ a.feed-icon {
 /* ------------------ Table Styles ------------------ */
 
 table {
-	border: 0;
+
 	border-spacing: 0;
-	font-size: 0.857em;
-	margin: 10px 0;
+	font-size: 1em;
+	margin: 10px 10px;
 }
 table table {
 	font-size: 1em;
@@ -147,6 +146,7 @@ table tr th {
 	background: #757575;
 	background: rgba(0, 0, 0, 0.51);
 	border-bottom-style: none;
+
 }
 table tr th, table tr th a, table tr th a:hover {
 	color: #FFF;
@@ -156,22 +156,17 @@ table tbody tr th {
 	vertical-align: top;
 }
 tr td, tr th {
-	padding: 4px 9px;
+	padding: 4px 10px;
 	border: 1px solid #fff;
 	text-align: left; 
+	
 }
+
 #footer-wrapper tr td, #footer-wrapper tr th {
 	border-color: #555;
 	border-color: rgba(255, 255, 255, 0.18);
 }
-tr.odd {
-	background: #e4e4e4;
-	background: rgba(0, 0, 0, 0.105);
-}
-tr, tr.even {
-	background: #efefef;
-	background: rgba(0, 0, 0, 0.063);
-}
+
 table ul.links {
 	margin: 0;
 	padding: 0;
@@ -216,6 +211,7 @@ ul.menu li {
 	border-top: #ffffff;*/
 	padding:10px;
 	margin:0px 0px 15px 0px ;
+	border-style:none;
 }
 .item-list ul li {
 	margin: 0;
@@ -1560,6 +1556,7 @@ div.admin-panel .description {
 	   width:80%;
 	  background-color:#ffffff;
       border:1px solid  #666666;
+      border-style:none;
       border-spacing:5px;/*cellspacing:poor IE support for  this*/
        /* border-collapse:separate;*/
 }
@@ -1576,4 +1573,7 @@ div.admin-panel .description {
       width:100%;
         background-color:#ccc;
 
+}
+.sidebar .block {
+  border-style:none;
 }
