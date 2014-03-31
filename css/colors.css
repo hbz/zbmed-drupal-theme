@@ -3,7 +3,8 @@
 
 body,
 body.overlay {
-  color: #3b3b3b;
+  //color: #3b3b3b;
+  background-image: -moz-linear-gradient(center top , #CCCCCC 0%, #FFFFFF 100%);
 }
 .comment .comment-arrow {
   border-color: #ffffff;
@@ -15,16 +16,15 @@ body.overlay {
 }
 #main-wrapper {
   background-color: #ffffff;
-  /* background-image: -moz-linear-gradient(top, #871D33 0%, #ffffff 100%); */
-  background-image: -moz-linear-gradient(top, #cccccc 0%, #ffffff 100%);
-  background-image: -ms-linear-gradient(top, #cccccc 0%, #ffffff 100%);
-  background-image: -o-linear-gradient(top, #cccccc 0%, #ffffff 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #cccccc), color-stop(1, #ffffff));
-  background-image: -webkit-linear-gradient(top, #cccccc 0%, #ffffff 100%);
-  background-image: linear-gradient(top, #cccccc 0%, #ffffff 100%);
+  
+}
+#messages
+{
+  background:#ffffff;
 }
 #main {
   background: #ffffff;
+  size:auto;
 }
 .tabs ul.primary li a.active {
   background-color: #ffffff;
@@ -34,7 +34,8 @@ body.overlay {
   border-bottom: 1px solid #ffffff;
 }
 #header {
-  background: #ffffff;
+  background:#ffffff;
+
 }
 a {
   color: #871D33;
@@ -52,7 +53,7 @@ a:active {
 }
 #page-wrapper,
 #footer-wrapper {
-  background: #292929;
+  background:#757575;
 }
 .region-header,
 .region-header a,
