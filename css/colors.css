@@ -26,7 +26,7 @@ body.overlay {
   background:#ffffff;
 }
 #main {
- //background-image: -moz-linear-gradient(center top , #CCCCCC 0%, #FFFFFF 100%);
+ background-image: -moz-linear-gradient(center top , #CCCCCC 0%, #FFFFFF 100%);
   size:auto;
 }
 .tabs ul.primary li a.active {
@@ -51,8 +51,7 @@ a:active {
   color: #23aeff;
 }
 .sidebar .block {
-  //background-color: #f6f6f2;
- // border-color: #f9f9f9;
+  background-color: #ffffff;
 }
 #page-wrapper
 {
