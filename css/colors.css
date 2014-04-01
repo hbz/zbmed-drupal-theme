@@ -3,7 +3,7 @@
 
 body,
 body.overlay {
-  color: #3b3b3b;
+ 
 }
 .comment .comment-arrow {
   border-color: #ffffff;
@@ -11,20 +11,23 @@ body.overlay {
 #page,
 #main-menu-links li a.active,
 #main-menu-links li.active-trail a {
-  background-color: #cccccc;
+ // background-color: #cccccc;
 }
 #main-wrapper {
-  background-color: #ffffff;
-  /* background-image: -moz-linear-gradient(top, #871D33 0%, #ffffff 100%); */
-  background-image: -moz-linear-gradient(top, #cccccc 0%, #ffffff 100%);
-  background-image: -ms-linear-gradient(top, #cccccc 0%, #ffffff 100%);
-  background-image: -o-linear-gradient(top, #cccccc 0%, #ffffff 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #cccccc), color-stop(1, #ffffff));
-  background-image: -webkit-linear-gradient(top, #cccccc 0%, #ffffff 100%);
-  background-image: linear-gradient(top, #cccccc 0%, #ffffff 100%);
+ 
+ 
+}
+#page-title, #breadcrumb a
+{
+	color:#000000;
+}
+#messages
+{
+  background:#ffffff;
 }
 #main {
-  background: #ffffff;
+ background-image: -moz-linear-gradient(center top , #CCCCCC 0%, #FFFFFF 100%);
+  size:auto;
 }
 .tabs ul.primary li a.active {
   background-color: #ffffff;
@@ -34,7 +37,8 @@ body.overlay {
   border-bottom: 1px solid #ffffff;
 }
 #header {
-  background: #ffffff;
+  background:#ffffff;
+
 }
 a {
   color: #871D33;
@@ -47,12 +51,15 @@ a:active {
   color: #23aeff;
 }
 .sidebar .block {
-  background-color: #f6f6f2;
-  border-color: #f9f9f9;
+  background-color: #ffffff;
+  border-style:none;
 }
-#page-wrapper,
+#page-wrapper
+{
+	
+}
 #footer-wrapper {
-  background: #292929;
+  background:#757575;
 }
 .region-header,
 .region-header a,
@@ -60,5 +67,15 @@ a:active {
 #name-and-slogan,
 #name-and-slogan a,
 #secondary-menu-links li a {
-  color: #fffeff;
+  color: #ffffff;
+}
+
+tr.odd {
+	background-color: #efefef;
+}
+tr.even{
+	background-color: #dbdbdb;
+}
+.form-submit{
+	background-color:#dd0000;
 }
