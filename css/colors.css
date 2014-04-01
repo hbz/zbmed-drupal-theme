@@ -76,3 +76,6 @@ tr.odd {
 tr.even{
 	background-color: #dbdbdb;
 }
+.form-submit{
+	background-color:#dd0000;
+}

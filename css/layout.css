@@ -10,6 +10,9 @@ body,
   min-height: 100%;
 
 }
+#logo{
+	margin:0 10px;
+}
 #header div.section,
 #featured div.section,
 #messages div.section,
@@ -32,8 +35,7 @@ body,
 .sidebar{
 float:left;
 min-width: 15%;
-#max-width: 15%;
-margin-top:20px;
+
 }
 #header div.section {
   position: relative;
@@ -72,9 +74,7 @@ margin-top:20px;
 
 }
 
-.sidebar{
-	float:left;
-}
+
 .one-sidebar #content {
 
 }
@@ -87,7 +87,6 @@ margin-top:20px;
 }
 #sidebar-first,
 #sidebar-second {
-
 }
 #main-wrapper {
 
@@ -97,8 +96,10 @@ margin-top:20px;
   padding: 0 15px;
 
 }
+
 #breadcrumb {
   margin: 0 15px;
+  padding-top:10px;
 }
 .region-triptych-first,
 .region-triptych-middle,
@@ -120,4 +121,8 @@ margin-top:20px;
 
 table{
 	min-width:100%;
+}
+.section{
+	padding-top:0px;
+	margin-top=0px;
 }
