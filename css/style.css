@@ -695,10 +695,7 @@ ul.links {
 }
 
 /* ------------------ Sidebar ----------------- */
-.sidebar .section {
-	padding-top: 10px;
-	
-}
+
 .sidebar .block {
 	border: 1px solid;
 	padding: 15px 20px;
@@ -1559,6 +1556,9 @@ div.admin-panel .description {
       border-style:none;
       border-spacing:5px;/*cellspacing:poor IE support for  this*/
        /* border-collapse:separate;*/
+      -moz-box-shadow: 10px 10px 5px #999,-1px -1px 5px #aaa;
+-webkit-box-shadow: 10px 10px 5px #999,-1px -1px 5px #aaa;
+box-shadow: 10px 10px 5px #999,-1px 0px 5px  #aaa;
 }
 .field .fieldset-legend{
 	 display:table-row;
@@ -1576,4 +1576,12 @@ div.admin-panel .description {
 }
 .sidebar .block {
   border-style:none;
+       
+}
+.form-checkboxes{
+	display:inline;
+}
+
+#page-title{
+	display:none;
 }
