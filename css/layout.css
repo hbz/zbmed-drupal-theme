@@ -24,18 +24,20 @@ body,
 #main, #header{
   min-width: 80%;
  margin-bottom:20px;
+
 }
 #content{
-
+  padding:10px;
 	
 }
 .region.region-content{
 	  min-width: 80%;
+	 
 }
 .sidebar{
 float:left;
 min-width: 15%;
-
+padding: 10px;
 }
 #header div.section {
   position: relative;
