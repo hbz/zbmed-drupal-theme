@@ -37,6 +37,7 @@ body,
 .sidebar{
 float:left;
 min-width: 15%;
+max-width:15%;
 padding: 10px;
 }
 #header div.section {
