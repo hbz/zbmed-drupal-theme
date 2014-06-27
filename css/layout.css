@@ -136,9 +136,11 @@ label{
 	padding-top:10px;
 }
 
-.field{
-	display:inline;
+.field table  {
+display:inline-table;
+
 }
+
 .collapsible fieldset {
 
 }
