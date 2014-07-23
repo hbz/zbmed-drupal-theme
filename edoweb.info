@@ -1,16 +1,12 @@
 name = Edoweb
-description = A flexible, recolorable theme with many regions.
-package = Core
-version = VERSION
+description = A fluid width subtheme for Bartik, based on Antonelli
 core = 7.x
+base theme = bartik
+engine = phptemplate
 
 stylesheets[all][] = css/layout.css
-stylesheets[all][] = css/style.css
+stylesheets[all][] = css/edoweb.css
 stylesheets[all][] = css/colors.css
-stylesheets[all][] = css/jquery-ui.css
-stylesheets[print][] = css/print.css
-
-scripts[] = js/jquery-ui.js
 
 regions[header] = Header
 regions[help] = Help

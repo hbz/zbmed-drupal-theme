@@ -1,38 +1,23 @@
+/* $Id: colors.css,v 1.1.2.1 2010/12/18 23:01:23 jmburnz Exp $ */
 
 /* ---------- Color Module Styles ----------- */
 
-body,
+body {
+  background-color: #292929;
+  color: #ffffff;
+}
+#page-wrapper,
+#main,
 body.overlay {
- 
+  background-color: #ffffff;
+  color: #3b3b3b;
 }
 .comment .comment-arrow {
   border-color: #ffffff;
 }
-#page,
 #main-menu-links li a.active,
 #main-menu-links li.active-trail a {
- // background-color: #cccccc;
-}
-#main-wrapper {
- 
- 
-}
-#page-title, #breadcrumb a
-{
-	color:#000000;
-}
-#messages
-{
-  background:#ffffff;
-}
-#main {
- background-image: -moz-linear-gradient(top, #cccccc 0%, #ffffff 100%);
-  background-image: -ms-linear-gradient(top, #cccccc 0%, #ffffff 100%);
-  background-image: -o-linear-gradient(top, #cccccc 0%, #ffffff 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #cccccc), color-stop(1, #ffffff));
-  background-image: -webkit-linear-gradient(top, #cccccc 0%, #ffffff 100%);
-  background-image: linear-gradient(top, #cccccc 0%, #ffffff 100%);
-  size:auto;
+  background: #ffffff;
 }
 .tabs ul.primary li a.active {
   background-color: #ffffff;
@@ -42,11 +27,10 @@ body.overlay {
   border-bottom: 1px solid #ffffff;
 }
 #header {
-  background:#ffffff;
-
+  background-color: #c2c4c5;
 }
 a {
-  color: #871D33;
+  color: #0071B3;
 }
 a:hover,
 a:focus {
@@ -56,15 +40,11 @@ a:active {
   color: #23aeff;
 }
 .sidebar .block {
-  background-color: #ffffff;
-  border-style:none;
-}
-#page-wrapper
-{
-	
+  background-color: #f6f6f2;
+  border-color: #f9f9f9;
 }
 #footer-wrapper {
-  background:#757575;
+  background: #292929;
 }
 .region-header,
 .region-header a,
@@ -72,15 +52,5 @@ a:active {
 #name-and-slogan,
 #name-and-slogan a,
 #secondary-menu-links li a {
-  color: #ffffff;
-}
-
-tr.odd {
-	background-color: #efefef;
-}
-tr.even{
-	background-color: #dbdbdb;
-}
-.form-submit{
-	background-color:#dd0000;
+  color: #fffeff;
 }

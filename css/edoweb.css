@@ -1,0 +1,132 @@
+/* $Id */
+
+.region-header .block {
+  float: right; /* LTR */
+  font-size: 0.857em;
+  margin: 0 15px;
+  padding: 0;
+  width: 43.5%;
+}
+.region-header .block-menu {
+  width: 43.5%;
+}
+.region-header #block-user-login .item-list li {
+  padding: 3px 5px 1px 0; /* LTR */
+}
+#search-form input#edit-keys, 
+#block-search-form .form-item-search-block-form input {
+  width: 70%;
+}
+
+div.field {
+  clear: both;
+  padding-bottom: 0.5em;
+}
+
+div.field .field-label {
+  display: block;
+  float: left;
+  width: 12em;
+}
+
+div.field .field-item {
+  display: block;
+  margin-left: 12em;
+}
+
+div.field>table {
+  display: block;
+  max-width: 90%;
+  margin: 0;
+  padding-bottom: 0.5em;
+}
+
+input[readonly="readonly"] {
+  background-color: #efefef;
+}
+
+div.item-list>ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+td {
+  max-width: 30em;
+}
+
+table:not([tableheader-processed]) th {
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+table:not([tableheader-processed]) th:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+table:not([tableheader-processed]) th.headerSortDown {
+  background-image: url('http://minorthreat/misc/arrow-desc.png');
+}
+
+table:not([tableheader-processed]) th.headerSortUp {
+  background-image: url('http://minorthreat/misc/arrow-asc.png');
+}
+
+button {
+  background: #fff url(/themes/bartik/images/buttons.png) 0 0 repeat-x;
+  border: 1px solid #e4e4e4;
+  border-bottom: 1px solid #b4b4b4;
+  border-left-color: #d2d2d2;
+  border-right-color: #d2d2d2;
+  color: #3a3a3a;
+  cursor: pointer;
+  text-align: center;
+  margin-right: 0.6em;
+  padding: 4px 17px;
+  -khtml-border-radius: 15px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+}
+
+button:hover, button:focus {
+  background: #dedede;
+}
+
+fieldset.edoweb-facets {
+  width: 20%;
+  float: left;
+}
+
+fieldset.edoweb-entity-list {
+  width: 75%;
+  float: left;
+}
+
+#block-edoweb-edoweb-search-block {
+  text-align: right;
+}
+
+ul.edoweb-facets-active>li {
+  background-color: #dbdbdb;
+  -khtml-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -khtml-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  padding: 1px;
+  margin: 2px;
+}
+
+ul.edoweb-facets-active>li>a, ul.edoweb-facets-available>li>span {
+  float: right;
+}
+
+ul.edoweb-facets-available>li{
+  border-bottom: 1px dotted #dbdbdb;
+}
+

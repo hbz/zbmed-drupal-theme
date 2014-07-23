@@ -1,3 +1,4 @@
+/* $Id: preview.js,v 1.1.2.1 2010/12/18 23:01:19 jmburnz Exp $ */
 
 (function ($) {
   Drupal.color = {
