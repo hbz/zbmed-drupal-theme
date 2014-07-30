@@ -1,5 +1,34 @@
 /* $Id */
 
+body{
+ font-family:helvetica, sans-serif;
+}
+
+a{
+
+  color: #871d33;
+}
+
+input.form-submit, a.button{
+
+border-radius: 7px;
+box-shadow: 0px 0px 6px #cccccc; 
+}
+
+input.form-submit:hover{
+
+box-shadow: 0px 0px 6px #ff9933;
+}
+
+a:hover{
+  color: #ff9933;
+}
+
+a:visited{
+  color: #3b3b3b;
+}
+
+
 .region-header .block {
   float: right; /* LTR */
   font-size: 0.857em;
@@ -88,6 +117,7 @@ button {
   -moz-border-radius: 20px;
   -webkit-border-radius: 15px;
   border-radius: 15px;
+
 }
 
 button:hover, button:focus {
@@ -108,8 +138,9 @@ fieldset.edoweb-entity-list {
   text-align: right;
 }
 
+
 ul.edoweb-facets-active>li {
-  background-color: #dbdbdb;
+  background-color: #ff9933;
   -khtml-border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -118,15 +149,69 @@ ul.edoweb-facets-active>li {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  padding: 1px;
-  margin: 2px;
+  padding: 2px;
+  margin-left: 0px;
+  margin-bottom: 5px;
+  color:#fff;
+  box-shadow: 1px 1px 6px #b4b4b4; 
 }
 
 ul.edoweb-facets-active>li>a, ul.edoweb-facets-available>li>span {
   float: right;
+  color: #871d33;
 }
 
 ul.edoweb-facets-available>li{
   border-bottom: 1px dotted #dbdbdb;
+  font-size: 0.857em; 
 }
+
+ul.edoweb-facets-available a:hover{
+    color: #ff9933;
+}
+
+.item-list h3{
+  background-color: #dbdbdb; 
+  
+}
+
+.form-type-item{
+ height:0px;
+ padding-top:10px; 
+ position: relative;
+ top: 0px;
+ left: 650px;
+
+}
+
+
+a[data-bundle="monograph"]{
+  margin: 10px;
+  font-size:0.8em;
+}
+
+a[data-bundle="journal"]{
+  margin: 10px;
+  font-size:0.8em;
+}
+
+a[data-bundle="volume"]{
+  margin: 10px;
+  font-size:0.8em;
+}
+a[data-bundle="issue"]{
+  margin: 10px;
+  font-size:0.8em;
+}
+
+a[data-bundle="article"]{
+  margin: 10px;
+  font-size:0.8em;
+}
+
+a[data-bundle="file"]{
+  margin: 10px;
+  font-size:0.8em;
+}
+
 
