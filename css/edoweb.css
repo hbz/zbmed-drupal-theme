@@ -156,10 +156,15 @@ ul.edoweb-facets-active>li {
   box-shadow: 1px 1px 6px #b4b4b4; 
 }
 
-ul.edoweb-facets-active>li>a, ul.edoweb-facets-available>li>span {
+ul.edoweb-facets-active>li>a{
   float: right;
-  color: white;
+  color: #fff;
 }
+
+ ul.edoweb-facets-available>li>span {
+  float: right;
+  color: #000;   
+ }
 
 ul.edoweb-facets-available>li{
   border-bottom: 1px dotted #dbdbdb;
@@ -175,15 +180,9 @@ ul.edoweb-facets-available a:hover{
   
 }
 
-.form-type-item{
- height:0px;
- padding-top:10px; 
- position: relative;
- top: 0px;
- left: 650px;
-
+.form-text:hover{
+    box-shadow: inset 0px 0px 6px #ff9933;
 }
-
 
 a[data-bundle="monograph"]{
   margin: 10px;
