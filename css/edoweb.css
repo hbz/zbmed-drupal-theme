@@ -180,37 +180,67 @@ ul.edoweb-facets-available a:hover{
   
 }
 
+
 .form-text:hover{
     box-shadow: inset 0px 0px 6px #ff9933;
 }
 
+.form-type-item{
+  padding-bottom:5px;
+  width: 95%;
+}
+
 a[data-bundle="monograph"]{
-  margin: 10px;
+  float:right;
+  margin: 0px;
   font-size:0.8em;
+  position:relative;
+  top: 10px;
 }
 
 a[data-bundle="journal"]{
-  margin: 10px;
+  float:right;
+  padding-right: 10px;
+  margin: 0px;
   font-size:0.8em;
+  position:relative;
+  top: 10px;
 }
 
 a[data-bundle="volume"]{
-  margin: 10px;
+  float:right;
+  padding-right: 10px;
+  margin: 0px;
   font-size:0.8em;
+  position:relative;
+  top: 10px;
+
 }
 a[data-bundle="issue"]{
-  margin: 10px;
+  float:right;
+  padding-right: 10px;
+  margin: 0px;
   font-size:0.8em;
+  position:relative;
+  top: 10px;
 }
 
 a[data-bundle="article"]{
-  margin: 10px;
+  float:right;
+  padding-right: 10px;
+  margin: 0px;
   font-size:0.8em;
+  position:relative;
+  top: 10px;
 }
 
 a[data-bundle="file"]{
-  margin: 10px;
+  float:right;
+  margin: 0px;
+  padding-right: 10px;
   font-size:0.8em;
+  position:relative;
+  top: 10px;
 }
 
 
