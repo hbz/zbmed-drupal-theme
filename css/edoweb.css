@@ -1,13 +1,18 @@
 /* $Id */
 
-body{
- font-family:helvetica, sans-serif;
+body, table, input, label, .fieldset-legend{
+ font-family: 'Signika', 'Droid Sans', 'PT Sans', helvetica, arial, serif;
 }
+
+ .fieldset-legend{
+ font-weight: 600;
+ }
 
 a{
 
   color: #871d33;
 }
+
 
 input.form-submit, a.button{
 
@@ -190,57 +195,14 @@ ul.edoweb-facets-available a:hover{
   width: 95%;
 }
 
-a[data-bundle="monograph"]{
+.form-type-item a[data-bundle]{
   float:right;
   margin: 0px;
+  padding-left: 10px;
   font-size:0.8em;
   position:relative;
   top: 10px;
 }
 
-a[data-bundle="journal"]{
-  float:right;
-  padding-right: 10px;
-  margin: 0px;
-  font-size:0.8em;
-  position:relative;
-  top: 10px;
-}
-
-a[data-bundle="volume"]{
-  float:right;
-  padding-right: 10px;
-  margin: 0px;
-  font-size:0.8em;
-  position:relative;
-  top: 10px;
-
-}
-a[data-bundle="issue"]{
-  float:right;
-  padding-right: 10px;
-  margin: 0px;
-  font-size:0.8em;
-  position:relative;
-  top: 10px;
-}
-
-a[data-bundle="article"]{
-  float:right;
-  padding-right: 10px;
-  margin: 0px;
-  font-size:0.8em;
-  position:relative;
-  top: 10px;
-}
-
-a[data-bundle="file"]{
-  float:right;
-  margin: 0px;
-  padding-right: 10px;
-  font-size:0.8em;
-  position:relative;
-  top: 10px;
-}
 
 
