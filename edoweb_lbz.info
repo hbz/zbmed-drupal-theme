@@ -1,11 +1,11 @@
-name = Edoweb
+name = Edoweb Drupal Theme
 description = A fluid width subtheme for Bartik, based on Antonelli
 core = 7.x
 base theme = bartik
 engine = phptemplate
 
 stylesheets[all][] = css/layout.css
-stylesheets[all][] = css/edoweb.css
+stylesheets[all][] = css/edoweb_lbz.css
 stylesheets[all][] = css/colors.css
 
 regions[header] = Header
