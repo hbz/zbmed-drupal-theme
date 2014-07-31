@@ -1,7 +1,7 @@
 /* $Id */
 
 body, table, input, label, .fieldset-legend{
- font-family: 'Signika', 'Droid Sans', 'PT Sans', helvetica, arial, serif;
+ font-family: 'Signika', 'Droid Sans', 'PT Sans', helvetica, arial, sans-serif;
 }
 
 table {
@@ -181,7 +181,13 @@ ul.edoweb-facets-active>li>a{
 ul.edoweb-facets-available>li{
   border-bottom: 1px dotted #dbdbdb;
   font-size: 0.8em; 
+  
 }
+
+ul.edoweb-facets-available a{
+    color: #871d33;
+}
+
 
 ul.edoweb-facets-available a:hover{
     color: #ff9933;
