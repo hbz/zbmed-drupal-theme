@@ -4,8 +4,13 @@ body, table, input, label, .fieldset-legend{
  font-family: 'Signika', 'Droid Sans', 'PT Sans', helvetica, arial, serif;
 }
 
+table {
+ font-size: 1em;  
+}
+
  .fieldset-legend{
  font-weight: 600;
+ text-shadow: none;
  }
 
 a{
@@ -36,7 +41,7 @@ a:visited{
 
 .region-header .block {
   float: right; /* LTR */
-  font-size: 0.857em;
+  font-size: 0.8em;
   margin: 0 15px;
   padding: 0;
   width: 43.5%;
@@ -87,6 +92,8 @@ div.item-list>ul {
 
 td {
   max-width: 30em;
+  font-weight: 300;
+
 }
 
 table:not([tableheader-processed]) th {
@@ -173,7 +180,7 @@ ul.edoweb-facets-active>li>a{
 
 ul.edoweb-facets-available>li{
   border-bottom: 1px dotted #dbdbdb;
-  font-size: 0.857em; 
+  font-size: 0.8em; 
 }
 
 ul.edoweb-facets-available a:hover{
@@ -181,7 +188,8 @@ ul.edoweb-facets-available a:hover{
 }
 
 .item-list h3{
-  background-color: #dbdbdb; 
+  background-color: #dbdbdb;
+  font-size: 1em;
   
 }
 
