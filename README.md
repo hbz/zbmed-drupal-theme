@@ -1,6 +1,6 @@
 # About
 
-edoweb-drupal-theme is a Drupal theme based on Bartik.
+edoweb_lbz is a Drupal theme based on Bartik.
 
 # Installation
 
