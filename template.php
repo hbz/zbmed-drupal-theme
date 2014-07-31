@@ -1,6 +1,6 @@
 <?php
 
-  function edoweb_preprocess_html(&$variables) {
+  function edoweb_lbz_preprocess_html(&$variables) {
 
   /** 
   * make google fonts available for themes
@@ -17,4 +17,5 @@
 
 
   }
+
 ?> 
