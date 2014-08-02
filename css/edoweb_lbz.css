@@ -218,5 +218,8 @@ ul.edoweb-facets-available a:hover{
   top: 10px;
 }
 
+.toggleButton{
+  float:right; 
+}
 
 
