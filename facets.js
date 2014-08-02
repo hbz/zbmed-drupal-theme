@@ -47,8 +47,12 @@ function actionIcons() {
     .attr('title', jQuery('.form-type-item a[data-bundle="file"]').html())
     .html('<span class="octicon octicon-file-binary"></span>');
 
-  
+
+  jQuery('label a[href="#"]').replaceWith('<a href="#">&nbsp;<span class="octicon octicon-diff-added"></span></a>');
+
 }
+
+
 
 
 jQuery(document).ready(function() {
