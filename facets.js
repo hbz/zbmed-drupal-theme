@@ -7,6 +7,14 @@ function appendToggle() {
     //jQuery(this).replaceWith('<a onclick="' + ref + '">Test</a>');
     jQuery(this).attr('href', ref + '&toggled=');
   });
+  
+  jQuery('.edoweb-entity-list ul.pager').append('<div class="toggleButton"><span class="batch-icons batch-icon-zoom-plus"></span><span class="batch-icons batch-icon-zoom-minus"></div>');
+
+}
+
+function appendSortable() {
+ jQuery('.edoweb-facets .fieldset-wrapper').sortable();
+  
 }
 
 // toggle functionality
@@ -51,10 +59,25 @@ function replaceWithIcon(target, iconCss) {
  
 }
 
+function zoomTable() {
+   jQuery('.edoweb-entity-list ul.pager span.batch-icon-zoom-plus').click(function(){
+   var size = jQuery('table').css('font-size');
+   var newSize = parseFloat(size) + 1;
+   jQuery('table').css('font-size', newSize);
+  });
+   jQuery('.edoweb-entity-list ul.pager span.batch-icon-zoom-minus').click(function(){
+   var size = jQuery('table').css('font-size');
+   var newSize = parseFloat(size) - 1;
+   jQuery('table').css('font-size', newSize);
+     
+  });
+}
 
 jQuery(document).ready(function() {
   appendToggle();  
   expandFacet();
   actionIcons();
+  appendSortable();
+  zoomTable();
 });
  
