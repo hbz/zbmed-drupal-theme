@@ -1,6 +1,6 @@
 /* $Id */
 
-body, table, input, label, .fieldset-legend{
+body, table, input, label, .fieldset-legend, .ui-widget {
  font-family: 'Signika', 'Droid Sans', 'PT Sans', helvetica, arial, sans-serif;
 }
 

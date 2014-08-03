@@ -18,41 +18,38 @@ function expandFacet() {
   });
 }
 
+
+
+
 // replace action textes with icons
 function actionIcons() {
  
-  jQuery('.form-type-item a[data-bundle="monograph"]')
-    .attr('title', jQuery('.form-type-item a[data-bundle="monograph"]').html())
-    .html('<span class="octicon octicon-repo"></span>');
+  replaceWithIcon(jQuery('.form-type-item a[data-bundle="monograph"]'), 'octicon octicon-repo');
+  replaceWithIcon(jQuery('.form-type-item a[data-bundle="journal"]'), 'octicon octicon-versions');
+  replaceWithIcon(jQuery('.form-type-item a[data-bundle="volume"]'), 'octicon octicon-list-ordered');
+  replaceWithIcon(jQuery('.form-type-item a[data-bundle="issue"]'), 'octicon octicon-book');
+  replaceWithIcon(jQuery('.form-type-item a[data-bundle="article"]'), 'octicon octicon-file-text');
+  replaceWithIcon(jQuery('.form-type-item a[data-bundle="file"]'), 'octicon octicon-file-binary');
 
-  jQuery('.form-type-item a[data-bundle="journal"]')
-    .attr('title', jQuery('.form-type-item a[data-bundle="journal"]').html())
-    .html('<span class="octicon octicon-versions"></span>');
-    
-  jQuery('.form-type-item a[data-bundle="volume"]')
-    .attr('title', jQuery('.form-type-item a[data-bundle="volume"]').html())
-    .html('<span class="octicon octicon-list-ordered"></span>');
-    
-  jQuery('.form-type-item a[data-bundle="issue"]')
-    .attr('title', jQuery('.form-type-item a[data-bundle="issue"]').html())
-    .html('<span class="octicon octicon-book"></span>');
+  replaceWithIcon(jQuery('label a[href="#"]'), 'batch-icons batch-icon-plus');
+  replaceWithIcon(jQuery('label[for="edit-field-edoweb-parent-und"] a[href="#"]'), 'batch-icons batch-icon-concat');
+  replaceWithIcon(jQuery('label[for="edit-field-edoweb-identifier-ht-und-0-value"] a[href="#"]'), 'batch-icons batch-icon-concat');
+  replaceWithIcon(jQuery('label[for="edit-field-edoweb-parallel-und"] a[href="#"]'), 'batch-icons batch-icon-concat');
 
-
-  jQuery('.form-type-item a[data-bundle="article"]')
-    .attr('title', jQuery('.form-type-item a[data-bundle="article"]').html())
-    .html('<span class="octicon octicon-file-text"></span>');
-
-
-  jQuery('.form-type-item a[data-bundle="file"]')
-    .attr('title', jQuery('.form-type-item a[data-bundle="file"]').html())
-    .html('<span class="octicon octicon-file-binary"></span>');
-
-
-  jQuery('label a[href="#"]').replaceWith('<a href="#">&nbsp;<span class="octicon octicon-diff-added"></span></a>');
-
+  
+/*  jQuery('label a[href="#"]')
+    .attr('title', jQuery('label a[href="#"]').html())
+    .html('<span class="batch-icons batch-icon-plus"></span>');
+*/
 }
 
-
+// replace action textes with icons
+function replaceWithIcon(target, iconCss) {
+  target
+    .attr('title', jQuery(this).html())
+    .html('<span class="' + iconCss + '"></span>');
+ 
+}
 
 
 jQuery(document).ready(function() {
