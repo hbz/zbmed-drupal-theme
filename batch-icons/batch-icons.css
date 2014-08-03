@@ -47,5 +47,7 @@
 .batch-icon-add-person:before { content: '\f171'}
 .batch-icon-plus:before { content: '\f01d'}
 .batch-icon-concat:before { content: '\f143'}
+.batch-icon-zoom-plus:before { content: '\f098'}
+.batch-icon-zoom-minus:before { content: '\f099'}
 
 
