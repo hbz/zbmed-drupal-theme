@@ -1,6 +1,7 @@
 
 // append the div for toggle functionality to each facet
 function appendToggle() {
+  jQuery.cookie("creator", "up");
   jQuery('.item-list h3').append('<div class="toggleButton"><span class="octicon octicon-triangle-up"></span>&nbsp;</div>');  
   jQuery('.item-list ul li a').each(function() {
     jQuery(this).addClass('facet-expanded');
@@ -63,15 +64,21 @@ function replaceWithIcon(target, iconCss) {
 }
 
 function zoomTable() {
-   jQuery('.edoweb-entity-list ul.pager span.batch-icon-zoom-plus').click(function(){
+  if(jQuery.cookie('table-font-size')){
+  jQuery('table').css('font-size', jQuery.cookie('table-font-size') + 'px');
+  }
+  //jQuery.cookie('table-font-size', jQuery('table').css('font-size'));
+  jQuery('.edoweb-entity-list ul.pager span.batch-icon-zoom-plus').click(function(){
    var size = jQuery('table').css('font-size');
    var newSize = parseFloat(size) + 1;
    jQuery('table').css('font-size', newSize);
+   jQuery.cookie("table-font-size", newSize);
   });
    jQuery('.edoweb-entity-list ul.pager span.batch-icon-zoom-minus').click(function(){
    var size = jQuery('table').css('font-size');
    var newSize = parseFloat(size) - 1;
    jQuery('table').css('font-size', newSize);
+   jQuery.cookie("table-font-size", newSize);
      
   });
 }
@@ -82,5 +89,6 @@ jQuery(document).ready(function() {
   actionIcons();
   appendSortable();
   zoomTable();
+  //alert(jQuery.cookie('creator'));
 });
  
