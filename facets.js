@@ -3,6 +3,7 @@
 function appendToggle() {
   jQuery('.item-list h3').append('<div class="toggleButton"><span class="octicon octicon-triangle-up"></span>&nbsp;</div>');  
   jQuery('.item-list ul li a').each(function() {
+    jQuery(this).addClass('facet-expanded');
     var ref = jQuery(this).attr('href');
     //jQuery(this).replaceWith('<a onclick="' + ref + '">Test</a>');
     jQuery(this).attr('href', ref + '&toggled=');
@@ -20,8 +21,10 @@ function appendSortable() {
 // toggle functionality
 function expandFacet() {
   jQuery('.item-list h3 div span').click(function(){
-         jQuery(this).parent().parent().parent().find("ul").toggle("clip", function(){
-	      jQuery(this).parent().find('span').toggleClass('octicon-triangle-down').toggleClass('octicon-triangle-up');
+    var facet = jQuery(this).parent().parent().parent().find("ul");    
+    //facet.toggleClass('facet-expanded').toggleClass('facet-closed');
+    facet.toggle("clip", function(){   
+	   jQuery(this).parent().find('span').toggleClass('octicon-triangle-down').toggleClass('octicon-triangle-up');
 	 });
   });
 }
@@ -54,7 +57,7 @@ function actionIcons() {
 // replace action textes with icons
 function replaceWithIcon(target, iconCss) {
   target
-    .attr('title', jQuery(this).html())
+    .attr('title', target.html())
     .html('<span class="' + iconCss + '"></span>');
  
 }
