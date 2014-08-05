@@ -20,12 +20,50 @@ function appendToggle() {
   
 }
 
+function appendSorting(){
+    
+    if(jQuery.cookie('sortFacets')){
+      var sortFacets = jQuery('.item-list h3').parent().clone();
+      
+      var facetsParent = jQuery('.item-list h3').parent();
+      facetsParent.children().remove();
+    
+      // javascript
+      var cookieSplit = jQuery.cookie('sortFacets').split(' ');
+      alert(cookieSplit.length);
+      var i;
+      for(i=0; i < cookieSplit.length; i++){
+	//alert(cookieSplit[i]);
+	//facetsParent.append(sortFacets.filter('#' + cookieSplit[i]));
+	var part = sortFacets.filter('#' + cookieSplit[i]);
+	facetsParent.after(part);
+	alert(part.html());
+	//sortFacets.filter('#' + cookieSplit).appendTo(facetsParent);
+      };
+      jQuery.cookie
+    }
+}
+
 function appendZoom(){
-  jQuery('.edoweb-entity-list ul.pager').append('<div class="toggleButton"><span class="batch-icons batch-icon-zoom-plus"></span><span class="batch-icons batch-icon-zoom-minus"></div>');
+  jQuery('.edoweb-entity-list ul.pager:first').append('<div class="toggleButton"><span class="batch-icons batch-icon-zoom-plus"></span><span class="batch-icons batch-icon-zoom-minus"></div>');
 }
 
 function appendSortable() {
- jQuery('.edoweb-facets .fieldset-wrapper').sortable();
+  jQuery('.edoweb-facets .fieldset-wrapper').sortable({
+      update: function(event, ui){
+	//jQuery.cookie('pos-'+ ui.item.attr('id'), ui.item.index());
+	var sorts = jQuery('.edoweb-facets .fieldset-wrapper').sortable('toArray');
+	var i = 0;
+	var cookieValue = '';
+	while(i < sorts.length){
+	  cookieValue = cookieValue +' ' + sorts[i];
+	}
+	jQuery.cookie('sortFacets', cookieValue.trim());
+	//alert(jQuery.cookie('sortFacets'));
+      },
+   });
+   //jQuery('.edoweb-facets .fieldset-wrapper').on( "sortableupdate", function( event, ui ) {alert(ui.item.html());} );
+ 
   
 }
 
@@ -99,6 +137,7 @@ function zoomTable() {
 
 jQuery(document).ready(function() {
   appendToggle();
+  appendSorting();
   appendZoom();  
   expandFacet();
   actionIcons();
