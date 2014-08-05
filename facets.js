@@ -98,7 +98,8 @@ function zoomTable() {
 }
 
 jQuery(document).ready(function() {
-  appendToggle();  
+  appendToggle();
+  appendZoom();  
   expandFacet();
   actionIcons();
   appendSortable();
