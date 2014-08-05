@@ -1,17 +1,27 @@
 
 // append the div for toggle functionality to each facet
 function appendToggle() {
-  jQuery.cookie("creator", "up");
-  jQuery('.item-list h3').append('<div class="toggleButton"><span class="octicon octicon-triangle-up"></span>&nbsp;</div>');  
-  jQuery('.item-list ul li a').each(function() {
-    jQuery(this).addClass('facet-expanded');
-    var ref = jQuery(this).attr('href');
-    //jQuery(this).replaceWith('<a onclick="' + ref + '">Test</a>');
-    jQuery(this).attr('href', ref + '&toggled=');
+  jQuery('.item-list h3').each(function(){
+    var facetHeader = jQuery(this);
+    var facetName = facetHeader.html();
+    
+    facetHeader.parent().attr('id', facetName);
+    //alert(facetName + ': ' +  jQuery.cookie(facetName));
+    if(jQuery.cookie(facetName)){
+      facetHeader.append('<div class="toggleButton"><span class="' + jQuery.cookie(facetName) + '"></span>&nbsp;</div>');
+      //jQuery(this).find('div span.octicon-triangle-up').parent().parent().parent().find("ul").css('display', 'block');
+      facetHeader.find('div span.octicon-triangle-down').parent().parent().parent().find("ul").css('display', 'none');
+    }else{
+      facetHeader.append('<div class="toggleButton"><span class="octicon octicon-triangle-up"></span>&nbsp;</div>');
+    }
+    
+    
   });
   
-  jQuery('.edoweb-entity-list ul.pager').append('<div class="toggleButton"><span class="batch-icons batch-icon-zoom-plus"></span><span class="batch-icons batch-icon-zoom-minus"></div>');
+}
 
+function appendZoom(){
+  jQuery('.edoweb-entity-list ul.pager').append('<div class="toggleButton"><span class="batch-icons batch-icon-zoom-plus"></span><span class="batch-icons batch-icon-zoom-minus"></div>');
 }
 
 function appendSortable() {
@@ -23,10 +33,14 @@ function appendSortable() {
 function expandFacet() {
   jQuery('.item-list h3 div span').click(function(){
     var facet = jQuery(this).parent().parent().parent().find("ul");    
-    //facet.toggleClass('facet-expanded').toggleClass('facet-closed');
     facet.toggle("clip", function(){   
-	   jQuery(this).parent().find('span').toggleClass('octicon-triangle-down').toggleClass('octicon-triangle-up');
-	 });
+	var facetHeader = jQuery(this).parent().find('h3 div span');
+        facetHeader.toggleClass('octicon-triangle-down').toggleClass('octicon-triangle-up');
+        var status = facetHeader.attr('class');
+	var facetName = facetHeader.parent().parent().parent().attr('id');
+	jQuery.cookie(facetName, status);
+
+    });
   });
 }
 
