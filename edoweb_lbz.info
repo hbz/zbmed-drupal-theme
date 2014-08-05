@@ -10,7 +10,6 @@ stylesheets[all][] = css/colors.css
 stylesheets[all][] = octicons/octicons.css
 stylesheets[all][] = batch-icons/batch-icons.css
 scripts[] = facets.js
-scripts[] = jquery.ui.sortable.min.js
 scripts[] = jquery.cookie.js
 
 regions[header] = Header
