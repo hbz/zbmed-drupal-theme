@@ -156,6 +156,17 @@ function zoomTable() {
   });
 }
 
+// datepicker
+function addDatePicker(){
+  
+  jQuery('#edit-field-edoweb-issued-und-0-value').datepicker( 
+	{
+	changeMonth:true,
+	changeYear:true,
+	dateFormat:"dd.mm.yy" 
+	} );
+}
+
 jQuery(document).ready(function() {
   appendToggle();
   appendSorting();
@@ -164,5 +175,6 @@ jQuery(document).ready(function() {
   actionIcons();
   appendSortable();
   zoomTable();
+  //addDatePicker();
 });
  
