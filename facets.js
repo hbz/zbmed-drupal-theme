@@ -25,20 +25,18 @@ function appendSorting(){
     if(jQuery.cookie('sortFacets')){
       var sortFacets = jQuery('.item-list h3').parent().clone();
       
-      var facetsParent = jQuery('.item-list h3').parent();
+      var activeFacets = jQuery('.item-list .edoweb-facets-active').parent().clone();
+      var facetsParent = jQuery('.item-list h3').parent().parent();
       facetsParent.children().remove();
+      
+      facetsParent.append(activeFacets);
     
       // javascript
       var cookieSplit = jQuery.cookie('sortFacets').split(' ');
-      alert(cookieSplit.length);
       var i;
       for(i=0; i < cookieSplit.length; i++){
-	//alert(cookieSplit[i]);
-	//facetsParent.append(sortFacets.filter('#' + cookieSplit[i]));
 	var part = sortFacets.filter('#' + cookieSplit[i]);
-	facetsParent.after(part);
-	alert(part.html());
-	//sortFacets.filter('#' + cookieSplit).appendTo(facetsParent);
+	facetsParent.append(part);
       };
       jQuery.cookie
     }
@@ -51,20 +49,17 @@ function appendZoom(){
 function appendSortable() {
   jQuery('.edoweb-facets .fieldset-wrapper').sortable({
       update: function(event, ui){
-	//jQuery.cookie('pos-'+ ui.item.attr('id'), ui.item.index());
 	var sorts = jQuery('.edoweb-facets .fieldset-wrapper').sortable('toArray');
 	var i = 0;
 	var cookieValue = '';
+	//alert(sorts.length);
 	while(i < sorts.length){
 	  cookieValue = cookieValue +' ' + sorts[i];
+	  i++;
 	}
 	jQuery.cookie('sortFacets', cookieValue.trim());
-	//alert(jQuery.cookie('sortFacets'));
       },
-   });
-   //jQuery('.edoweb-facets .fieldset-wrapper').on( "sortableupdate", function( event, ui ) {alert(ui.item.html());} );
- 
-  
+   });  
 }
 
 // toggle functionality
@@ -100,11 +95,6 @@ function actionIcons() {
   replaceWithIcon(jQuery('label[for="edit-field-edoweb-identifier-ht-und-0-value"] a[href="#"]'), 'batch-icons batch-icon-concat');
   replaceWithIcon(jQuery('label[for="edit-field-edoweb-parallel-und"] a[href="#"]'), 'batch-icons batch-icon-concat');
 
-  
-/*  jQuery('label a[href="#"]')
-    .attr('title', jQuery('label a[href="#"]').html())
-    .html('<span class="batch-icons batch-icon-plus"></span>');
-*/
 }
 
 // replace action textes with icons
@@ -143,6 +133,5 @@ jQuery(document).ready(function() {
   actionIcons();
   appendSortable();
   zoomTable();
-  //alert(jQuery.cookie('creator'));
 });
  
