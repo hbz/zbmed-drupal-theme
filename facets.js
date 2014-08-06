@@ -102,6 +102,13 @@ function actionIcons() {
   replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(Article)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-file-text');
   replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(File)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-file-binary');
 
+  replaceMatchWithIcon('.breadcrumb a', 'Monograph:', 'octicon octicon-repo');
+  replaceMatchWithIcon('.breadcrumb a', 'Journal:', 'octicon octicon-versions');
+  replaceMatchWithIcon('.breadcrumb a', 'Volume:', 'octicon octicon-list-ordered');
+  replaceMatchWithIcon('.breadcrumb a', 'Issue:', 'octicon octicon-book');
+  replaceMatchWithIcon('.breadcrumb a', 'Article:', 'octicon octicon-file-text');
+  replaceMatchWithIcon('.breadcrumb a', 'File:', 'octicon octicon-file-binary');
+
 }
 
   
@@ -113,6 +120,15 @@ function replaceWithIcon(target, iconCss) {
  
 }
 
+// replace action textes with icons
+function replaceMatchWithIcon(filter, match, iconCss) {
+  var target = jQuery(filter + ':contains("' + match + '")');
+  target.each(function(){
+    var elementText = target.html().replace(match, '<span class="' + iconCss + '"></span>');
+    target.html(elementText);
+  });
+    
+}
 
 function zoomTable() {
   if(jQuery.cookie('table-font-size')){
