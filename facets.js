@@ -95,8 +95,16 @@ function actionIcons() {
   replaceWithIcon(jQuery('label[for="edit-field-edoweb-identifier-ht-und-0-value"] a[href="#"]'), 'batch-icons batch-icon-concat');
   replaceWithIcon(jQuery('label[for="edit-field-edoweb-parallel-und"] a[href="#"]'), 'batch-icons batch-icon-concat');
 
+  replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(Monograph)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-repo');
+  replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(Journal)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-versions');
+  replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(Volume)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-list-ordered');
+  replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(Issue)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-book');
+  replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(Article)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-file-text');
+  replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(File)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-file-binary');
+
 }
 
+  
 // replace action textes with icons
 function replaceWithIcon(target, iconCss) {
   target
@@ -104,6 +112,7 @@ function replaceWithIcon(target, iconCss) {
     .html('<span class="' + iconCss + '"></span>');
  
 }
+
 
 function zoomTable() {
   if(jQuery.cookie('table-font-size')){
