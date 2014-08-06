@@ -109,6 +109,12 @@ function actionIcons() {
   replaceMatchWithIcon('.breadcrumb a', 'Article:', 'octicon octicon-file-text');
   replaceMatchWithIcon('.breadcrumb a', 'File:', 'octicon octicon-file-binary');
 
+  replaceMatchWithIcon('h1#page-title', 'Monograph:', 'mega-octicon octicon-repo');
+  replaceMatchWithIcon('h1#page-title', 'Journal:', 'mega-octicon octicon-versions');
+  replaceMatchWithIcon('h1#page-title', 'Volume:', 'mega-octicon octicon-list-ordered');
+  replaceMatchWithIcon('h1#page-title', 'Issue:', 'mega-octicon octicon-book');
+  replaceMatchWithIcon('h1#page-title', 'Article:', 'mega-octicon octicon-file-text');
+  replaceMatchWithIcon('h1#page-title', 'File:', 'mega-octicon octicon-file-binary');
 }
 
   
@@ -124,7 +130,7 @@ function replaceWithIcon(target, iconCss) {
 function replaceMatchWithIcon(filter, match, iconCss) {
   var target = jQuery(filter + ':contains("' + match + '")');
   target.each(function(){
-    var elementText = target.html().replace(match, '<span class="' + iconCss + '"></span>');
+    var elementText = target.html().replace(match, '<span style="margin-right: 10px;" class="' + iconCss + '"></span>');
     target.html(elementText);
   });
     
