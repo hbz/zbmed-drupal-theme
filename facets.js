@@ -23,22 +23,14 @@ function appendToggle() {
 function appendSorting(){
     
     if(jQuery.cookie('sortFacets')){
-      var sortFacets = jQuery('.item-list h3').parent().clone();
-      
-      var activeFacets = jQuery('.item-list .edoweb-facets-active').parent().clone();
+      var sortFacets = jQuery('.item-list h3').parent();
       var facetsParent = jQuery('.item-list h3').parent().parent();
-      facetsParent.children().remove();
-      
-      facetsParent.append(activeFacets);
-    
-      // javascript
       var cookieSplit = jQuery.cookie('sortFacets').split(' ');
       var i;
       for(i=0; i < cookieSplit.length; i++){
-	var part = sortFacets.filter('#' + cookieSplit[i]);
+	var part = sortFacets.filter('#' + cookieSplit[i].trim());
 	facetsParent.append(part);
       };
-      jQuery.cookie
     }
 }
 
