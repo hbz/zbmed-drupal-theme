@@ -20,13 +20,38 @@ function appendToggle() {
   
 }
 
+function appendSorting(){
+    
+    if(jQuery.cookie('sortFacets')){
+      var sortFacets = jQuery('.item-list h3').parent();
+      var facetsParent = jQuery('.item-list h3').parent().parent();
+      var cookieSplit = jQuery.cookie('sortFacets').split(' ');
+      var i;
+      for(i=0; i < cookieSplit.length; i++){
+	var part = sortFacets.filter('#' + cookieSplit[i].trim());
+	facetsParent.append(part);
+      };
+    }
+}
+
 function appendZoom(){
-  jQuery('.edoweb-entity-list ul.pager').append('<div class="toggleButton"><span class="batch-icons batch-icon-zoom-plus"></span><span class="batch-icons batch-icon-zoom-minus"></div>');
+  jQuery('.edoweb-entity-list ul.pager:first').append('<div class="toggleButton"><span class="batch-icons batch-icon-zoom-plus"></span><span class="batch-icons batch-icon-zoom-minus"></div>');
 }
 
 function appendSortable() {
- jQuery('.edoweb-facets .fieldset-wrapper').sortable();
-  
+  jQuery('.edoweb-facets .fieldset-wrapper').sortable({
+      update: function(event, ui){
+	var sorts = jQuery('.edoweb-facets .fieldset-wrapper').sortable('toArray');
+	var i = 0;
+	var cookieValue = '';
+	//alert(sorts.length);
+	while(i < sorts.length){
+	  cookieValue = cookieValue +' ' + sorts[i];
+	  i++;
+	}
+	jQuery.cookie('sortFacets', cookieValue.trim());
+      },
+   });  
 }
 
 // toggle functionality
@@ -62,19 +87,45 @@ function actionIcons() {
   replaceWithIcon(jQuery('label[for="edit-field-edoweb-identifier-ht-und-0-value"] a[href="#"]'), 'batch-icons batch-icon-concat');
   replaceWithIcon(jQuery('label[for="edit-field-edoweb-parallel-und"] a[href="#"]'), 'batch-icons batch-icon-concat');
 
-  
-/*  jQuery('label a[href="#"]')
-    .attr('title', jQuery('label a[href="#"]').html())
-    .html('<span class="batch-icons batch-icon-plus"></span>');
-*/
+  replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(Monograph)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-repo');
+  replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(Journal)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-versions');
+  replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(Volume)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-list-ordered');
+  replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(Issue)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-book');
+  replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(Article)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-file-text');
+  replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(File)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-file-binary');
+
+  replaceMatchWithIcon('.breadcrumb a', 'Monograph:', 'octicon octicon-repo');
+  replaceMatchWithIcon('.breadcrumb a', 'Journal:', 'octicon octicon-versions');
+  replaceMatchWithIcon('.breadcrumb a', 'Volume:', 'octicon octicon-list-ordered');
+  replaceMatchWithIcon('.breadcrumb a', 'Issue:', 'octicon octicon-book');
+  replaceMatchWithIcon('.breadcrumb a', 'Article:', 'octicon octicon-file-text');
+  replaceMatchWithIcon('.breadcrumb a', 'File:', 'octicon octicon-file-binary');
+
+  replaceMatchWithIcon('h1#page-title', 'Monograph:', 'mega-octicon octicon-repo');
+  replaceMatchWithIcon('h1#page-title', 'Journal:', 'mega-octicon octicon-versions');
+  replaceMatchWithIcon('h1#page-title', 'Volume:', 'mega-octicon octicon-list-ordered');
+  replaceMatchWithIcon('h1#page-title', 'Issue:', 'mega-octicon octicon-book');
+  replaceMatchWithIcon('h1#page-title', 'Article:', 'mega-octicon octicon-file-text');
+  replaceMatchWithIcon('h1#page-title', 'File:', 'mega-octicon octicon-file-binary');
 }
 
+  
 // replace action textes with icons
 function replaceWithIcon(target, iconCss) {
   target
     .attr('title', target.html())
     .html('<span class="' + iconCss + '"></span>');
  
+}
+
+// replace action textes with icons
+function replaceMatchWithIcon(filter, match, iconCss) {
+  var target = jQuery(filter + ':contains("' + match + '")');
+  target.each(function(){
+    var elementText = target.html().replace(match, '<span style="margin-right: 10px;" class="' + iconCss + '"></span>');
+    target.html(elementText);
+  });
+    
 }
 
 function zoomTable() {
@@ -97,13 +148,25 @@ function zoomTable() {
   });
 }
 
+// datepicker
+function addDatePicker(){
+  
+  jQuery('#edit-field-edoweb-issued-und-0-value').datepicker( 
+	{
+	changeMonth:true,
+	changeYear:true,
+	dateFormat:"dd.mm.yy" 
+	} );
+}
+
 jQuery(document).ready(function() {
   appendToggle();
+  appendSorting();
   appendZoom();  
   expandFacet();
   actionIcons();
   appendSortable();
   zoomTable();
-  //alert(jQuery.cookie('creator'));
+  //addDatePicker();
 });
  
