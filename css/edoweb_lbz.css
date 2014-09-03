@@ -223,3 +223,16 @@ ul.edoweb-facets-available a:hover{
 }
 
 
+
+.edoweb-tree div.item-list {
+  padding-left: 1em;
+}
+
+.edoweb-tree a[data-bundle] {
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+}
+
+.edoweb-tree {
+  white-space: nowrap;
+}

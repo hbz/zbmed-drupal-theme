@@ -82,6 +82,13 @@ function actionIcons() {
   replaceWithIcon(jQuery('.form-type-item a[data-bundle="article"]'), 'octicon octicon-file-text');
   replaceWithIcon(jQuery('.form-type-item a[data-bundle="file"]'), 'octicon octicon-file-binary');
 
+  replaceWithIcon(jQuery('.edoweb-tree a[data-bundle="monograph"]'), 'octicon octicon-repo');
+  replaceWithIcon(jQuery('.edoweb-tree a[data-bundle="journal"]'), 'octicon octicon-versions');
+  replaceWithIcon(jQuery('.edoweb-tree a[data-bundle="volume"]'), 'octicon octicon-list-ordered');
+  replaceWithIcon(jQuery('.edoweb-tree a[data-bundle="issue"]'), 'octicon octicon-book');
+  replaceWithIcon(jQuery('.edoweb-tree a[data-bundle="article"]'), 'octicon octicon-file-text');
+  replaceWithIcon(jQuery('.edoweb-tree a[data-bundle="file"]'), 'octicon octicon-file-binary');
+
   replaceWithIcon(jQuery('label a[href="#"]'), 'batch-icons batch-icon-plus');
   replaceWithIcon(jQuery('label[for="edit-field-edoweb-parent-und"] a[href="#"]'), 'batch-icons batch-icon-concat');
   replaceWithIcon(jQuery('label[for="edit-field-edoweb-identifier-ht-und-0-value"] a[href="#"]'), 'batch-icons batch-icon-concat');
