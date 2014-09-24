@@ -236,3 +236,11 @@ ul.edoweb-facets-available a:hover{
 .edoweb-tree {
   white-space: nowrap;
 }
+
+.edoweb-tree .edoweb-mimetype {
+  height: 1em;
+}
+
+.edoweb-mimetype {
+  height: 2em;
+}
