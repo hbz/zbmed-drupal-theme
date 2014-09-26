@@ -75,7 +75,6 @@ div.field .field-item {
 
 div.field>table {
   display: block;
-  max-width: 90%;
   margin: 0;
   padding-bottom: 0.5em;
 }
@@ -228,7 +227,7 @@ ul.edoweb-facets-available a:hover{
   padding-left: 1em;
 }
 
-.edoweb-tree a[data-bundle] {
+.edoweb-tree .edoweb-tree-toolbox>a {
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
@@ -243,4 +242,14 @@ ul.edoweb-facets-available a:hover{
 
 .edoweb-mimetype {
   height: 2em;
+}
+
+.one-sidebar #content {
+  width: auto;
+  min-width: 50em;
+}
+
+#sidebar-first {
+  width: auto;
+  min-width: 30em;
 }

@@ -21,6 +21,8 @@
   // PT font family: a complete family with serif and sans
   //drupal_add_css('http://fonts.googleapis.com/css?family=PT+Serif|PT+Sans|PT+Sans+Narrow|PT+Sans+Caption&subset=latin,latin-ext', array('type' => 'external'));
 
+  // Add Font-Awesome
+  drupal_add_css('http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 
   }
 

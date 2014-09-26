@@ -82,12 +82,19 @@ function actionIcons() {
   replaceWithIcon(jQuery('.form-type-item a[data-bundle="article"]'), 'octicon octicon-file-text');
   replaceWithIcon(jQuery('.form-type-item a[data-bundle="file"]'), 'octicon octicon-file-binary');
 
-  replaceWithIcon(jQuery('.edoweb-tree a[data-bundle="monograph"]'), 'octicon octicon-repo');
-  replaceWithIcon(jQuery('.edoweb-tree a[data-bundle="journal"]'), 'octicon octicon-versions');
-  replaceWithIcon(jQuery('.edoweb-tree a[data-bundle="volume"]'), 'octicon octicon-list-ordered');
-  replaceWithIcon(jQuery('.edoweb-tree a[data-bundle="issue"]'), 'octicon octicon-book');
-  replaceWithIcon(jQuery('.edoweb-tree a[data-bundle="article"]'), 'octicon octicon-file-text');
-  replaceWithIcon(jQuery('.edoweb-tree a[data-bundle="file"]'), 'octicon octicon-file-binary');
+  replaceWithIcon(jQuery('.edoweb-tree a[data-target-bundle="monograph"]'), 'octicon octicon-repo');
+  replaceWithIcon(jQuery('.edoweb-tree a[data-target-bundle="journal"]'), 'octicon octicon-versions');
+  replaceWithIcon(jQuery('.edoweb-tree a[data-target-bundle="volume"]'), 'octicon octicon-list-ordered');
+  replaceWithIcon(jQuery('.edoweb-tree a[data-target-bundle="issue"]'), 'octicon octicon-book');
+  replaceWithIcon(jQuery('.edoweb-tree a[data-target-bundle="article"]'), 'octicon octicon-file-text');
+  replaceWithIcon(jQuery('.edoweb-tree a[data-target-bundle="file"]'), 'octicon octicon-file-binary');
+
+  jQuery('.edoweb-tree a[data-bundle="monograph"]').before(jQuery('<span>&nbsp;</span>').addClass('octicon octicon-repo'));
+  jQuery('.edoweb-tree a[data-bundle="journal"]').before(jQuery('<span>&nbsp;</span>').addClass('octicon octicon-versions'));
+  jQuery('.edoweb-tree a[data-bundle="volume"]').before(jQuery('<span>&nbsp;</span>').addClass('octicon octicon-list-ordered'));
+  jQuery('.edoweb-tree a[data-bundle="issue"]').before(jQuery('<span>&nbsp;</span>').addClass('octicon octicon-book'));
+  jQuery('.edoweb-tree a[data-bundle="article"]').before(jQuery('<span>&nbsp;</span>').addClass('octicon octicon-file-text'));
+  jQuery('.edoweb-tree a[data-bundle="file"]').before(jQuery('<span>&nbsp;</span>').addClass('octicon octicon-file-binary'));
 
   replaceWithIcon(jQuery('label a[href="#"]'), 'batch-icons batch-icon-plus');
   replaceWithIcon(jQuery('label[for="edit-field-edoweb-parent-und"] a[href="#"]'), 'batch-icons batch-icon-concat');
