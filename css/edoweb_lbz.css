@@ -221,7 +221,13 @@ ul.edoweb-facets-available a:hover{
   float:right; 
 }
 
+.edoweb-tree li>a {
+  color: #3b3b3b;
+}
 
+.edoweb-tree li.active>a {
+  font-weight: bold;
+}
 
 .edoweb-tree div.item-list {
   padding-left: 1em;
@@ -232,6 +238,19 @@ ul.edoweb-facets-available a:hover{
   padding-right: 0.3em;
 }
 
+#edoweb-tree-clipboard {
+  margin-bottom: 1em;
+}
+
+#edoweb-tree-clipboard span {
+  float: right;
+  cursor: pointer;
+}
+
+#edoweb-tree-clipboard p {
+  padding: 0.5em;
+}
+
 .edoweb-tree {
   white-space: nowrap;
 }
@@ -240,8 +259,16 @@ ul.edoweb-facets-available a:hover{
   height: 1em;
 }
 
+.edoweb-tree-cut-item {
+  opacity: .5;
+}
+
 .edoweb-mimetype {
   height: 2em;
+}
+
+#edoweb-tree-clipboard {
+  background-color: #ff9933;
 }
 
 .one-sidebar #content {
