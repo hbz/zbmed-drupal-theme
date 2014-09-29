@@ -64,12 +64,12 @@
     attach: function (context, settings) {
 
       // replace action textes with icons
-      replaceWithIcon($('.form-type-item a[data-bundle="monograph"]', context), 'octicon octicon-repo');
-      replaceWithIcon($('.form-type-item a[data-bundle="journal"]', context), 'octicon octicon-versions');
-      replaceWithIcon($('.form-type-item a[data-bundle="volume"]', context), 'octicon octicon-list-ordered');
-      replaceWithIcon($('.form-type-item a[data-bundle="issue"]', context), 'octicon octicon-book');
-      replaceWithIcon($('.form-type-item a[data-bundle="article"]', context), 'octicon octicon-file-text');
-      replaceWithIcon($('.form-type-item a[data-bundle="file"]', context), 'octicon octicon-file-binary');
+      $('#content .form-type-item a[data-bundle="monograph"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-repo'));
+      $('#content .form-type-item a[data-bundle="journal"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-versions'));
+      $('#content .form-type-item a[data-bundle="volume"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-list-ordered'));
+      $('#content .form-type-item a[data-bundle="issue"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-book'));
+      $('#content .form-type-item a[data-bundle="article"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-file-text'));
+      $('#content .form-type-item a[data-bundle="file"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-file-binary'));
 
       replaceWithIcon($('.edoweb-tree a[data-target-bundle="monograph"]', context), 'octicon octicon-repo');
       replaceWithIcon($('.edoweb-tree a[data-target-bundle="journal"]', context), 'octicon octicon-versions');
