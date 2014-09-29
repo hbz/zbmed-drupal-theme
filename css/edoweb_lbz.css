@@ -215,7 +215,8 @@ ul.edoweb-facets-available a:hover{
 }
 
 .toggleButton{
-  float:right; 
+  float:right;
+  cursor: pointer;
 }
 
 .edoweb-tree li>a {
