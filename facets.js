@@ -1,172 +1,148 @@
+(function($) {
 
-// append the div for toggle functionality to each facet
-function appendToggle() {
-  jQuery('.item-list h3').each(function(){
-    var facetHeader = jQuery(this);
-    var facetName = facetHeader.html();
-    
-    facetHeader.parent().attr('id', facetName);
-    //alert(facetName + ': ' +  jQuery.cookie(facetName));
-    if(jQuery.cookie(facetName)){
-      facetHeader.append('<div class="toggleButton"><span class="' + jQuery.cookie(facetName) + '"></span>&nbsp;</div>');
-      //jQuery(this).find('div span.octicon-triangle-up').parent().parent().parent().find("ul").css('display', 'block');
-      facetHeader.find('div span.octicon-triangle-down').parent().parent().parent().find("ul").css('display', 'none');
-    }else{
-      facetHeader.append('<div class="toggleButton"><span class="octicon octicon-triangle-up"></span>&nbsp;</div>');
+  Drupal.behaviors.edoweb_drupal_theme_facets = {
+    attach: function (context, settings) {
+
+      // append the div for toggle functionality to each facet
+      $('.item-list h3', context).each(function() {
+        var facetHeader = $(this);
+        var facetName = facetHeader.html();
+
+        facetHeader.parent().attr('id', facetName);
+        //alert(facetName + ': ' +  $.cookie(facetName));
+        if ($.cookie(facetName)) {
+          facetHeader.append('<div class="toggleButton"><span class="' + $.cookie(facetName) + '"></span>&nbsp;</div>');
+          //$(this).find('div span.octicon-triangle-up').parent().parent().parent().find("ul").css('display', 'block');
+          facetHeader.find('div span.octicon-triangle-down').parent().parent().parent().find("ul").css('display', 'none');
+        } else {
+          facetHeader.append('<div class="toggleButton"><span class="octicon octicon-triangle-up"></span>&nbsp;</div>');
+        }
+      });
+
+      // restore order of facets from cookie
+      if ($.cookie('sortFacets')) {
+        var sortFacets = $('.item-list h3', context).parent();
+        var facetsParent = $('.item-list h3', context).parent().parent();
+        var cookieSplit = $.cookie('sortFacets').split(' ');
+        var i;
+        for (i=0; i < cookieSplit.length; i++) {
+          var part = sortFacets.filter('#' + cookieSplit[i].trim());
+          facetsParent.append(part);
+        };
+      }
+
+      // add sortable behaviour to facet list
+      $('.edoweb-facets .fieldset-wrapper', context).sortable({
+        update: function(event, ui) {
+          var sorts = $('.edoweb-facets .fieldset-wrapper', context).sortable('toArray');
+          var i = 0;
+          var cookieValue = '';
+          //alert(sorts.length);
+          while (i < sorts.length) {
+            cookieValue = cookieValue +' ' + sorts[i];
+            i++;
+          }
+          $.cookie('sortFacets', cookieValue.trim());
+        },
+      });
+
+      // toggle functionality
+      $('.item-list h3 div span', context).click(function() {
+          var facet = $(this).parent().parent().parent().find("ul");
+          facet.toggle("clip", function() {
+            var facetHeader = $(this).parent().find('h3 div span');
+            facetHeader.toggleClass('octicon-triangle-down').toggleClass('octicon-triangle-up');
+            var status = facetHeader.attr('class');
+            var facetName = facetHeader.parent().parent().parent().attr('id');
+            $.cookie(facetName, status);
+          });
+      });
     }
-    
-    
-  });
-  
-}
+  };
 
-function appendSorting(){
-    
-    if(jQuery.cookie('sortFacets')){
-      var sortFacets = jQuery('.item-list h3').parent();
-      var facetsParent = jQuery('.item-list h3').parent().parent();
-      var cookieSplit = jQuery.cookie('sortFacets').split(' ');
-      var i;
-      for(i=0; i < cookieSplit.length; i++){
-	var part = sortFacets.filter('#' + cookieSplit[i].trim());
-	facetsParent.append(part);
-      };
+  Drupal.behaviors.edoweb_drupal_theme_icons = {
+    attach: function (context, settings) {
+
+      // replace action textes with icons
+      $('#content .form-type-item a[data-bundle="monograph"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-repo'));
+      $('#content .form-type-item a[data-bundle="journal"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-versions'));
+      $('#content .form-type-item a[data-bundle="volume"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-list-ordered'));
+      $('#content .form-type-item a[data-bundle="issue"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-book'));
+      $('#content .form-type-item a[data-bundle="article"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-file-text'));
+      $('#content .form-type-item a[data-bundle="file"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-file-binary'));
+
+      replaceWithIcon($('.edoweb-tree a[data-target-bundle="monograph"]', context), 'octicon octicon-repo');
+      replaceWithIcon($('.edoweb-tree a[data-target-bundle="journal"]', context), 'octicon octicon-versions');
+      replaceWithIcon($('.edoweb-tree a[data-target-bundle="volume"]', context), 'octicon octicon-list-ordered');
+      replaceWithIcon($('.edoweb-tree a[data-target-bundle="issue"]', context), 'octicon octicon-book');
+      replaceWithIcon($('.edoweb-tree a[data-target-bundle="article"]', context), 'octicon octicon-file-text');
+      replaceWithIcon($('.edoweb-tree a[data-target-bundle="file"]', context), 'octicon octicon-file-binary');
+
+      replaceWithIcon($('label a[href="#"]'), 'batch-icons batch-icon-plus', context);
+      replaceWithIcon($('label[for="edit-field-edoweb-parent-und"] a[href="#"]', context), 'batch-icons batch-icon-concat');
+      replaceWithIcon($('label[for="edit-field-edoweb-identifier-ht-und-0-value"] a[href="#"]', context), 'batch-icons batch-icon-concat');
+      replaceWithIcon($('label[for="edit-field-edoweb-parallel-und"] a[href="#"]', context), 'batch-icons batch-icon-concat');
+
+      $('.edoweb-tree a[data-bundle="monograph"]', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-repo'));
+      $('.edoweb-tree a[data-bundle="journal"]', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-versions'));
+      $('.edoweb-tree a[data-bundle="volume"]', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-list-ordered'));
+      $('.edoweb-tree a[data-bundle="issue"]', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-book'));
+      $('.edoweb-tree a[data-bundle="article"]', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-file-text'));
+      $('.edoweb-tree a[data-bundle="file"]', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-file-binary'));
+
+      $('.entity-label-monograph', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-repo'));
+      $('.entity-label-journal', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-versions'));
+      $('.entity-label-volume', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-list-ordered'));
+      $('.entity-label-issue', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-book'));
+      $('.entity-label-article', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-file-text'));
+      $('.entity-label-file', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-file-binary'));
+
+      $('body.entity-type-monograph h1.title', context).addClass('mega-octicon octicon-repo');
+      $('body.entity-type-journal h1.title', context).addClass('mega-octicon octicon-versions');
+      $('body.entity-type-volume h1.title', context).addClass('mega-octicon octicon-list-ordered');
+      $('body.entity-type-issue h1.title', context).addClass('mega-octicon octicon-book');
+      $('body.entity-type-article h1.title', context).addClass('mega-octicon octicon-file-text');
+      $('body.entity-type-file h1.title').addClass('mega-octicon octicon-file-binary');
+
+      function replaceWithIcon(target, iconCss) {
+        target
+          .attr('title', target.html())
+          .html('<span class="' + iconCss + '"></span>');
+      }
+
     }
-}
+  };
 
-function appendZoom(){
-  jQuery('.edoweb-entity-list ul.pager:first').append('<div class="toggleButton"><span class="batch-icons batch-icon-zoom-plus"></span><span class="batch-icons batch-icon-zoom-minus"></div>');
-}
+  Drupal.behaviors.edoweb_drupal_theme_zoom = {
+    attach: function (context, settings) {
+      // add zoom control to search result listing
+      $('.edoweb-entity-list ul.pager:first', context).append('<div class="toggleButton"><span class="batch-icons batch-icon-zoom-plus"></span><span class="batch-icons batch-icon-zoom-minus"></div>');
+      if ($.cookie('table-font-size')) {
+        $('table', context).css('font-size', $.cookie('table-font-size') + 'px');
+      }
+      $('.edoweb-entity-list ul.pager span.batch-icon-zoom-plus', context).click(function() {
+        var size = $('table').css('font-size');
+        var newSize = parseFloat(size) + 1;
+        $('table').css('font-size', newSize);
+        $.cookie("table-font-size", newSize);
+      });
+      $('.edoweb-entity-list ul.pager span.batch-icon-zoom-minus', context).click(function() {
+        var size = $('table').css('font-size');
+        var newSize = parseFloat(size) - 1;
+        $('table').css('font-size', newSize);
+        $.cookie("table-font-size", newSize);
+      });
+    }
+  };
 
-function appendSortable() {
-  jQuery('.edoweb-facets .fieldset-wrapper').sortable({
-      update: function(event, ui){
-	var sorts = jQuery('.edoweb-facets .fieldset-wrapper').sortable('toArray');
-	var i = 0;
-	var cookieValue = '';
-	//alert(sorts.length);
-	while(i < sorts.length){
-	  cookieValue = cookieValue +' ' + sorts[i];
-	  i++;
-	}
-	jQuery.cookie('sortFacets', cookieValue.trim());
-      },
-   });  
-}
-
-// toggle functionality
-function expandFacet() {
-  jQuery('.item-list h3 div span').click(function(){
-    var facet = jQuery(this).parent().parent().parent().find("ul");    
-    facet.toggle("clip", function(){   
-	var facetHeader = jQuery(this).parent().find('h3 div span');
-        facetHeader.toggleClass('octicon-triangle-down').toggleClass('octicon-triangle-up');
-        var status = facetHeader.attr('class');
-	var facetName = facetHeader.parent().parent().parent().attr('id');
-	jQuery.cookie(facetName, status);
-
-    });
-  });
-}
-
-
-
-
-// replace action textes with icons
-function actionIcons() {
- 
-  replaceWithIcon(jQuery('.form-type-item a[data-bundle="monograph"]'), 'octicon octicon-repo');
-  replaceWithIcon(jQuery('.form-type-item a[data-bundle="journal"]'), 'octicon octicon-versions');
-  replaceWithIcon(jQuery('.form-type-item a[data-bundle="volume"]'), 'octicon octicon-list-ordered');
-  replaceWithIcon(jQuery('.form-type-item a[data-bundle="issue"]'), 'octicon octicon-book');
-  replaceWithIcon(jQuery('.form-type-item a[data-bundle="article"]'), 'octicon octicon-file-text');
-  replaceWithIcon(jQuery('.form-type-item a[data-bundle="file"]'), 'octicon octicon-file-binary');
-
-  replaceWithIcon(jQuery('label a[href="#"]'), 'batch-icons batch-icon-plus');
-  replaceWithIcon(jQuery('label[for="edit-field-edoweb-parent-und"] a[href="#"]'), 'batch-icons batch-icon-concat');
-  replaceWithIcon(jQuery('label[for="edit-field-edoweb-identifier-ht-und-0-value"] a[href="#"]'), 'batch-icons batch-icon-concat');
-  replaceWithIcon(jQuery('label[for="edit-field-edoweb-parallel-und"] a[href="#"]'), 'batch-icons batch-icon-concat');
-
-  replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(Monograph)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-repo');
-  replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(Journal)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-versions');
-  replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(Volume)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-list-ordered');
-  replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(Issue)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-book');
-  replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(Article)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-file-text');
-  replaceWithIcon(jQuery('td').filter(function(){return /(^|\s)(File)(\s|$)/.test(jQuery(this).text())}), 'mega-octicon octicon-file-binary');
-
-  replaceMatchWithIcon('.breadcrumb a', 'Monograph:', 'octicon octicon-repo');
-  replaceMatchWithIcon('.breadcrumb a', 'Journal:', 'octicon octicon-versions');
-  replaceMatchWithIcon('.breadcrumb a', 'Volume:', 'octicon octicon-list-ordered');
-  replaceMatchWithIcon('.breadcrumb a', 'Issue:', 'octicon octicon-book');
-  replaceMatchWithIcon('.breadcrumb a', 'Article:', 'octicon octicon-file-text');
-  replaceMatchWithIcon('.breadcrumb a', 'File:', 'octicon octicon-file-binary');
-
-  replaceMatchWithIcon('h1#page-title', 'Monograph:', 'mega-octicon octicon-repo');
-  replaceMatchWithIcon('h1#page-title', 'Journal:', 'mega-octicon octicon-versions');
-  replaceMatchWithIcon('h1#page-title', 'Volume:', 'mega-octicon octicon-list-ordered');
-  replaceMatchWithIcon('h1#page-title', 'Issue:', 'mega-octicon octicon-book');
-  replaceMatchWithIcon('h1#page-title', 'Article:', 'mega-octicon octicon-file-text');
-  replaceMatchWithIcon('h1#page-title', 'File:', 'mega-octicon octicon-file-binary');
-}
-
-  
-// replace action textes with icons
-function replaceWithIcon(target, iconCss) {
-  target
-    .attr('title', target.html())
-    .html('<span class="' + iconCss + '"></span>');
- 
-}
-
-// replace action textes with icons
-function replaceMatchWithIcon(filter, match, iconCss) {
-  var target = jQuery(filter + ':contains("' + match + '")');
-  target.each(function(){
-    var elementText = target.html().replace(match, '<span style="margin-right: 10px;" class="' + iconCss + '"></span>');
-    target.html(elementText);
-  });
-    
-}
-
-function zoomTable() {
-  if(jQuery.cookie('table-font-size')){
-  jQuery('table').css('font-size', jQuery.cookie('table-font-size') + 'px');
-  }
-  //jQuery.cookie('table-font-size', jQuery('table').css('font-size'));
-  jQuery('.edoweb-entity-list ul.pager span.batch-icon-zoom-plus').click(function(){
-   var size = jQuery('table').css('font-size');
-   var newSize = parseFloat(size) + 1;
-   jQuery('table').css('font-size', newSize);
-   jQuery.cookie("table-font-size", newSize);
-  });
-   jQuery('.edoweb-entity-list ul.pager span.batch-icon-zoom-minus').click(function(){
-   var size = jQuery('table').css('font-size');
-   var newSize = parseFloat(size) - 1;
-   jQuery('table').css('font-size', newSize);
-   jQuery.cookie("table-font-size", newSize);
-     
-  });
-}
-
-// datepicker
-function addDatePicker(){
-  
-  jQuery('#edit-field-edoweb-issued-und-0-value').datepicker( 
-	{
-	changeMonth:true,
-	changeYear:true,
-	dateFormat:"dd.mm.yy" 
-	} );
-}
-
-jQuery(document).ready(function() {
-  appendToggle();
-  appendSorting();
-  appendZoom();  
-  expandFacet();
-  actionIcons();
-  appendSortable();
-  zoomTable();
-  //addDatePicker();
-});
- 
+  //Drupal.behaviors.edoweb_drupal_theme_datepicker = {
+  //  attach: function (context, settings) {
+  //    // datepicker
+  //    $('#edit-field-edoweb-issued-und-0-value', context).datepicker({
+  //      changeMonth:true,
+  //      changeYear:true,
+  //      dateFormat:"dd.mm.yy" 
+  //    });
+  //  }
+  //};
+})(jQuery);
