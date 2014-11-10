@@ -205,13 +205,15 @@ ul.edoweb-facets-available a:hover{
   width: 95%;
 }
 
-.form-type-item a[data-bundle] {
-  float:right;
+.form-type-item a[data-bundle], #edoweb-tree-menu a[data-bundle] {
   margin: 0px;
   padding-left: 10px;
   font-size:0.8em;
-  position:relative;
   top: 10px;
+}
+
+.form-type-item a[data-bundle] {
+  float:right;
 }
 
 .toggleButton{
@@ -236,17 +238,14 @@ ul.edoweb-facets-available a:hover{
   padding-right: 0.3em;
 }
 
-#edoweb-tree-clipboard {
-  margin-bottom: 1em;
+.edoweb-tree-clipboard-item {
+  padding: 0.3em;
+  margin: 0.3em;
 }
 
-#edoweb-tree-clipboard span {
+.edoweb-tree-clipboard-item span.octicon {
   float: right;
   cursor: pointer;
-}
-
-#edoweb-tree-clipboard p {
-  padding: 0.5em;
 }
 
 .edoweb-tree {
@@ -269,8 +268,13 @@ ul.edoweb-facets-available a:hover{
   height: 2em;
 }
 
-#edoweb-tree-clipboard {
+.edoweb-tree-clipboard-item {
   background-color: #ff9933;
+}
+
+#edoweb-tree-menu {
+  border-bottom: 1px dashed black;
+  margin-bottom: 1em;
 }
 
 .one-sidebar #content {
