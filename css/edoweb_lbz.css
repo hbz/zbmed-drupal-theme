@@ -101,11 +101,11 @@ table:not([tableheader-processed]) th:hover {
 }
 
 table:not([tableheader-processed]) th.headerSortDown {
-  background-image: url('http://minorthreat/misc/arrow-desc.png');
+  background-image: url('/misc/arrow-desc.png');
 }
 
 table:not([tableheader-processed]) th.headerSortUp {
-  background-image: url('http://minorthreat/misc/arrow-asc.png');
+  background-image: url('/misc/arrow-asc.png');
 }
 
 button {
