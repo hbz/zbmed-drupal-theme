@@ -31,9 +31,6 @@ a:hover {
   color: #ff9933;
 }
 
-a:visited {
-  color: #3b3b3b;
-}
 
 .region-header .block {
   float: right; /* LTR */
