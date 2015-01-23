@@ -63,47 +63,30 @@
   Drupal.behaviors.edoweb_drupal_theme_icons = {
     attach: function (context, settings) {
 
-      // replace action textes with icons
-      $('#content .form-type-item a[data-bundle="monograph"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-repo'));
-      $('#content .form-type-item a[data-bundle="journal"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-versions'));
-      $('#content .form-type-item a[data-bundle="volume"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-list-ordered'));
-      $('#content .form-type-item a[data-bundle="issue"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-book'));
-      $('#content .form-type-item a[data-bundle="article"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-file-text'));
-      $('#content .form-type-item a[data-bundle="file"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-file-binary'));
+      var icons = {
+        'monograph': 'octicon-repo',
+        'journal': 'octicon-versions',
+        'volume': 'octicon-list-ordered',
+        'issue': 'octicon-book',
+        'article': 'octicon-file-text',
+        'file': 'octicon-file-binary',
+        'webpage': 'octicon-browser',
+        'version': 'octicon-git-branch'
+      }
 
-      // replace action textes with icons
-      $('#edoweb-tree-menu a[data-bundle="monograph"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-repo'));
-      $('#edoweb-tree-menu a[data-bundle="journal"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-versions'));
-      $('#edoweb-tree-menu a[data-bundle="volume"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-list-ordered'));
-      $('#edoweb-tree-menu a[data-bundle="issue"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-book'));
-      $('#edoweb-tree-menu a[data-bundle="article"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-file-text'));
-      $('#edoweb-tree-menu a[data-bundle="file"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon octicon-file-binary'));
+      for (var bundle in icons) {
+        var icon = icons[bundle];
+        $('#content .form-type-item a[data-bundle="' + bundle + '"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon ' + icon));
+        $('#edoweb-tree-menu a[data-bundle="' + bundle + '"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon ' + icon));
+        $('.edoweb-tree a[data-bundle="' + bundle + '"]', context).before($('<span>&nbsp;</span>').addClass('octicon ' + icon));
+        $('.entity-label-' + bundle, context).before($('<span>&nbsp;</span>').addClass('octicon ' + icon));
+        $('body.entity-type-' + bundle + ' h1.title', context).addClass('mega-octicon ' + icon);
+      }
 
       replaceWithIcon($('label a[href="#"]'), 'batch-icons batch-icon-plus', context);
       replaceWithIcon($('label[for="edit-field-edoweb-parent-und"] a[href="#"]', context), 'batch-icons batch-icon-concat');
       replaceWithIcon($('label[for="edit-field-edoweb-identifier-ht-und-0-value"] a[href="#"]', context), 'batch-icons batch-icon-concat');
       replaceWithIcon($('label[for="edit-field-edoweb-parallel-und"] a[href="#"]', context), 'batch-icons batch-icon-concat');
-
-      $('.edoweb-tree a[data-bundle="monograph"]', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-repo'));
-      $('.edoweb-tree a[data-bundle="journal"]', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-versions'));
-      $('.edoweb-tree a[data-bundle="volume"]', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-list-ordered'));
-      $('.edoweb-tree a[data-bundle="issue"]', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-book'));
-      $('.edoweb-tree a[data-bundle="article"]', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-file-text'));
-      $('.edoweb-tree a[data-bundle="file"]', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-file-binary'));
-
-      $('.entity-label-monograph', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-repo'));
-      $('.entity-label-journal', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-versions'));
-      $('.entity-label-volume', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-list-ordered'));
-      $('.entity-label-issue', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-book'));
-      $('.entity-label-article', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-file-text'));
-      $('.entity-label-file', context).before($('<span>&nbsp;</span>').addClass('octicon octicon-file-binary'));
-
-      $('body.entity-type-monograph h1.title', context).addClass('mega-octicon octicon-repo');
-      $('body.entity-type-journal h1.title', context).addClass('mega-octicon octicon-versions');
-      $('body.entity-type-volume h1.title', context).addClass('mega-octicon octicon-list-ordered');
-      $('body.entity-type-issue h1.title', context).addClass('mega-octicon octicon-book');
-      $('body.entity-type-article h1.title', context).addClass('mega-octicon octicon-file-text');
-      $('body.entity-type-file h1.title').addClass('mega-octicon octicon-file-binary');
 
       function replaceWithIcon(target, iconCss) {
         target
