@@ -285,3 +285,7 @@ ul.edoweb-facets-available a:hover {
   background-color: white;
   border: none;
 }
+
+h1#page-title{
+visibility:hidden;
+}
