@@ -65,7 +65,7 @@ div.field .field-label {
 
 div.field .field-item {
   display: block;
-  margin-left: 12em;
+ # margin-left: 12em;
 }
 
 div.field>table {
