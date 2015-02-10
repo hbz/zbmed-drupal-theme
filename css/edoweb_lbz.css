@@ -68,6 +68,20 @@ div.field .field-item {
  # margin-left: 12em;
 }
 
+div.field-name-field-edoweb-title .field-item{
+margin-left: 12em;
+}
+
+div.field-type-text .field-item{
+margin-left: 12em;
+}
+
+div.field .field-item[property="dc:issued"]{
+margin-left: 12em;
+}
+
+
+
 div.field>table {
   display: block;
   margin: 0;
