@@ -5,7 +5,7 @@ body, table, input, label, .fieldset-legend, .ui-widget {
 }
 
 table {
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 .fieldset-legend {
@@ -18,15 +18,40 @@ a {
 }
 
 
-input.form-submit, a.button {
+input.form-submit, button {
   border-radius: 7px;
   box-shadow: 0px 0px 6px #cccccc; 
 }
 
-input.form-submit:hover {
-  box-shadow: 0px 0px 6px #ff9933;
+input.form-submit:hover,
+input.form-submit:focus,
+button:hover,
+button:focus {
+  background: #dedede;
+ box-shadow: 0px 0px 6px #ff9933;
 }
 
+input.form-submit, button {
+    background: url("../images/buttons.png") repeat-x scroll 0px 0px #FFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #E4E4E4 #D2D2D2 #B4B4B4;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    color: #3A3A3A;
+    cursor: pointer;
+    font-size: 0.929em;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 1em;
+    margin-right: 0.6em;
+    padding: 4px 17px;
+    border-radius: 15px;
+font-family: "Signika","Droid Sans","PT Sans",helvetica,arial,sans-serif;
+}
 a:hover {
   color: #ff9933;
 }
@@ -34,7 +59,7 @@ a:hover {
 
 .region-header .block {
   float: right; /* LTR */
-  font-size: 0.8em;
+  font-size: 1.0em;
   margin: 0 15px;
   padding: 0;
   width: 43.5%;
@@ -114,28 +139,6 @@ table:not([tableheader-processed]) th.headerSortUp {
   background-image: url('/misc/arrow-asc.png');
 }
 
-button {
-  background: #fff url(/themes/bartik/images/buttons.png) 0 0 repeat-x;
-  border: 1px solid #e4e4e4;
-  border-bottom: 1px solid #b4b4b4;
-  border-left-color: #d2d2d2;
-  border-right-color: #d2d2d2;
-  color: #3a3a3a;
-  cursor: pointer;
-  text-align: center;
-  margin-right: 0.6em;
-  padding: 4px 17px;
-  -khtml-border-radius: 15px;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
-
-}
-
-button:hover, button:focus {
-  background: #dedede;
-}
-
 fieldset.edoweb-facets {
   width: 20%;
   float: left;
@@ -174,13 +177,12 @@ ul.edoweb-facets-active>li>a {
 }
 
  ul.edoweb-facets-available>li>span {
-  float: right;
   color: #000;
  }
 
 ul.edoweb-facets-available>li {
   border-bottom: 1px dotted #dbdbdb;
-  font-size: 0.8em; 
+  font-size: 1.0em; 
 }
 
 ul.edoweb-facets-available a {
@@ -194,7 +196,7 @@ ul.edoweb-facets-available a:hover {
 
 .item-list h3 {
   background-color: #dbdbdb;
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 .form-text:hover {
@@ -209,7 +211,7 @@ ul.edoweb-facets-available a:hover {
 .form-type-item a[data-bundle], #edoweb-tree-menu a[data-bundle] {
   margin: 0px;
   padding-left: 10px;
-  font-size:0.8em;
+  font-size:1.0em;
   top: 10px;
 }
 
@@ -231,7 +233,7 @@ ul.edoweb-facets-available a:hover {
 }
 
 .edoweb-tree div.item-list {
-  padding-left: 1em;
+  padding-left: 1.1em;
 }
 
 .edoweb-tree .edoweb-tree-toolbox>a {
@@ -254,7 +256,7 @@ ul.edoweb-facets-available a:hover {
 }
 
 .edoweb-tree .edoweb-mimetype {
-  height: 1em;
+  height: 1.1em;
 }
 
 .edoweb-tree-cut-item {
@@ -274,17 +276,19 @@ ul.edoweb-facets-available a:hover {
 }
 
 #edoweb-tree-menu {
-  margin-bottom: 1em;
+  margin-bottom: 1.1em;
 }
 
 .one-sidebar #content {
   width: auto;
-  min-width: 50em;
+  min-width: 30em;
+  max-width: 60em;
 }
 
 #sidebar-first {
   width: auto;
-  min-width: 30em;
+  min-width: 10em;
+  may-width: 20em;
 }
 
 .sidebar .block {
