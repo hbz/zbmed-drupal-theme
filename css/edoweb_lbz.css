@@ -2,10 +2,11 @@
 
 body, table, input, label, .fieldset-legend, .ui-widget {
   font-family: 'Signika', 'Droid Sans', 'PT Sans', helvetica, arial, sans-serif;
+  line-height: 1.3em;
 }
 
 table {
-  font-size: 1.1em;
+  font-size: 0.9em;
 }
 
 .fieldset-legend {
@@ -79,7 +80,7 @@ a:hover {
 
 div.field {
   clear: both;
-  padding-bottom: 0.5em;
+  /*padding-bottom: 0.5em;*/
 }
 
 div.field .field-label {
@@ -89,7 +90,7 @@ div.field .field-label {
 }
 
 div.field .field-item {
-  display: block;
+ display: block;
  margin-left: 12em;
 }
 
@@ -102,7 +103,7 @@ margin-left: 0em;
 div.field>table {
   display: block;
   margin: 0;
-  padding-bottom: 0.5em;
+  padding-bottom: em;
 }
 
 input[readonly="readonly"] {
@@ -137,6 +138,12 @@ table:not([tableheader-processed]) th.headerSortDown {
 
 table:not([tableheader-processed]) th.headerSortUp {
   background-image: url('/misc/arrow-asc.png');
+}
+
+table h1{
+  font-size: 1.2em;
+  font-weight: 400;
+  margin-top: 3px;
 }
 
 fieldset.edoweb-facets {
