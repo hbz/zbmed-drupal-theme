@@ -305,3 +305,7 @@ ul.edoweb-facets-available a:hover {
   border: none;
 }
 
+.thumb img{
+  box-shadow: 3px 3px 7px #666;
+  width:150px;
+}
