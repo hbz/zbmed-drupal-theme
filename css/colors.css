@@ -3,7 +3,7 @@
 /* ---------- Color Module Styles ----------- */
 
 body {
-  background-color: #292929;
+  background-color: #EDEDED;
   color: #ffffff;
 }
 #page-wrapper,
@@ -43,7 +43,7 @@ a:active {
   border-color: #f9f9f9;
 }
 #footer-wrapper {
-  background: #292929;
+  background: #EDEDED;
 }
 .region-header,
 .region-header a,
@@ -52,4 +52,19 @@ a:active {
 #name-and-slogan a,
 #secondary-menu-links li a {
   color: #fffeff;
+}
+#footer-wrapper a:hover, #footer-wrapper a:focus {
+
+    color: rgb(75,75,77);
+    text-decoration: underline;
+
+}
+#footer-wrapper a {
+
+    color: rgb(75,75,77);
+
+}
+
+#footer-wrapper {
+color: rgb(75,75,77);
 }
