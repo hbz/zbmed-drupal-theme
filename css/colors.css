@@ -4,13 +4,13 @@
 
 body {
   background-color: #EDEDED;
-  color: #ffffff;
+  color: #b4b4b4;
 }
 #page-wrapper,
 #main,
 body.overlay {
   background-color: #ffffff;
-  color: #3b3b3b;
+  color: #4b4b4b;
 }
 .comment .comment-arrow {
   border-color: #ffffff;

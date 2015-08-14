@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'TabletGothicNarrow';
+    src: url('TabletGothicNarrowRegular.otf');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TabletGothicNarrowOblique';
+    src: url('TabletGothicNarrowOblique.otf');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TabletGothicNarrowLight';
+    src: url('TabletGothicNarrowLight.otf');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TabletGothicNarrowLightOblique';
+    src: url('TabletGothicNarrowLightOblique.otf');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TabletGothicNarrowSemibold';
+    src: url('TabletGothicNarrowSemibold.otf');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TabletGothicNarrowSemiboldOblique';
+    src: url('TabletGothicNarrowSemiboldOblique.otf');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TabletGothicNarrowBold';
+    src: url('TabletGothicNarrowBold.otf');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TabletGothicNarrowBoldOblique';
+    src: url('TabletGothicNarrowBoldOblique.otf');
+    font-weight: normal;
+    font-style: normal;
+
+}

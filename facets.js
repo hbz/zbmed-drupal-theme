@@ -80,7 +80,7 @@
         $('#edoweb-tree-menu a[data-bundle="' + bundle + '"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon ' + icon));
         $('.edoweb-tree a[data-bundle="' + bundle + '"]', context).before($('<span>&nbsp;</span>').addClass('octicon ' + icon));
         $('.entity-label-' + bundle, context).before($('<span>&nbsp;</span>').addClass('octicon ' + icon));
-        $('body.entity-type-' + bundle + ' h1.title', context).addClass('mega-octicon ' + icon);
+        $('body.entity-type-' + bundle + ' h1.title', context).prepend($('<span>&nbsp;</span>').addClass('mega-octicon ' + icon));
       }
 
       replaceWithIcon($('label a[href="#"]'), 'batch-icons batch-icon-plus', context);
