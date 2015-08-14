@@ -1,8 +1,55 @@
 /* $Id */
 
+#header {
+  background: url("../images/muehlenfeldtrans3.jpg") no-repeat;
+  background-position: 140px -40px;
+  font-family: "TabletGothicNarrow", "roboto_condensedregular", snas-serif;
+
+}
+
+#header {
+  font-family: "TabletGothicNarrow";
+
+}
+
+
+#site-slogan {
+ font-family: "TabletGothicNarrowOblique", "roboto_condensedregular", sans-serif;
+
+}
+
+.tabs.primary {
+  font-family: "TabletGothicNarrow", sans-serif;
+
+}
+
+.breadcrumb {
+  font-family: "TabletGothicNarrowOblique", sans-serif;
+  
+}
+
+#footer-wrapper {
+  font-family: "TabletGothicNarrow", sans-serif;
+  background: #fff;
+}
+
+body {
+  background: #fff;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
 body, table, input, label, .fieldset-legend, .ui-widget {
-  font-family: "TabletGothicNarrow",sans-serif;
-  line-height: 1.3em;
+  font-family: "TabletGothicNarrow", "roboto_condensedregular",sans-serif;
+  line-height: 1.5em;
+  color: #4b4b4d;
+  max-width: 1650px;
+}
+
+h1{
+  color: #4b4b4d;
+  font-weight: 500;
 }
 
 table {
@@ -15,7 +62,7 @@ table {
 }
 
 a {
-  color: #871d33;
+  color: #375b9a;
 }
 
 
@@ -51,10 +98,10 @@ input.form-submit, button {
     margin-right: 0.6em;
     padding: 4px 17px;
     border-radius: 7px;
-font-family: "Signika","Droid Sans","PT Sans",helvetica,arial,sans-serif;
+font-family: "TabletGothicNarrow", sans-serif;
 }
 a:hover {
-  color: #ff9933;
+  color: #99bfd9;
 }
 
 
@@ -162,7 +209,7 @@ fieldset.edoweb-entity-list {
 
 
 ul.edoweb-facets-active>li {
-  background-color: #ff9933;
+  background-color: #ee7f00;
   -khtml-border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -195,12 +242,12 @@ ul.edoweb-facets-available>li span {
 }
 
 ul.edoweb-facets-available a {
-  color: #871d33;
+  color: #004678;
 }
 
 
 ul.edoweb-facets-available a:hover {
-  color: #ff9933;
+  color: #77adcf;
 }
 
 .item-list h3 {
