@@ -71,8 +71,7 @@
         'article': 'octicon-file-text',
         'file': 'octicon-file-binary',
         'webpage': 'octicon-browser',
-        'version': 'octicon-git-branch',
-	'part' : 'octicon-file-submodule'
+        'version': 'octicon-git-branch'
       }
 
       for (var bundle in icons) {
@@ -81,7 +80,7 @@
         $('#edoweb-tree-menu a[data-bundle="' + bundle + '"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon ' + icon));
         $('.edoweb-tree a[data-bundle="' + bundle + '"]', context).before($('<span>&nbsp;</span>').addClass('octicon ' + icon));
         $('.entity-label-' + bundle, context).before($('<span>&nbsp;</span>').addClass('octicon ' + icon));
-        $('body.entity-type-' + bundle + ' h1.title', context).prepend($('<span>&nbsp;</span>').addClass('mega-octicon ' + icon));
+        $('body.entity-type-' + bundle + ' h1.title', context).addClass('mega-octicon ' + icon);
       }
 
       replaceWithIcon($('label a[href="#"]'), 'batch-icons batch-icon-plus', context);
@@ -119,7 +118,78 @@
       });
     }
   };
+  
+  Drupal.behaviors.edoweb_drupal_image_viewer = {
+    attach: function (context, settings) {
 
+      // Prepare Service
+      var serviceUrl = "https://api.ellinet-dev.hbz-nrw.de/deepzoom/api/getDzi?imageUrl=";
+      var callbackString = "&callback=?";
+      var imageUrl = null;
+      var viewer = null;
+      var tileSourcesFn = null;
+
+    var imagethumb = $('.field-item[property:dc-format]:contains("image")');
+    var thumbreference = imagethumb.parent().parent().parent().find('.thumb a');
+    imageUrl = thumbreference.attr('href');
+    //alert(imageUrl);
+    var thumb = imagethumb.parent().parent().parent().find('.thumb a');
+    imagethumb.parent().parent().append('<div class="viewer" id="osd_view" style="width: 800px; height: 600px; background:#ccc;"></div>');
+    //alert(thumbreference.html());
+
+
+	    
+	    $('#osd_view').dialog({
+		modal: true,
+		autoOpen: false,
+		height: ($(window).height() - 60),
+		width: ($(window).width() - 60),
+		buttons: {
+		    Ok: function() {
+	    	    $( this ).dialog( "close" );
+		    }
+		}
+	    });
+	    
+	    thumbreference.click(function(){
+	    $("#osd_view").dialog("open");
+		deepZoomService();
+		return false;
+	    });
+  
+	    function deepZoomService (){
+		
+		var url = serviceUrl + imageUrl + callbackString;
+		$.getJSON(url, function(json){
+		    tileSourcesFn = json;
+		    if(viewer){
+	    		viewer.destroy();
+		    }
+        
+		    viewer = OpenSeadragon({
+	    		id: "osd_view",
+	    		prefixUrl: "../OSimages/",
+	    		tileSources: {
+			    Image: {
+				xmlns:    "http://schemas.microsoft.com/deepzoom/2008",
+				Url: tileSourcesFn.Url + "/",
+				Format:   tileSourcesFn.Format, 
+				Overlap:  tileSourcesFn.Overlap, 
+				TileSize: tileSourcesFn.TileSize,
+				Size: {
+				    Height: tileSourcesFn.Size.Height,
+				    Width:  tileSourcesFn.Size.Width
+				}
+			    }
+	    		},
+	    		showNavigator: "true",
+		    });
+		});
+	    }; 
+    }
+  };
+  
+  
   //Drupal.behaviors.edoweb_drupal_theme_datepicker = {
   //  attach: function (context, settings) {
   //    // datepicker
