@@ -169,7 +169,7 @@
         
 		    viewer = OpenSeadragon({
 	    		id: "osd_view",
-	    		prefixUrl: "../OSimages/",
+	    		prefixUrl: "../sites/all/themes/zbmed-drupal-theme/OSimages/",
 	    		tileSources: {
 			    Image: {
 				xmlns:    "http://schemas.microsoft.com/deepzoom/2008",
