@@ -71,7 +71,8 @@
         'article': 'octicon-file-text',
         'file': 'octicon-file-binary',
         'webpage': 'octicon-browser',
-        'version': 'octicon-git-branch'
+        'version': 'octicon-git-branch',
+	'part': 'octicon-file-submodule'
       }
 
       for (var bundle in icons) {
