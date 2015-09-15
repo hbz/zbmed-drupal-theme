@@ -122,75 +122,69 @@
   
   Drupal.behaviors.edoweb_drupal_image_viewer = {
     attach: function (context, settings) {
-
       // Prepare Service
+      //var viewer = null;
       var serviceUrl = "https://api.ellinet-dev.hbz-nrw.de/deepzoom/api/getDzi?imageUrl=";
       var callbackString = "&callback=?";
       var imageUrl = null;
       var viewer = null;
       var tileSourcesFn = null;
+      var imagethumb = $('.field-item[property:dc-format]:contains("image")', context);
+      var thumbreference = imagethumb.parent().parent().parent().find('.thumb a');
+      imageUrl = thumbreference.attr('href');
+      //alert(imagethumb.html() + "\n" + thumbreference.html() + "\n"  + imageUrl);
+      var thumb = imagethumb.parent().parent().parent().find('.thumb a');
+      imagethumb.parent().parent().append('<div class="viewer" id="osd_view" style="width: 800px; height: 600px; background:#ccc;"></div>');
+      //alert(thumbreference.html());
 
-    var imagethumb = $('.field-item[property:dc-format]:contains("image")');
-    var thumbreference = imagethumb.parent().parent().parent().find('.thumb a');
-    imageUrl = thumbreference.attr('href');
-    //alert(imageUrl);
-    var thumb = imagethumb.parent().parent().parent().find('.thumb a');
-    imagethumb.parent().parent().append('<div class="viewer" id="osd_view" style="width: 800px; height: 600px; background:#ccc;"></div>');
-    //alert(thumbreference.html());
+      // initialize and hide dialog-window for OpenSeaDragon viewer  
+      $('#osd_view', context).dialog({
+        modal: true,
+        autoOpen: false,
+        height: ($(window).height() - 20),
+        width: ($(window).width() - 20),
+        buttons: {
+          Ok: function() {
+            $( this ).dialog( "close" );
+            viewer.destroy();
+          }
+        }
+      });
 
-
-	    
-	    $('#osd_view').dialog({
-		modal: true,
-		autoOpen: false,
-		height: ($(window).height() - 60),
-		width: ($(window).width() - 60),
-		buttons: {
-		    Ok: function() {
-	    	    $( this ).dialog( "close" );
-		    }
-		}
-	    });
-	    
-	    thumbreference.on("click", function(){
-	    $("#osd_view").dialog("open");
-		deepZoomService();
-		return false;
-	    });
+      thumbreference.click(function(){
+        deepZoomService();
+        $("#osd_view").dialog("open");
+        return false;
+      });
   
-	    function deepZoomService (){
-		
-		var url = serviceUrl + imageUrl + callbackString;
-		$.getJSON(url, function(json){
-		    tileSourcesFn = json;
-		    if(viewer){
-	    		viewer.destroy();
-		    }
-        
-		    viewer = OpenSeadragon({
-	    		id: "osd_view",
-	    		prefixUrl: "../sites/all/themes/zbmed-drupal-theme/OSimages/",
-	    		tileSources: {
-			    Image: {
-				xmlns:    "http://schemas.microsoft.com/deepzoom/2008",
-				Url: tileSourcesFn.Url + "/",
-				Format:   tileSourcesFn.Format, 
-				Overlap:  tileSourcesFn.Overlap, 
-				TileSize: tileSourcesFn.TileSize,
-				Size: {
-				    Height: tileSourcesFn.Size.Height,
-				    Width:  tileSourcesFn.Size.Width
-				}
-			    }
-	    		},
-	    		showNavigator: "true",
-		    });
-		});
-	    }; 
+      function deepZoomService (){
+        var url = serviceUrl + imageUrl + callbackString;
+        $.getJSON(url, function(json){
+        tileSourcesFn = json;
+         viewer = OpenSeadragon({
+           id: "osd_view",
+           prefixUrl: "../sites/all/themes/zbmed-drupal-theme/OSimages/",
+           tileSources: {
+             Image: {
+               xmlns:    "http://schemas.microsoft.com/deepzoom/2008",
+               Url: tileSourcesFn.Url + "/",
+               Format:   tileSourcesFn.Format, 
+               Overlap:  tileSourcesFn.Overlap, 
+               TileSize: tileSourcesFn.TileSize,
+               Size: {
+                 Height: tileSourcesFn.Size.Height,
+                 Width:  tileSourcesFn.Size.Width
+               }
+             }
+           },
+           showNavigator: "true",
+         });
+       });
+      }; 
     }
   };
-  
-  
+
+
   //Drupal.behaviors.edoweb_drupal_theme_datepicker = {
   //  attach: function (context, settings) {
   //    // datepicker
