@@ -152,7 +152,7 @@
 		}
 	    });
 	    
-	    thumbreference.click(function(){
+	    thumbreference.on("click", function(){
 	    $("#osd_view").dialog("open");
 		deepZoomService();
 		return false;
