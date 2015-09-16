@@ -159,6 +159,7 @@
       });
       });
 
+
       thumbreference.click(function(){
         if(viewer){
           alert(viewer);
