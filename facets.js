@@ -127,38 +127,51 @@
       var serviceUrl = "https://api.ellinet-dev.hbz-nrw.de/deepzoom/api/getDzi?imageUrl=";
       var callbackString = "&callback=?";
       var imageUrl = null;
-      var viewer = null;
+      var viewer;
       var tileSourcesFn = null;
       var imagethumb = $('.field-item[property:dc-format]:contains("image")', context);
       var thumbreference = imagethumb.parent().parent().parent().find('.thumb a');
       imageUrl = thumbreference.attr('href');
       //alert(imagethumb.html() + "\n" + thumbreference.html() + "\n"  + imageUrl);
       var thumb = imagethumb.parent().parent().parent().find('.thumb a');
-      imagethumb.parent().parent().append('<div class="viewer" id="osd_view" style="width: 800px; height: 600px; background:#ccc;"></div>');
-      //alert(thumbreference.html());
-
-      // initialize and hide dialog-window for OpenSeaDragon viewer  
-      $('#osd_view', context).dialog({
-        modal: true,
-        autoOpen: false,
-        height: ($(window).height() - 20),
-        width: ($(window).width() - 20),
-        buttons: {
-          Ok: function() {
-            $( this ).dialog( "close" );
-            viewer.destroy();
-          }
+      imagethumb.parent().parent().once('viewerDiv', function(){ 
+        $(this).append('<div class="viewer" id="osd_view" style="width: 800px; height: 600px; background:#ccc;"></div>');
+        if(viewer){
+          alert('found viewer');
+          viewer.destroy();
         }
       });
 
+      //alert(thumbreference.html());
+
+      // initialize and hide dialog-window for OpenSeaDragon viewer  
+      $('#osd_view', context).once('dialogDiv', function() {
+        $(this).dialog({
+        modal: true,
+        autoOpen: false,
+        height: ($(window).height() -20),
+        width: ($(window).width() -20),
+        buttons: {
+          Ok: function() {
+            $( this ).dialog( "close" );
+          }
+        }
+      });
+      });
+
       thumbreference.click(function(){
+        if(viewer){
+          alert(viewer);
+          viewer.destroy();
+        }
         deepZoomService();
         $("#osd_view").dialog("open");
         return false;
       });
-  
+
       function deepZoomService (){
         var url = serviceUrl + imageUrl + callbackString;
+        
         $.getJSON(url, function(json){
         tileSourcesFn = json;
          viewer = OpenSeadragon({
