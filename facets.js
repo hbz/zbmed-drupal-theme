@@ -127,7 +127,7 @@
       var serviceUrl = "https://api.ellinet-dev.hbz-nrw.de/deepzoom/api/getDzi?imageUrl=";
       var callbackString = "&callback=?";
       var imageUrl = null;
-      var viewer;
+      //var viewer=null;
       var tileSourcesFn = null;
       var imagethumb = $('.field-item[property:dc-format]:contains("image")', context);
       var thumbreference = imagethumb.parent().parent().parent().find('.thumb a');
@@ -136,15 +136,11 @@
       var thumb = imagethumb.parent().parent().parent().find('.thumb a');
       imagethumb.parent().parent().once('viewerDiv', function(){ 
         $(this).append('<div class="viewer" id="osd_view" style="width: 800px; height: 600px; background:#ccc;"></div>');
-        if(viewer){
-          alert('found viewer');
-          viewer.destroy();
-        }
       });
 
       //alert(thumbreference.html());
 
-      // initialize and hide dialog-window for OpenSeaDragon viewer  
+      // initialize and hide dialog-window for OpenSeaDragon viewer
       $('#osd_view', context).once('dialogDiv', function() {
         $(this).dialog({
         modal: true,
@@ -155,14 +151,21 @@
           Ok: function() {
             $( this ).dialog( "close" );
           }
+        },
+        close: function() {
+          //if(viewer){
+            //viewer.destroy();
+            //alert('viewer zertört');
+          //}
         }
       });
       });
 
 
       thumbreference.click(function(){
-        if(viewer){
-          alert(viewer);
+        //alert('added click');
+        if(typeof viewer != "undefined"){
+          //alert(viewer);
           viewer.destroy();
         }
         deepZoomService();
