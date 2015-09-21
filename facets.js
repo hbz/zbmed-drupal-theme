@@ -160,6 +160,7 @@
       });
       });
 
+<<<<<<< HEAD
       thumbreference.click(function(){
         if(viewer){
           alert(viewer);
@@ -173,6 +174,8 @@
       function deepZoomService (){
         var url = serviceUrl + imageUrl + callbackString;
 =======
+=======
+>>>>>>> f877974... merge
     var imagethumb = $('.field-item[property:dc-format]:contains("image")');
     var thumbreference = imagethumb.parent().parent().parent().find('.thumb a');
     imageUrl = thumbreference.attr('href');
