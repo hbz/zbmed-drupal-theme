@@ -142,6 +142,7 @@
         }
       });
 
+<<<<<<< HEAD
       //alert(thumbreference.html());
 
       // initialize and hide dialog-window for OpenSeaDragon viewer  
@@ -171,6 +172,44 @@
 
       function deepZoomService (){
         var url = serviceUrl + imageUrl + callbackString;
+=======
+    var imagethumb = $('.field-item[property:dc-format]:contains("image")');
+    var thumbreference = imagethumb.parent().parent().parent().find('.thumb a');
+    imageUrl = thumbreference.attr('href');
+    //alert(imageUrl);
+    var thumb = imagethumb.parent().parent().parent().find('.thumb a');
+    imagethumb.parent().parent().append('<div class="viewer" id="osd_view" style="width: 800px; height: 600px; background:#ccc;"></div>');
+    //alert(thumbreference.html());
+
+
+	    
+	    $('#osd_view').dialog({
+		modal: true,
+		autoOpen: false,
+		height: ($(window).height() - 60),
+		width: ($(window).width() - 60),
+		buttons: {
+		    Ok: function() {
+	    	    $( this ).dialog( "close" );
+		    }
+		}
+	    });
+	    
+	    thumbreference.click( function(){
+	    $("#osd_view").dialog("open");
+		deepZoomService();
+		return false;
+	    });
+  
+	    function deepZoomService (){
+		
+		var url = serviceUrl + imageUrl + callbackString;
+		$.getJSON(url, function(json){
+		    tileSourcesFn = json;
+		    if(viewer){
+	    		viewer.destroy();
+		    }
+>>>>>>> 60dc27c... merge
         
         $.getJSON(url, function(json){
         tileSourcesFn = json;
