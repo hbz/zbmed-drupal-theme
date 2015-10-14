@@ -64,15 +64,10 @@
     attach: function (context, settings) {
 
       var icons = {
-        'monograph': 'octicon-repo',
-        'journal': 'octicon-versions',
         'volume': 'octicon-list-ordered',
         'issue': 'octicon-book',
-        'article': 'octicon-file-text',
         'file': 'octicon-file-binary',
-        'webpage': 'octicon-browser',
-        'version': 'octicon-git-branch',
-	'part' : 'octicon-file-submodule'
+        'version': 'octicon-git-branch'
       }
 
       for (var bundle in icons) {
@@ -82,6 +77,43 @@
         $('.edoweb-tree a[data-bundle="' + bundle + '"]', context).before($('<span>&nbsp;</span>').addClass('octicon ' + icon));
         $('.entity-label-' + bundle, context).before($('<span>&nbsp;</span>').addClass('octicon ' + icon));
         $('body.entity-type-' + bundle + ' h1.title', context).prepend($('<span>&nbsp;</span>').addClass('mega-octicon ' + icon));
+      }
+
+      replaceWithIcon($('label a[href="#"]'), 'batch-icons batch-icon-plus', context);
+      replaceWithIcon($('label[for="edit-field-edoweb-parent-und"] a[href="#"]', context), 'batch-icons batch-icon-concat');
+      replaceWithIcon($('label[for="edit-field-edoweb-identifier-ht-und-0-value"] a[href="#"]', context), 'batch-icons batch-icon-concat');
+      replaceWithIcon($('label[for="edit-field-edoweb-parallel-und"] a[href="#"]', context), 'batch-icons batch-icon-concat');
+
+      function replaceWithIcon(target, iconCss) {
+        target
+          .attr('title', target.html())
+          .html('<span class="' + iconCss + '"></span>');
+      }
+
+    }
+  };
+
+  Drupal.behaviors.edoweb_drupal_theme_livivoicons = {
+    attach: function (context, settings) {
+
+      var icons = {
+        'monograph': 'livivoicon-doctype-mono',
+        'journal': 'livivoicon-doctype-journal',
+        'article': 'livivoicon-doctype-article',
+        'webpage': 'livivoicon-doctype-online',
+        'diss': 'livivoicon-doctype-diss',
+        'av': 'livivoicon-doctype-av',
+        'conf': 'livivoicon-doctype-conf',
+        'part': 'livivoicon-doctype-collection'
+      }
+
+      for (var bundle in icons) {
+        var icon = icons[bundle];
+        $('#content .form-type-item a[data-bundle="' + bundle + '"]', context).prepend($('<span>&nbsp;</span>').addClass('livivoicon ' + icon));
+        $('#edoweb-tree-menu a[data-bundle="' + bundle + '"]', context).prepend($('<span>&nbsp;</span>').addClass('livivoicon ' + icon));
+        $('.edoweb-tree a[data-bundle="' + bundle + '"]', context).before($('<span>&nbsp;</span>').addClass('livivoicon ' + icon));
+        $('.entity-label-' + bundle, context).before($('<span>&nbsp;</span>').addClass('livivoicon ' + icon));
+        $('body.entity-type-' + bundle + ' h1.title', context).prepend($('<span>&nbsp;</span>'). addClass('mega-livivicon ' + icon));
       }
 
       replaceWithIcon($('label a[href="#"]'), 'batch-icons batch-icon-plus', context);

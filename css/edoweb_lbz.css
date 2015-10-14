@@ -1,9 +1,9 @@
 /* $Id */
 
 #header {
-  background: url("../images/muehlenfeldtrans3.jpg") no-repeat;
+  /* background: url("../images/muehlenfeldtrans3.jpg") no-repeat; */
   background-position: 140px -40px;
-  font-family: "TabletGothicNarrow", "roboto_condensedregular", snas-serif;
+  font-family: "TabletGothicNarrow", "roboto_condensedregular", sans-serif;
 
 }
 
@@ -12,9 +12,16 @@
 
 }
 
+#site-name a{
+  color: #4b4b4d;
+  font-size: 1.4em;
+}
 
 #site-slogan {
- font-family: "TabletGothicNarrowOblique", "roboto_condensedregular", sans-serif;
+ font-family: "TabletGothicNarrow", "roboto_condensedregular", sans-serif;
+ color: #4b4b4d;
+ font-size: 1.1em;
+ margin-top: -4px;
 
 }
 

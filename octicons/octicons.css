@@ -15,8 +15,8 @@
 
 */
 .octicon {
-  font: normal normal 16px octicons;
-  line-height: 1;
+  font: normal normal 20px octicons;
+  line-height: 1px;
   display: inline-block;
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
