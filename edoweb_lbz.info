@@ -8,6 +8,7 @@ stylesheets[all][] = css/layout.css
 stylesheets[all][] = css/edoweb_lbz.css
 stylesheets[all][] = css/colors.css
 stylesheets[all][] = octicons/octicons.css
+stylesheets[all][] = livivo-icons/livivoicons.css
 stylesheets[all][] = batch-icons/batch-icons.css
 stylesheets[all][] = robotocondensed/stylesheet.css
 stylesheets[all][] = TabletGothicNarrow/stylesheet.css
