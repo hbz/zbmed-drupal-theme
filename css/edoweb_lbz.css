@@ -134,6 +134,7 @@ a:hover {
 
 div.field {
   clear: both;
+  border-bottom: 1px solid #bbb;
   /*padding-bottom: 0.5em;*/
 }
 
@@ -159,6 +160,25 @@ div.field>table {
   margin: 0;
   padding-bottom: em;
 }
+
+div.field > table tr.even, 
+div.field > table tr.odd {
+  background-color: #fff;
+}
+div.field > table th {
+  padding-left: 0;
+  color: #4b4b4b;
+  background-color: #fff;
+  vertical-align: top;
+}
+div.field > table thead tr {
+  border-bottom: 1px solid #bbb;
+}
+div.field > table td {
+  padding-left: 0;
+  vertical-align: top;
+} 
+
 
 input[readonly="readonly"] {
   background-color: #efefef;
@@ -269,6 +289,7 @@ ul.edoweb-facets-available a:hover {
 .form-type-item {
   padding-bottom:5px;
   width: 95%;
+  float: left;
 }
 
 .form-type-item a[data-bundle], #edoweb-tree-menu a[data-bundle] {
@@ -276,6 +297,11 @@ ul.edoweb-facets-available a:hover {
   padding-left: 10px;
   font-size:1.0em;
   top: 10px;
+  display: block;
+}
+
+#edoweb-tree-menu a span {
+  width: 25px;
 }
 
 .form-type-item a[data-bundle] {
