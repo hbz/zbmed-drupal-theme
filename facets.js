@@ -6,11 +6,11 @@
       // append the div for toggle functionality to each facet
       $('.item-list h3', context).each(function() {
         var facetHeader = $(this);
-        var facetName = facetHeader.html();
+        var facetName = facetHeader.html().replace(/\W/g,"");
 
         facetHeader.parent().attr('id', facetName);
         //alert(facetName + ': ' +  $.cookie(facetName));
-        if ($.cookie(facetName)) {
+       if ($.cookie(facetName)) {
           facetHeader.append('<div class="toggleButton"><span class="' + $.cookie(facetName) + '"></span>&nbsp;</div>');
           //$(this).find('div span.octicon-triangle-up').parent().parent().parent().find("ul").css('display', 'block');
           facetHeader.find('div span.octicon-triangle-down').parent().parent().parent().find("ul").css('display', 'none');
