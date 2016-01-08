@@ -6,7 +6,7 @@
       // append the div for toggle functionality to each facet
       $('.item-list h3', context).each(function() {
         var facetHeader = $(this);
-        var facetName = facetHeader.html();
+        var facetName = facetHeader.html().replace(/\W/g,"");
 
         facetHeader.parent().attr('id', facetName);
         //alert(facetName + ': ' +  $.cookie(facetName));
@@ -201,7 +201,7 @@ Drupal.behaviors.edoweb_drupal_image_viewer = {
         
 		    viewer = OpenSeadragon({
 	    		id: "osd_view",
-	    		prefixUrl: "../OSimages/",
+	    		prefixUrl: "../sites/all/themes/zbmed-drupal-theme/OSimages/",
 	    		tileSources: {
 			    Image: {
 				xmlns:    "http://schemas.microsoft.com/deepzoom/2008",

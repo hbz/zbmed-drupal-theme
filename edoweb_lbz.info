@@ -15,7 +15,6 @@ stylesheets[all][] = TabletGothicNarrow/stylesheet.css
 scripts[] = facets.js
 scripts[] = jquery.cookie.js
 scripts[] = openseadragon.min.js
-scripts[] = jquery-ui.min.js
 
 regions[header] = Header
 regions[help] = Help
