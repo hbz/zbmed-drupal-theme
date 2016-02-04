@@ -131,11 +131,13 @@ a:hover {
 #search-form input#edit-keys, #block-search-form .form-item-search-block-form input {
   width: 70%;
 }
-
+.item-list div.field {
+  clear: both;
+  border-bottom: none;
+}
 div.field {
   clear: both;
   border-bottom: 1px solid #bbb;
-  /*padding-bottom: 0.5em;*/
 }
 
 div.field .field-label {
@@ -153,18 +155,28 @@ div.field .field-item[property="content:encoded"]{
 margin-left: 0em;
 }
 
-
-
 div.field>table {
   display: block;
   margin: 0;
   padding-bottom: em;
 }
 
+.edoweb-entity-list tr.even, 
+.edoweb-entity-list tr.odd, 
 div.field > table tr.even, 
 div.field > table tr.odd {
   background-color: #fff;
 }
+
+.edoweb-entity-list tr th,
+.edoweb-entity-list tr td {
+  border: none;
+}
+
+.edoweb-entity-list tr td {
+  border-bottom: 1px solid #bbb;
+}
+
 div.field > table th {
   padding-left: 0;
   color: #4b4b4b;
@@ -223,6 +235,14 @@ table h1{
 fieldset.edoweb-facets {
   width: 20%;
   float: left;
+}
+fieldset.edoweb-facets .ui-sortable h3,
+fieldset.edoweb-facets .ui-sortable-helper {
+  cursor: move;
+}
+fieldset.edoweb-facets .ui-sortable-helper {
+  background-color: #fff;
+  border: 3px dotted #ccc;
 }
 
 fieldset.edoweb-entity-list {
