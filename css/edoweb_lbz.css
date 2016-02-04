@@ -251,7 +251,7 @@ ul.edoweb-facets-available>li span {
 ul.edoweb-facets-available a {
   color: #004678;
   word-wrap: break-word;
-  break-word: break-word;
+  word-break: break-word;
 }
 
 
