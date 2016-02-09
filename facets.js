@@ -76,7 +76,44 @@
         $('#edoweb-tree-menu a[data-bundle="' + bundle + '"]', context).prepend($('<span>&nbsp;</span>').addClass('octicon ' + icon));
         $('.edoweb-tree a[data-bundle="' + bundle + '"]', context).before($('<span>&nbsp;</span>').addClass('octicon ' + icon));
         $('.entity-label-' + bundle, context).before($('<span>&nbsp;</span>').addClass('octicon ' + icon));
-        $('body.entity-type-' + bundle + ' h1.title', context).prepend($('<span>&nbsp;</span>').addClass('mega-octicon ' + icon));
+        $('body.entity-type-' + bundle + ' h1.title', context).prepend($('<span>&nbsp;</span>'). addClass('mega-octicon ' + icon));
+      }
+
+      replaceWithIcon($('label a[href="#"]'), 'batch-icons batch-icon-plus', context);
+      replaceWithIcon($('label[for="edit-field-edoweb-parent-und"] a[href="#"]', context), 'batch-icons batch-icon-concat');
+      replaceWithIcon($('label[for="edit-field-edoweb-identifier-ht-und-0-value"] a[href="#"]', context), 'batch-icons batch-icon-concat');
+      replaceWithIcon($('label[for="edit-field-edoweb-parallel-und"] a[href="#"]', context), 'batch-icons batch-icon-concat');
+
+      function replaceWithIcon(target, iconCss) {
+        target
+          .attr('title', target.html())
+          .html('<span class="' + iconCss + '"></span>');
+      }
+
+    }
+  };
+
+  Drupal.behaviors.edoweb_drupal_theme_livivoicons = {
+    attach: function (context, settings) {
+
+      var icons = {
+        'monograph': 'livivoicon-doctype-mono',
+        'journal': 'livivoicon-doctype-journal',
+        'article': 'livivoicon-doctype-article',
+        'webpage': 'livivoicon-doctype-online',
+        'diss': 'livivoicon-doctype-diss',
+        'av': 'livivoicon-doctype-av',
+        'conf': 'livivoicon-doctype-conf',
+        'part': 'livivoicon-doctype-collection'
+      }
+
+      for (var bundle in icons) {
+        var icon = icons[bundle];
+        $('#content .form-type-item a[data-bundle="' + bundle + '"]', context).prepend($('<span>&nbsp;</span>').addClass('livivoicon ' + icon));
+        $('#edoweb-tree-menu a[data-bundle="' + bundle + '"]', context).prepend($('<span>&nbsp;</span>').addClass('livivoicon ' + icon));
+        $('.edoweb-tree a[data-bundle="' + bundle + '"]', context).before($('<span>&nbsp;</span>').addClass('livivoicon ' + icon));
+        $('.entity-label-' + bundle, context).before($('<span>&nbsp;</span>').addClass('livivoicon ' + icon));
+        $('body.entity-type-' + bundle + ' h1.title', context).prepend($('<span>&nbsp;</span>'). addClass('mega-livivicon ' + icon));
       }
 
       replaceWithIcon($('label a[href="#"]'), 'batch-icons batch-icon-plus', context);
@@ -151,6 +188,88 @@
       });
     }
   };
+  
+  Drupal.behaviors.edoweb_drupal_image_viewer = {
+    attach: function (context, settings) {
+      // Prepare Service
+      //var viewer = null;
+      var serviceUrl = "https://api.ellinet-dev.hbz-nrw.de/deepzoom/api/getDzi?imageUrl=";
+      var callbackString = "&callback=?";
+      var imageUrl = null;
+      //var viewer=null;
+      var tileSourcesFn = null;
+      var imagethumb = $('.field-item[property:dc-format]:contains("image")', context);
+      var thumbreference = imagethumb.parent().parent().parent().find('.thumb a');
+      imageUrl = thumbreference.attr('href');
+      //alert(imagethumb.html() + "\n" + thumbreference.html() + "\n"  + imageUrl);
+      var thumb = imagethumb.parent().parent().parent().find('.thumb a');
+      imagethumb.parent().parent().once('viewerDiv', function(){ 
+        $(this).append('<div class="viewer" id="osd_view" style="width: 800px; height: 600px; background:#ccc;"></div>');
+      });
+
+      //alert(thumbreference.html());
+
+      // initialize and hide dialog-window for OpenSeaDragon viewer
+      $('#osd_view', context).once('dialogDiv', function() {
+        $(this).dialog({
+        modal: true,
+        autoOpen: false,
+        height: ($(window).height() -20),
+        width: ($(window).width() -20),
+        buttons: {
+          Ok: function() {
+            $( this ).dialog( "close" );
+          }
+        },
+        close: function() {
+          //if(viewer){
+            //viewer.destroy();
+            //alert('viewer zertört');
+          //}
+        }
+      });
+      });
+
+
+      thumbreference.click(function(){
+        //alert('added click');
+        if(typeof viewer != "undefined"){
+          //alert(viewer);
+          viewer.destroy();
+        }
+        deepZoomService();
+        $("#osd_view").dialog("open");
+        return false;
+      });
+
+      function deepZoomService (){
+        var url = serviceUrl + imageUrl + callbackString;
+        
+        $.getJSON(url, function(json){
+        tileSourcesFn = json;
+         viewer = OpenSeadragon({
+           id: "osd_view",
+           prefixUrl: "../sites/all/themes/zbmed-drupal-theme/OSimages/",
+           tileSources: {
+             Image: {
+               xmlns:    "http://schemas.microsoft.com/deepzoom/2008",
+               Url: tileSourcesFn.Url + "/",
+               Format:   tileSourcesFn.Format, 
+               Overlap:  tileSourcesFn.Overlap, 
+               TileSize: tileSourcesFn.TileSize,
+               Size: {
+                 Height: tileSourcesFn.Size.Height,
+                 Width:  tileSourcesFn.Size.Width
+               }
+             }
+           },
+           showNavigator: "true",
+         });
+       });
+      }; 
+    }
+  };
+
 
   //Drupal.behaviors.edoweb_drupal_theme_datepicker = {
   //  attach: function (context, settings) {
