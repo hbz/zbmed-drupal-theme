@@ -271,6 +271,17 @@
   };
 
 
+  Drupal.behaviors.edoweb_drupal_video_html5_viewer = {
+    attach: function (context, settings) {
+
+      var videoUrl = null;
+      var videothumb = $('.field-item[property:dc-format]:contains("video/mp4")', context);
+      var thumbreference = videothumb.parent().parent().parent().find('.thumb a');
+      videoUrl = thumbreference.attr('href');
+      thumbreference.html('<div><video width="320" height="240" controls><source src="' + videoUrl + '" type="video/mp4"></video></div>');
+    }
+  };
+
   //Drupal.behaviors.edoweb_drupal_theme_datepicker = {
   //  attach: function (context, settings) {
   //    // datepicker
