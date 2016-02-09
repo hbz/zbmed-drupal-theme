@@ -8,7 +8,7 @@
         var facetHeader = $(this);
         var facetName = facetHeader.html();
 
-        facetHeader.parent().attr('id', facetName);
+        facetHeader.parent().attr('id', facetName.replace(/\W/g,""));
         //alert(facetName + ': ' +  $.cookie(facetName));
         if ($.cookie(facetName)) {
           facetHeader.append('<div class="toggleButton"><span class="' + $.cookie(facetName) + '"></span>&nbsp;</div>');
