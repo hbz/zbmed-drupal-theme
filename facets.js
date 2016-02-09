@@ -279,7 +279,7 @@
       var mime = videothumb.html();
       var thumbreference = videothumb.parent().parent().parent().find('.thumb a');
       videoUrl = thumbreference.attr('href');
-      thumbreference.parent().html('<div><video width="500" controls><source src="' + videoUrl + '" type="' + '"></video></div>');
+      thumbreference.parent().html('<div><video width="500" controls><source src="' + videoUrl + '" type="' + mime + '"></video></div>');
     }
   };
 
