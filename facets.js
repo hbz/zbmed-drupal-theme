@@ -275,18 +275,11 @@
     attach: function (context, settings) {
 
       var videoUrl = null;
-      var videothumb = $('.field-item[property:dc-format]:contains("video/mp4")', context);
+      var videothumb = $('.field-item[property:dc-format]:contains("video")', context);
+      var mime = videothumb.html();
       var thumbreference = videothumb.parent().parent().parent().find('.thumb a');
       videoUrl = thumbreference.attr('href');
-      thumbreference.parent().html('<div><video width="500" controls><source src="' + videoUrl + '" type="video/mp4"></video></div>');
-
-      
-      var videoUrl = null;
-      var videothumb = $('.field-item[property:dc-format]:contains("video/x-matroska")', context);
-      var thumbreference = videothumb.parent().parent().parent().find('.thumb a');
-      videoUrl = thumbreference.attr('href');
-      thumbreference.parent().html('<div><video width="500" controls><source src="' + videoUrl + '" type="video/webm"></video></div>');
-
+      thumbreference.parent().html('<div><video width="500" controls><source src="' + videoUrl + '" type="' + mime + '"></video></div>');
     }
   };
 
