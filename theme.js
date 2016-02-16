@@ -33,13 +33,13 @@
   Drupal.behaviors.edoweb_drupal_theme_child = {
     attach: function (context, settings) {
 
-    var fieldLabel = 'Datei';
+    var fieldLabel = 'Datei:';
 
     $('.field-name-field-edoweb-struct-child', context).ajaxComplete(function() {
       //$(this).find('.field-label').text('HT-Nummer');
-      var isFile = $(this).find('.download');
+      var isFile = $(this).find('.download').attr('href');
       if( isFile ) {
-        $(this).find('.item-label').text(fieldLabel);
+        $(this).find('.field-label').text(fieldLabel);
       }
       /*
       $(this).find('table').remove();
