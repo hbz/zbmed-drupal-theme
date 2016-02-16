@@ -11,11 +11,11 @@
       var htnr = $('.field-name-field-edoweb-parallel .resolved').attr('data-curie');
       htnr = htnr.replace("lr:","");
       // replace old html-code with code to display HT-Number only
-      $('.field-name-field-edoweb-parallel').find('table').remove();
+      $('.field-name-field-edoweb-parallel').remove();
       $('.field-name-field-edoweb-parallel').append(
       '<table class=""><tbody><tr class="odd"><td>'
       + htnr + 
-      '</td><tr></tbody></table>');
+      '</td></tr></tbody></table>');
 
       
     }
