@@ -6,7 +6,7 @@
     attach: function (context, settings) {
 
       $('.field-name-field-edoweb-parallel .field-label').text('HT-Nummer');
-      $('.field-name-field-edoweb-parallel .field-items').attr('style', 'display: block;');
+      $('.field-name-field-edoweb-parallel div.field-items').attr('style', 'display: block;');
 
       
     }
