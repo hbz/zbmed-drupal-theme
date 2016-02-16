@@ -9,9 +9,9 @@
       $('.field-name-field-edoweb-parallel .field-label').text('HT-Nummer');
       // get HT-Number
       var htnr = $('.field-name-field-edoweb-parallel .resolved').attr('data-curie');
-      htnr.replace("Ir:","");
+      htnr = htnr.replace("lr:","");
       // replace old html-code with code to display HT-Number only
-      $('.field-name-field-edoweb-parallel table').remove();
+      $('.field-name-field-edoweb-parallel').remove('table');
       $('.field-name-field-edoweb-parallel').append(
       '<table class=""><tbody><td>'
       + htnr + 
