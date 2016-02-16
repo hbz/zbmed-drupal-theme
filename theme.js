@@ -12,10 +12,10 @@
       htnr.replace("Ir:","");
       // replace old html-code with code to display HT-Number only
       $('.field-name-field-edoweb-parallel table').remove();
-      $('.field-name-field-edoweb-parallel').append('<div class="field-items">'
-      + '<table class=""><tbody><td>'
+      $('.field-name-field-edoweb-parallel').append(
+      '<table class=""><tbody><td>'
       + htnr + 
-      '</td></tbody></table></div>');
+      '</td></tbody></table>');
 
       
     }
