@@ -39,7 +39,7 @@
 
     $('.field-name-field-edoweb-struct-child', context).ajaxComplete(function() {
       //$(this).find('.field-label').text('HT-Nummer');
-      var isFile = $(this).find('.download');
+      var isFile = $(this).find('.download').attr('href');
       if( isFile ) {
         $(this).find('.field-label').text(fieldLabel);
       }
