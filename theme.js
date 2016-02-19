@@ -5,7 +5,7 @@
   Drupal.behaviors.edoweb_drupal_theme_entity_minimize = {
     attach: function (context, settings) {
 
-    var fieldLabel = 'Verbundkatalog-ID';
+    var fieldLabel = 'Verbundkatalog-ID:';
     var htattr = $('.field-name-field-edoweb-parallel .resolved', context).attr('data-curie');
     var htnr = '';
     if( htattr ){
@@ -22,7 +22,7 @@
          + ' data-target-bundle="monograph" data-curie="lr:' + htnr + '" resource="http://lobid.org/resource/' + htnr + '" class="resolved">'
          + htnr +'</a>'
          + '</div></div>');
-      $('.field-name-field-edoweb-doi').after($(this));
+      $('.field-name-field-edoweb-medium').after($(this));
 
       });
 
@@ -34,25 +34,29 @@
     attach: function (context, settings) {
 
     var fieldLabel = 'Datei';
-    var thumbyUrl = 'https://frl.publisso.de/tools/thumby?url=';
-    var thumbSize = '&size=250';
+    var thumbyUrl = 'https://api.ellinet-dev.hbz-nrw.de/tools/thumby?url=';
+    var thumbSize = '&size=150';
+    var serverUrl = 'https://ellinet-dev.hbz-nrw.de'
 
     $('.field-name-field-edoweb-struct-child', context).ajaxComplete(function() {
       //$(this).find('.field-label').text('HT-Nummer');
-      var isFile = $(this).find('.download').attr('href');
-      if( isFile ) {
-        $(this).find('.field-label').text(fieldLabel);
-      }
-      var dataLink = $(this).find('a.download');
-      var linkImg = datalink.find('img');
-      linkImg.attr('src', function(i, val){
-        return thumbyUrl + val + thumbSize;
-        });
-      $(this).find('table').remove();
-      $(this).once().append( '<div class="field-items"><div class="field-item even" property="regal:hasData">'
-         + dataLink
-         + '</div></div>');
-      //$('.field-name-field-edoweb-doi').after($(this));
+      var dataLink = $(this).find('.download').attr('href');
+      if( dataLink ) {
+        var ref = $(this).attr('href');
+        $(this).find('.field-label').text('Datei(en):');
+        //var linkImg = $(this).find(".download");
+        //linkImg.attr('src', thumbyUrl + 'https://ellinet-dev.hbz-nrw.de/' + linkImg + thumbSize);
+	$(this).find('table').remove();
+        $(this).once().append( '<div class="field-items"><div class="field-item even" property="regal:hasData">'
+          + '<a class="thumb" href="' + serverUrl + ref + '" target="_blank">'
+          + '<img src="'
+          + thumbyUrl
+          + serverUrl
+          + dataLink
+          + thumbSize
+          + '" /></a></div></div>');
+        }
+      $('.field-name-field-edoweb-title').after($(this));
  
       });
 
