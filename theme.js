@@ -40,8 +40,11 @@
 
     $('.field-name-field-edoweb-struct-child', context).ajaxComplete(function() {
       //$(this).find('.field-label').text('HT-Nummer');
-      var dataLink = $(this).find('.download').attr('href');
-      if( dataLink ) {
+      var dataLink = $(this).find('a');
+      
+     // alert(dataLink);
+      
+     if( dataLink ) {
         var ref = $(this).attr('href');
         $(this).find('.field-label').text('Datei(en):');
         //var linkImg = $(this).find(".download");
