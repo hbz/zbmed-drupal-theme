@@ -12,18 +12,19 @@
       htnr = htattr.replace('lr:','');
     };
 
-
+    // replace Label "Titelkopie von" with fieldLabel
     $('.field-name-field-edoweb-parallel .field-label', context).text(fieldLabel);
+
     $('.field-name-field-edoweb-parallel', context).ajaxComplete(function() {
       //$(this).find('.field-label').text('HT-Nummer');
-      $(this).find('table').remove();
+      //$(this).find('table').hide();
       $('.field-name-field-edoweb-parallel').once().append( '<div class="field-items"><div class="field-item even">'
          + '<a target="_blank" href="http://193.30.112.134/F/?func=find-c&ccl_term=IDN%3D' + htnr + '"'
          + ' data-target-bundle="monograph" data-curie="lr:' + htnr + '" resource="http://lobid.org/resource/' + htnr + '" class="resolved">'
          + htnr +'</a>'
          + '</div></div>');
       $('.field-name-field-edoweb-medium').after($(this));
-
+      //$(this), context).find('table').hide();
       });
 
 
@@ -40,22 +41,21 @@
 
     $('.field-name-field-edoweb-struct-child', context).ajaxComplete(function() {
       //$(this).find('.field-label').text('HT-Nummer');
-      var dataLink = $(this).find('a');
+      var dataLink = $('div[data-entity-bundle*="file"]');
       
-     // alert(dataLink);
+      //alert(dataLink.html());
       
-     if( dataLink ) {
+     if( dataLink.html() ) {
         var ref = $(this).attr('href');
         $(this).find('.field-label').text('Datei(en):');
-        //var linkImg = $(this).find(".download");
+        var link = $(this).find(".download").attr('href');
         //linkImg.attr('src', thumbyUrl + 'https://ellinet-dev.hbz-nrw.de/' + linkImg + thumbSize);
-	$(this).find('table').remove();
         $(this).once().append( '<div class="field-items"><div class="field-item even" property="regal:hasData">'
-          + '<a class="thumb" href="' + serverUrl + ref + '" target="_blank">'
+          + '<a class="thumb" href="' + serverUrl + link + '" target="_blank">'
           + '<img src="'
           + thumbyUrl
           + serverUrl
-          + dataLink
+          + link
           + thumbSize
           + '" /></a></div></div>');
         }
