@@ -41,26 +41,45 @@
 
     $('.field-name-field-edoweb-struct-child', context).ajaxComplete(function() {
       //$(this).find('.field-label').text('HT-Nummer');
-      var dataLink = $('div[data-entity-bundle*="file"]');
-      
+      var dataLink = $('a[data-target-bundle*="file"]');
+
       //alert(dataLink.html());
-      
-     if( dataLink.html() ) {
+      if( dataLink.html() ) {
+
         var ref = $(this).attr('href');
-        $(this).find('.field-label').text('Datei(en):');
-        var link = $(this).find(".download").attr('href');
+        $(this).find('.field-label').text('Dateiliste:');
+
+
+        var firstLink = $('.download').attr('href');
+/*        $(this).find('.resolved').each(function() {
+          $('.field-name-field-edoweb-struct-child table').append('<h1><a href="' + $(this).attr('href') + '">'
+            + $(this).html() + '</a></div>');
+        });
+
+        //alert(link);
         //linkImg.attr('src', thumbyUrl + 'https://ellinet-dev.hbz-nrw.de/' + linkImg + thumbSize);
-        $(this).once().append( '<div class="field-items"><div class="field-item even" property="regal:hasData">'
-          + '<a class="thumb" href="' + serverUrl + link + '" target="_blank">'
+        $('.field-name-field-edoweb-struct-child > table').once().before( '<div class="field-items"><div class="field-item" property="regal:hasData">'
+          + '<a class="thumb" href="' + serverUrl + firstLink + '" target="_blank">'
           + '<img src="'
           + thumbyUrl
           + serverUrl
-          + link
+          + firstLink
           + thumbSize
           + '" /></a></div></div>');
         }
-      $('.field-name-field-edoweb-title').after($(this));
- 
+*/
+        var pictureField = '<div class="field field-name-field-edoweb-preview"><div class="field-label"></div><div class="field-items"><div class="field-item" property="regal:hasData">'
+          + '<a class="thumb" href="' + serverUrl + firstLink + '" target="_blank">'
+          + '<img src="'
+          + thumbyUrl
+          + serverUrl
+          + firstLink
+          + thumbSize
+          + '" /></a></div></div></div>';
+        }
+
+      $('.field-name-field-edoweb-title').once().after($(pictureField));
+      $('.field-name-field-edoweb-preview').after($(this));
       });
 
 

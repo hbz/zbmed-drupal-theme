@@ -425,7 +425,12 @@ ul.edoweb-facets-available a:hover {
   display:none;
 }
 
-/* .field-name-field-edoweb-struct-child th,td {
+.field-name-field-edoweb-struct-child thead {
   display:none;
-} */
+}
+
+.field-name-field-edoweb-struct-child .field-label-above {
+  display:none;
+}
+ 
 
