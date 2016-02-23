@@ -41,10 +41,13 @@
       if( dataLink.html() ) {
 
         var ref = $(this).attr('href');
-        $(this).find('.field-label').text('Dateiliste:');
+        $(this).find('.field-label:first').text('Dateiliste:');
         var firstLink = $('.download').attr('href');
-        var pictureField = '<div class="field field-name-field-edoweb-preview"><div class="field-label"></div><div class="field-items"><div class="field-item" property="regal:hasData">'
-          + '<a class="thumb" href="' + serverUrl + firstLink + '" target="_blank">'
+        var pictureField = '<div class="field field-name-field-edoweb-preview"><div class="field-label"></div>'
+          + '<div class="field-items">'
+          // + '<div class="field-item" style="display:none" property="dc:format">image/jpeg</div>' 
+          + '<div class="field-item thumb" property="regal:hasPart">'
+          + '<a href="' + serverUrl + firstLink + '" target="_blank">'
           + '<img src="'
           + thumbyUrl
           + serverUrl
@@ -58,7 +61,7 @@
       });
 
 
-    }
+    } 
   };
 
 
