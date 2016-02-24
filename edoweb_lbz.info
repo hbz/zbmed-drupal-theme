@@ -13,6 +13,7 @@ stylesheets[all][] = batch-icons/batch-icons.css
 stylesheets[all][] = robotocondensed/stylesheet.css
 stylesheets[all][] = TabletGothicNarrow/stylesheet.css
 scripts[] = theme.js
+scripts[] = viewers.js
 scripts[] = facets.js
 scripts[] = jquery.cookie.js
 scripts[] = openseadragon.min.js
