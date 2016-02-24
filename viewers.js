@@ -109,7 +109,7 @@
     attach: function (context, settings) {
 
       var audioUrl = null;
-      var audiothumb = $('.field-item[property:dc-format]:contains("audio/mp3")', context);
+      var audiothumb = $('.field-item[property:dc-format]:contains("audio/mpeg")', context);
       var mime = audiothumb.html();
       var thumbreference = audiothumb.parent().parent().parent().find('.thumb a');
       audioUrl = thumbreference.attr('href');
