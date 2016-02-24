@@ -417,6 +417,20 @@ ul.edoweb-facets-available a:hover {
   display:none;
 } 
 
-.field-name-field-edoweb-parallel td {
-   display:none;
+.default .field-name-field-edoweb-title {
+  display:none;
+} 
+
+.default .field-name-field-edoweb-parallel td {
+  display:none;
 }
+
+.default .field-name-field-edoweb-struct-child thead {
+  display:none;
+}
+
+/* .field-name-field-edoweb-struct-child .field-label-above .field-label {
+  display:none;
+} 
+ */
+
