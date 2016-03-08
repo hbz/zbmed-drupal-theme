@@ -33,7 +33,7 @@
     var fieldLabel = 'Download:';
     var thumbyUrl =  Drupal.settings.edoweb.thumbyServiceUrl + '?url=';
     var thumbSize = '&size=150';
-    var serverUrl = 'https://ellinet-dev.hbz-nrw.de'
+    var serverUrl = 'https://' + window.location.hostname;
 
     $('.field-name-field-edoweb-struct-child', context).ajaxComplete(function() {
 
