@@ -31,7 +31,7 @@
 
     var fieldLabelParent = 'Dateiliste:';
     var fieldLabel = 'Download:';
-    var thumbyUrl = 'https://api.ellinet-dev.hbz-nrw.de/tools/thumby?url=';
+    var thumbyUrl =  Drupal.settings.edoweb.thumbyServiceUrl + '?url=';
     var thumbSize = '&size=150';
     var serverUrl = 'https://ellinet-dev.hbz-nrw.de'
 

@@ -4,7 +4,7 @@
     attach: function (context, settings) {
       // Prepare Service
       //var viewer = null;
-      var serviceUrl = "https://api.ellinet-dev.hbz-nrw.de/deepzoom/api/getDzi?imageUrl=";
+      var serviceUrl = Drupal.settings.edoweb.deepzoomServiceUrl + '?imageUrl=';
       var callbackString = "&callback=?";
       var imageUrl = null;
       //var viewer=null;
