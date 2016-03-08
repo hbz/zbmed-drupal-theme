@@ -63,6 +63,13 @@ table {
   font-size: 0.9em;
 }
 
+#content h2.title-suffix {
+  line-height: 1em;
+  margin-top: -0.3em;
+  margin-bottom: 1em;
+  font-size: 1.1em;
+}
+
 .fieldset-legend {
   font-weight: 600;
   text-shadow: none;
@@ -227,6 +234,12 @@ table:not([tableheader-processed]) th.headerSortUp {
 }
 
 table h1{
+  font-size: 1.2em;
+  font-weight: 400;
+  margin-top: 3px;
+}
+
+.item-list .title{
   font-size: 1.2em;
   font-weight: 400;
   margin-top: 3px;
