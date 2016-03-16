@@ -32,7 +32,7 @@
     var fieldLabelParent = 'Dateiliste:';
     var fieldLabel = 'Download:';
     var thumbyUrl =  Drupal.settings.edoweb.thumbyServiceUrl + '?url=';
-    var thumbSize = '&size=150';
+    var thumbSize = '&size=250';
     var serverUrl = 'https://' + window.location.hostname;
 
     $('.field-name-field-edoweb-struct-child', context).ajaxComplete(function() {
