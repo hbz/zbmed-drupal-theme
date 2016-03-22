@@ -440,13 +440,25 @@ ul.edoweb-facets-available a:hover {
 
 .default .field-name-field-edoweb-creator td {
   padding: 0px;
-  margin:0px;
+  margin: 0px;
 
 }
 
 .default .field-name-field-edoweb-creator td h1 {
   
-  margin:0px;
+  margin: 0px;
+
+}
+
+.default .field-name-field-edoweb-contributor td {
+  padding: 0px;
+  margin: 0px;
+
+}
+
+.default .field-name-field-edoweb-contributor td h1 {
+  
+  margin: 0px;
 
 }
 
@@ -461,4 +473,3 @@ ul.edoweb-facets-available a:hover {
   display:none;
 } 
  */
-
