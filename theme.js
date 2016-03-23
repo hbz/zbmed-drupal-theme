@@ -35,6 +35,15 @@
     var thumbSize = '&size=250';
     var serverUrl = 'https://' + window.location.hostname;
 
+    $('.edoweb-tree a[data-bundle="file"', context).once(function(){
+      $('.field-name-field-edoweb-struct-child').find('.field-label:first').text(fieldLabelParent)
+    });
+    $('.edoweb-tree a[data-bundle="file"', context).each(function(){
+      var mimetype = $(this).parent().find('.download').attr('title').replace(/Download /, '').toLowerCase().replace(/-/, '/');
+      $('this').append('<p>' + mimetype + '</p>');
+    });
+
+
     $('.field-name-field-edoweb-struct-child', context).ajaxComplete(function() {
 
       $(this).find('.edoweb[data-entity-bundle="file"').once(function() {
