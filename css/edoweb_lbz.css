@@ -321,6 +321,12 @@ ul.edoweb-facets-available a:hover {
     box-shadow: inset 0px 0px 6px #ff9933;
 }
 
+.form-type-item {
+  padding-bottom:5px;
+  width: 95%,
+  float: left;
+}
+
 form, #edoweb-basic-search-entities-form {
   margin-bottom: 30px;
 

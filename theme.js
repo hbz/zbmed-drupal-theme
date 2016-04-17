@@ -35,40 +35,6 @@
     var thumbSize = '&size=250';
     var serverUrl = 'https://' + window.location.hostname;
 
-    $('ul.edoweb-tree li.active > .item-list > ul > li', context).children('a[data-bundle="file"]').once(function(){
-      //$(this).append('<h1>Treffer!</h1>');
-      $('.field-name-field-edoweb-struct-child').find('.field-label:first').text(fieldLabelParent);
-    });
-
-    $('ul.edoweb-tree li.active > .item-list > ul > li', context).children('a[data-bundle="file"]').once(function(){
-       var mimetype = $('.edoweb-tree li.active > .item-list > ul > li > a[data-bundle="file"]', context).parent().find('.download').attr('title').replace(/Download /, '').toLowerCase().replace(/-/, '/');
-
-//    $('.field-name-field-edoweb-struct-child', context).ajaxComplete(function() {
-
-         var dataLink = $('.field-name-field-edoweb-struct-child', context).find('.field-item a').attr('href') + '/data';
-         var pictureField = '<div class="field field-name-field-edoweb-preview">'
-           + '<div class="field-label"></div>'
-           + '<div class="field-item thumb" >'
-           + '<a href="' + serverUrl + dataLink + '" target="_blank">'
-           + '<img src="'
-           + thumbyUrl
-           + serverUrl
-           + dataLink
-           + thumbSize
-           + '" /></a>'
-           + '</div>'
-           + '<div class="field field-name-field-edoweb-filetype" >'
-           + '<div class="field-items">'
-           + '<div class="field-item" property="dc:format" style="display: none;">' + mimetype + '</div>'
-           + '</div>'
-           + '</div>'
-           + '</div>';
-
-         $('.field-name-field-edoweb-title').once().after($(pictureField));
-
-    });
-
-
 
     $('.field-name-field-edoweb-struct-child', context).ajaxComplete(function() {
 
