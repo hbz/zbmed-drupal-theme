@@ -38,6 +38,9 @@
   -ms-user-select: none;
   user-select: none;
 }
+.octicon-link-external {
+    font: 12px/1px octicons;
+}
 
 .octicon-alert:before { content: '\f02d'} /*  */
 .octicon-alignment-align:before { content: '\f08a'} /*  */
