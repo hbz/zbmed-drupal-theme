@@ -35,9 +35,10 @@
     var thumbSize = '&size=250';
     var serverUrl = 'https://' + window.location.hostname;
 
+
     $('.field-name-field-edoweb-struct-child', context).ajaxComplete(function() {
 
-      $(this).find('.edoweb[data-entity-bundle="file"').once(function() {
+      $(this).find('.edoweb[data-entity-bundle="file"]').once(function() {
 
        $('.field-name-field-edoweb-struct-child .field-label').text(fieldLabel);
        $('.field-name-field-edoweb-struct-child').find('.field-label:first').text(fieldLabelParent);

@@ -327,6 +327,22 @@ ul.edoweb-facets-available a:hover {
   float: left;
 }
 
+form, #edoweb-basic-search-entities-form {
+  margin-bottom: 30px;
+
+}
+
+#edoweb-basic-search-entities-form input.form-text, textarea.form-textarea, select.form-select {
+  border: 1px solid #375b9a;
+  float: left;
+}
+
+#edoweb-basic-search-entities-form div.form-type-checkbox {
+  margin-bottom: 0.2em;
+  margin-top: 0em;
+}
+
+
 .form-type-item a[data-bundle], #edoweb-tree-menu a[data-bundle] {
   margin: 0px;
   padding-left: 10px;

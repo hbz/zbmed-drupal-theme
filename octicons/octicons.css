@@ -41,6 +41,7 @@
 .octicon-link-external{
   font: normal normal 12px octicons;
 }
+
 .octicon-alert:before { content: '\f02d'} /*  */
 .octicon-alignment-align:before { content: '\f08a'} /*  */
 .octicon-alignment-aligned-to:before { content: '\f08e'} /*  */
