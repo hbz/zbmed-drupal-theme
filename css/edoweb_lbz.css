@@ -344,7 +344,7 @@ form, #edoweb-basic-search-entities-form {
 
 #edoweb-basic-search-entities-form div.form-type-checkbox {
   margin-bottom: 0.2em;
-  margin-top: 0em;
+  margin-top: 0.2em;
 }
 
 .form-type-item a[data-bundle], #edoweb-tree-menu a[data-bundle] {
