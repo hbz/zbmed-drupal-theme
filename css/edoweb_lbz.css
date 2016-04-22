@@ -338,7 +338,7 @@ form, #edoweb-basic-search-entities-form {
   float: left;
 }
 
-#edoweb-basic-search-entities-form div.form-submit, button {
+#edoweb-basic-search-entities-form input.form-submit, button {
   margin-bottom: 0.1em;
 }
 
