@@ -334,14 +334,18 @@ form, #edoweb-basic-search-entities-form {
 
 #edoweb-basic-search-entities-form input.form-text, textarea.form-textarea, select.form-select {
   border: 1px solid #375b9a;
+  margin-right: 3px;
   float: left;
+}
+
+#edoweb-basic-search-entities-form input.form-submit, button {
+  margin-bottom: 0.1em;
 }
 
 #edoweb-basic-search-entities-form div.form-type-checkbox {
   margin-bottom: 0.2em;
-  margin-top: 0em;
+  margin-top: 0.2em;
 }
-
 
 .form-type-item a[data-bundle], #edoweb-tree-menu a[data-bundle] {
   margin: 0px;
