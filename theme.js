@@ -35,8 +35,13 @@
     var thumbSize = '&size=250';
     var serverUrl = 'https://' + window.location.hostname;
 
+   
     $('.field-name-field-edoweb-struct-child', context).ajaxComplete(function() {
 
+     if($('.active :contains("View")').html() == null && $('.active :contains("Ansicht")').html() == null){
+    	    	return;
+     }
+    	    
       $(this).find('.edoweb[data-entity-bundle="file"').once(function() {
 
        $('.field-name-field-edoweb-struct-child .field-label').text(fieldLabel);
