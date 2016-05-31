@@ -457,8 +457,19 @@ ul.edoweb-facets-available a:hover {
 
 }
 
-/* .field-name-field-edoweb-struct-child .field-label-above .field-label {
-  display:none;
+.item-list .edoweb.entity.compact.jquery-once-2-processed .title {
+  display:none !important;
 } 
- */
-
+ 
+.field-name-field-edoweb-datastream .field-label {
+   display:none !important;
+ }
+ 
+.field-name-field-edoweb-struct-child .entity-label-file {
+   display:none !important;
+ }
+ 
+ 
+.field-name-field-mab-710{
+	display: none;
+}
