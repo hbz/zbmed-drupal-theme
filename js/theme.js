@@ -27,7 +27,7 @@
    
     $('.field-name-field-edoweb-struct-child', context).ajaxComplete(function() {
 
-     if($('.active :contains("View")').html() == null && $('.active :contains("Ansicht")').html() == null){
+     if($('.active :contains("Edit")').html() != null || $('.active :contains("Bearbeiten")').html() != null){
     	    	return;
      }
     	    
