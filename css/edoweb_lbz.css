@@ -25,6 +25,19 @@
 
 }
 
+#header #edit-query-0-term {
+  border: 1px solid #ededed;
+  background: #f6f6f6;
+
+}
+
+#header #edit-query-0-term:focus {
+  border: 1px solid #ededed;
+  background: #375b9a;
+
+}
+
+
 .tabs.primary {
   font-family: "TabletGothicNarrow", sans-serif;
 
