@@ -61,7 +61,7 @@ body {
 
 body, table, input, label, .fieldset-legend, .ui-widget {
   font-family: "TabletGothicNarrow", "roboto_condensedregular",sans-serif;
-  line-height: 1.2em;
+  line-height: 1.5em;
   color: #4b4b4d;
   max-width: 1650px;
 }
@@ -156,7 +156,7 @@ a:hover {
 }
 div.field {
   clear: both;
-  border-bottom: 1px solid #bbb;
+  /* border-bottom: 1px solid #bbb; */
 }
 
 div.field .field-label {
