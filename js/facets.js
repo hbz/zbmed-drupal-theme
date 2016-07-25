@@ -126,9 +126,6 @@
           .attr('title', target.html())
           .html('<span class="' + iconCss + '"></span>');
       }
-
-        $('#edit-query-0-submit', context).prepend($('<span>&nbsp;</span>').addClass('octicon-search'));
-
       
     }
   };
