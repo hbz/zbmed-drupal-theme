@@ -62,6 +62,7 @@ form, #edoweb-basic-search-entities-form {
 
 #edit-query-0-submit {
     background-image: none;
+    box-shadow: none;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -69,8 +70,9 @@ form, #edoweb-basic-search-entities-form {
     font-weight: normal;
     text-align: center;
     margin-bottom: 1em;
-    margin-right: -70px;
+    margin-left: -70px;
     border-radius: 0px;
+    height: 2em;
 font-family: "TabletGothicNarrow", sans-serif;
 }
 
