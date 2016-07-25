@@ -43,35 +43,33 @@ form, #edoweb-basic-search-entities-form {
 /* introduce zbmed publisso design to search field */
 #edit-query-0-term {
   border: 1px solid #ededed;
-  border-right: 0px;
   background: #f6f6f6;
+  height: 2em;
 
 }
 
 #edit-query-0-term:focus {
   border: 1px solid #375b9a;
-  border-right: 0px;
 
 }
 
 #edit-query-0-submit:focus
- {
-  border: 1px solid #375b9a;
-  border-left: 0px;
+#edit-query-0-submit:hover
+{
+   
+  
 }
 
 #edit-query-0-submit {
     background-image: none;
-    background: #f6f6f6;
-    border: 1px solid #ededed;
-    border-left: 0px;
+    background: transparent;
+    border: none;
     cursor: pointer;
     font-size: 1em;
     font-weight: normal;
     text-align: center;
     margin-bottom: 1em;
-    margin-right: 0.6em;
-    padding: 4px 17px;
+    margin-right: -70px;
     border-radius: 0px;
 font-family: "TabletGothicNarrow", sans-serif;
 }
@@ -319,7 +317,6 @@ fieldset.edoweb-entity-list {
 }
 
 #block-edoweb-edoweb-search-block {
-  text-align: right;
 }
 
 
