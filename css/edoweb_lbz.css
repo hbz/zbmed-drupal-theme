@@ -89,6 +89,11 @@ font-family: "TabletGothicNarrow", sans-serif;
 /* end of search field adatpion */
 
 /* hack for search field block in production  */
+
+#edoweb-basic-search-entities-form--2 input.form-text, textarea.form-textarea, select.form-select {
+  float: left;
+}
+
 #edit-query-0-term--2 {
   border: 1px solid #ededed;
   background: #f6f6f6;
