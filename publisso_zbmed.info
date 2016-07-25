@@ -16,6 +16,7 @@ scripts[] = js/theme.js
 scripts[] = js/viewers.js
 scripts[] = js/facets.js
 scripts[] = js/isbnformat.js
+scripts[] = js/searchbutton.js
 scripts[] = lib/jquery.cookie.js
 scripts[] = lib/openseadragon.min.js
 scripts[] = lib/jquery-ui.min.js

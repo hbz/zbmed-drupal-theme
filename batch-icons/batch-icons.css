@@ -28,6 +28,22 @@
   padding-left: 5px;
   padding-right: 5px;
 }
+
+.large-batch-icons {
+  font: normal normal 24px batch-icons;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .mega-batch-icons {
   font: normal normal 32px batch-icons;
   line-height: 1;
@@ -49,5 +65,5 @@
 .batch-icon-concat:before { content: '\f143'}
 .batch-icon-zoom-plus:before { content: '\f098'}
 .batch-icon-zoom-minus:before { content: '\f099'}
-
+.batch-icon-search:before { content: '\f094'}
 
