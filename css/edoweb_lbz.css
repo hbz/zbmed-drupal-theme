@@ -25,6 +25,22 @@
 
 }
 
+/* restructure search field for EL */
+form, #edoweb-basic-search-entities-form {
+  margin-bottom: 30px;
+
+}
+
+#edoweb-basic-search-entities-form input.form-text, textarea.form-textarea, select.form-select {
+  float: left;
+}
+
+#edoweb-basic-search-entities-form div.form-type-checkbox {
+  margin-bottom: 0.1em;
+  margin-top: 0em;
+}
+
+/* introduce zbmed publisso design to search field */
 #edit-query-0-term {
   border: 1px solid #ededed;
   background: #f6f6f6;
