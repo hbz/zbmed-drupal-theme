@@ -76,7 +76,7 @@ form, #edoweb-basic-search-entities-form {
 font-family: "TabletGothicNarrow", sans-serif;
 }
 
-.region-header .form-text #edit-query-0-term {
+.region-header .form-text {
   width: 250px;
   
 }
