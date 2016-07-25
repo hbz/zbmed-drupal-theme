@@ -76,6 +76,15 @@ form, #edoweb-basic-search-entities-form {
 font-family: "TabletGothicNarrow", sans-serif;
 }
 
+.region-header .form-text #edit-query-0-term {
+  width: 250px;
+  
+}
+
+.with-secondary-menu .region-header {
+    margin-top: -1em;
+}
+
 /* end of search field adatpion */
 
 .tabs.primary {
