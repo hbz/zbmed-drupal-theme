@@ -90,15 +90,13 @@ font-family: "TabletGothicNarrow", sans-serif;
 
 /* hack for search field block in production  */
 
-#edoweb-basic-search-entities-form--2 input.form-text, textarea.form-textarea, select.form-select {
-  float: left;
-}
 
 #edit-query-0-term--2 {
   border: 1px solid #ededed;
   background: #f6f6f6;
   height: 2em;
   font-size: 1em;
+  float: left;
 
 }
 
