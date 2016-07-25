@@ -78,7 +78,7 @@ font-family: "TabletGothicNarrow", sans-serif;
 }
 
 .region-header .form-text {
-  width: 250px;
+  width: 80%;
   
 }
 
@@ -87,6 +87,55 @@ font-family: "TabletGothicNarrow", sans-serif;
 }
 
 /* end of search field adatpion */
+
+/* hack for search field block in production  */
+#edit-query-0-term--2 {
+  border: 1px solid #ededed;
+  background: #f6f6f6;
+  height: 2em;
+  font-size: 1em;
+
+}
+
+#edit-query-0-term--2:focus {
+  border: 1px solid #375b9a;
+
+}
+
+#edit-query-0-submit:focus
+#edit-query-0-submit:hover
+{
+   
+  
+}
+
+#edit-query-0-submit--2 {
+    background-image: none;
+    box-shadow: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 1em;
+    margin-left: -60px;
+    border-radius: 0px;
+    height: 100%;
+font-family: "TabletGothicNarrow", sans-serif;
+}
+
+.region-header .form-text {
+  width: 80%px;
+  
+}
+
+.with-secondary-menu .region-header {
+    margin-top: -1em;
+}
+
+/* end of search field adatpion */
+
 
 .tabs.primary {
   font-family: "TabletGothicNarrow", sans-serif;
