@@ -43,15 +43,40 @@ form, #edoweb-basic-search-entities-form {
 /* introduce zbmed publisso design to search field */
 #edit-query-0-term {
   border: 1px solid #ededed;
+  border-right: 0px;
   background: #f6f6f6;
 
 }
 
 #edit-query-0-term:focus {
   border: 1px solid #375b9a;
+  border-right: 0px;
 
 }
 
+#edit-query-0-submit:focus
+ {
+  border: 1px solid #375b9a;
+  border-left: 0px;
+}
+
+#edit-query-0-submit {
+    background-image: none;
+    background: #f6f6f6;
+    border: 1px solid #ededed;
+    border-left: 0px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 1em;
+    margin-right: 0.6em;
+    padding: 4px 17px;
+    border-radius: 0px;
+font-family: "TabletGothicNarrow", sans-serif;
+}
+
+/* end of search field adatpion */
 
 .tabs.primary {
   font-family: "TabletGothicNarrow", sans-serif;
@@ -118,7 +143,7 @@ input.form-submit:focus,
 button:hover,
 button:focus {
   background: #dedede;
- box-shadow: 0px 0px 6px #ff9933;
+  box-shadow: 0px 0px 6px #ff9933;
 }
 
 input.form-submit, button {
@@ -142,6 +167,8 @@ input.form-submit, button {
     border-radius: 7px;
 font-family: "TabletGothicNarrow", sans-serif;
 }
+
+
 a:hover {
   color: #99bfd9;
 }
