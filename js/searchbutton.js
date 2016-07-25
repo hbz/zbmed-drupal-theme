@@ -4,7 +4,7 @@
     Drupal.behaviors.edoweb_drupal_theme_searchbutton = {
     attach: function (context, settings) {
 
-      replaceWithButton($('#edit-query-0-submit'), 'batch-icons batch-icon-search', context);
+      replaceWithButton($('#edit-query-0-submit'), 'large-batch-icons batch-icon-search', context);
 
       function replaceWithButton(target, iconCss) {
         target.after('<button type="submit" id="edit-query-0-submit" style="margin-top: 0.3em;"><span class="' + iconCss + '"></span></button>');
