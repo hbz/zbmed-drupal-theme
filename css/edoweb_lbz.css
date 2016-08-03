@@ -598,10 +598,13 @@ ul.edoweb-facets-available a:hover {
 #block-edoweb-edoweb-search-block {
   position: absolute;
   top: 100px;
-  right: 0px;
+  right: -60px;
+  width: 350px;
 }
 #edoweb-basic-search-entities-form--2 {
   margin-bottom: 0;
+}
+#edit-query-0-term--2 {
 }
 
 /* publisso menu  */
@@ -623,21 +626,21 @@ ul.edoweb-facets-available a:hover {
 .region-header .block-menu ul > li {
   display: inline-flex;
 }
-.region-header .block-menu ul > li > a {
+#block-menu-menu-publisso-menue > div > ul > li > a {
   padding: 15px 20px;
 }
-.region-header .block-menu ul > li > a:hover {
+#block-menu-menu-publisso-menue > div > ul > li > a:hover {
   background-color: #375b9a;
   color: #ffffff;
 }
-.region-header .block-menu ul > li > a {
+#block-menu-menu-publisso-menue > div > ul > li > a {
   font-size: 18px;
   display: inline;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 /* nav .level2 */
-.region-header .block-menu ul > li > ul {
+#block-menu-menu-publisso-menue > div > ul > li > ul {
   border-top: 5px solid #375b9a;
   background-color: #ffffff;
   min-height: 78px;
@@ -648,24 +651,30 @@ ul.edoweb-facets-available a:hover {
   width: 100%;
   z-index: 99999;
 }
-.region-header .block-menu ul > li > ul li a {
+#block-menu-menu-publisso-menue > div > ul > li > ul > li > a {
   padding: 15px 20px;
   background-color: #ffffff;
 }
-.region-header .block-menu ul > li > ul li a:hover {
-  padding: 15px 20px;
-  background-color: #ffffff;
-  color: #4b4b4d;
+#block-menu-menu-publisso-menue > div > ul > li > ul > li > a:hover {
   text-decoration: underline
 }
-.region-header .block-menu ul li ul li a {
+#block-menu-menu-publisso-menue > div > ul > li > ul > li > a {
   font-size: 16px;
   text-transform: None;
 }
+/* 3. level */
+#block-menu-menu-publisso-menue > div > ul > li > ul > li > ul {
+  position: relative;
+}
+#block-menu-menu-publisso-menue > div > ul > li > ul > li > ul > li {
+  display: block;
+  text-transform: None;
+}
 /* submenus only on hover */
-.region-header .block-menu ul > li > ul { 
+
+#block-menu-menu-publisso-menue > div > ul > li > ul { 
   display: none;
 }
-.region-header .block-menu ul > li:hover > ul { 
+#block-menu-menu-publisso-menue > div > ul > li:hover > ul { 
   display: inline;
 }
