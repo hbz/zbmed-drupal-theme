@@ -593,3 +593,70 @@ ul.edoweb-facets-available a:hover {
 .field-name-field-edoweb-identifier-ht{
 	display: none;
 }
+
+/* publisso menu  */
+#block-menu-menu-publisso-menue {
+}
+.region-header {
+  float: None;
+  width: 100%;
+}
+.region-header .content {
+  float: right;
+}
+.region-header .block-menu {
+  width: 100%;
+}
+.region-header a {
+  color: #4b4b4d;
+}
+.region-header .block-menu ul {
+  border-bottom: 
+}
+.region-header .block-menu ul > li {
+  display: inline-flex;
+}
+.region-header .block-menu ul > li > a {
+  padding: 15px 20px;
+}
+.region-header .block-menu ul > li > a:hover {
+  background-color: #375b9a;
+  color: #ffffff;
+}
+.region-header .block-menu ul > li > a {
+  font-size: 18px;
+  display: inline;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+/* nav .level2 */
+.region-header .block-menu ul > li > ul {
+  border-top: 5px solid #375b9a;
+  min-height: 78px;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: 225px;
+  width: 100%;
+  z-index: 99999;
+}
+.region-header .block-menu ul > li > ul li a {
+  padding: 15px 20px;
+  background-color: #ffffff;
+}
+.region-header .block-menu ul > li > ul li a:hover {
+  padding: 15px 20px;
+  background-color: #ffffff;
+  color: #4b4b4d;
+  text-decoration: underline
+}
+.region-header .block-menu ul li ul li a {
+  font-size: 16px;
+  text-transform: None;
+}
+.region-header .block-menu ul > li > ul { 
+  display: none;
+}
+.region-header .block-menu ul > li:hover > ul { 
+  display: inline;
+}
