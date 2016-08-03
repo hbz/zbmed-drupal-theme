@@ -594,6 +594,16 @@ ul.edoweb-facets-available a:hover {
 	display: none;
 }
 
+/* suche im Header */
+#block-edoweb-edoweb-search-block {
+  position: absolute;
+  top: 100px;
+  right: 0px;
+}
+#edoweb-basic-search-entities-form--2 {
+  margin-bottom: 0;
+}
+
 /* publisso menu  */
 #block-menu-menu-publisso-menue {
 }
@@ -609,9 +619,6 @@ ul.edoweb-facets-available a:hover {
 }
 .region-header a {
   color: #4b4b4d;
-}
-.region-header .block-menu ul {
-  border-bottom: 
 }
 .region-header .block-menu ul > li {
   display: inline-flex;
@@ -632,6 +639,7 @@ ul.edoweb-facets-available a:hover {
 /* nav .level2 */
 .region-header .block-menu ul > li > ul {
   border-top: 5px solid #375b9a;
+  background-color: #ffffff;
   min-height: 78px;
   position: absolute;
   right: 0;
@@ -654,6 +662,7 @@ ul.edoweb-facets-available a:hover {
   font-size: 16px;
   text-transform: None;
 }
+/* submenus only on hover */
 .region-header .block-menu ul > li > ul { 
   display: none;
 }
