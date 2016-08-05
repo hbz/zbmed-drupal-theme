@@ -595,6 +595,8 @@ ul.edoweb-facets-available a:hover {
 }
 
 /* Suche im Header */
+/*
+*/
 #block-edoweb-edoweb-search-block {
   position: absolute;
   top: 100px;
@@ -605,7 +607,6 @@ ul.edoweb-facets-available a:hover {
 #edoweb-basic-search-entities-form--2 {
   margin-bottom: 0;
 }
-
 /* publisso menu  */
 #block-menu-menu-publisso-menue {
 }
@@ -618,62 +619,78 @@ ul.edoweb-facets-available a:hover {
 }
 .region-header .block-menu {
   width: 100%;
+  text-rendering: optimizelegibility;
 }
 .region-header a {
   color: #4b4b4d;
 }
-.region-header .block-menu ul > li {
+.region-header .block-menu ul > li,
+.region-header .block-menu ul > li > a {
   display: inline-flex;
 }
 #block-menu-menu-publisso-menue > div > ul > li > a {
   padding: 15px 20px;
-}
-#block-menu-menu-publisso-menue > div > ul > li > a:hover {
-  background-color: #375b9a;
-  color: #ffffff;
-}
-#block-menu-menu-publisso-menue > div > ul > li > a {
   font-size: 18px;
   display: inline;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
-/* nav .level2 */
+#block-menu-menu-publisso-menue > div > ul > li > a:hover {
+  background-color: #375b9a;
+  color: #ffffff;
+}
+/* Level 2 */
 #block-menu-menu-publisso-menue > div > ul > li > ul {
+  display: inline;
   border-top: 5px solid #375b9a;
   background-color: #ffffff;
   min-height: 78px;
   position: absolute;
   right: 0;
   text-align: right;
+  font-size: 16px;
   top: 225px;
   width: 100%;
   z-index: 99999;
 }
+#block-menu-menu-publisso-menue > div > ul > li > ul > li {
+  display: inline;
+}
 #block-menu-menu-publisso-menue > div > ul > li > ul > li > a {
   padding: 15px 20px;
   background-color: #ffffff;
+  text-align: left;
+  text-transform: None;
+  width: 150px;
 }
 #block-menu-menu-publisso-menue > div > ul > li > ul > li > a:hover {
   text-decoration: underline
 }
-#block-menu-menu-publisso-menue > div > ul > li > ul > li > a {
-  font-size: 16px;
-  text-transform: None;
-}
-/* 3. level */
+/* Level 3 */
 #block-menu-menu-publisso-menue > div > ul > li > ul > li > ul {
-  position: relative;
+  font-size: 16px;
+  display: inline;
+  background-color: #ffffff;
+  position:absolute;
+  top: 45px;
+  margin-left: -175px
 }
 #block-menu-menu-publisso-menue > div > ul > li > ul > li > ul > li {
   display: block;
   text-transform: None;
 }
 /* submenus only on hover */
-
+/* Level 2 */
 #block-menu-menu-publisso-menue > div > ul > li > ul { 
   display: none;
 }
 #block-menu-menu-publisso-menue > div > ul > li:hover > ul { 
+  display: inline;
+}
+/* Level 3 */
+#block-menu-menu-publisso-menue > div > ul > li > ul > li > ul { 
+  display: none;
+}
+#block-menu-menu-publisso-menue > div > ul > li > ul > li:hover > ul { 
   display: inline;
 }
