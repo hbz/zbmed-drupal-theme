@@ -626,24 +626,32 @@ ul.edoweb-facets-available a:hover {
   overflow: auto;
   position: relative;
   clip: auto;
-  color:#000;
+  color: #4b4b4d;
+  display: block;
+  font-size: 0px;
+  padding: 10px 12px 1px 12px;
+  margin-top: 0px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 #block-menu-menu-publisso-menue h2.element-invisible::before {
   font-family: "Publisso";
-  content: "r";
+  font-size: 19px;
+  content: "f";
 }
 #block-menu-menu-publisso-menue .content {
-  margin-top: 20px;
+  margin-top: 42px;
 }
 .region-header a {
-		color: #4b4b4d;
+  color: #4b4b4d;
 }
 #block-menu-menu-publisso-menue  {
   position: absolute;
   z-index: 9999;
   top: 0;
   left: 0;
-  background-color: #F6F6F6;
+  background-color: #ffffff;
 }
 #block-menu-menu-publisso-menue > div > ul > li > a {
   padding: 15px 20px;
@@ -660,9 +668,18 @@ ul.edoweb-facets-available a:hover {
 
 @media (min-width: 769px) {
   /* publisso menu */
+  #block-menu-menu-publisso-menue h2.element-invisible {
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
   #block-menu-menu-publisso-menue {
   position: static;
   background-color: #ffffff;
+  }
+  #block-menu-menu-publisso-menue .content {
+    margin-top: 0px;
   }
   .region-header {
     float: None;
