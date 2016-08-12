@@ -665,11 +665,27 @@ ul.edoweb-facets-available a:hover {
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
-#block-menu-menu-publisso-menue > div > ul > li > a:hover {
+#block-menu-menu-publisso-menue > div > ul > li > ul > li {
+  border-top: 1px solid #d9d9d9;
+}
+#block-menu-menu-publisso-menue > div > ul > li > ul {
+    background-color: #f6f6f6;
+    text-align: left;
+    font-size: 16px;
+ }
+#block-menu-menu-publisso-menue > div > ul > li:hover > a {
   background-color: #375b9a;
   color: #ffffff;
 }
-
+#block-menu-menu-publisso-menue > div > ul > li > ul  a:hover {
+  text-decoration: underline;
+}
+#block-menu-menu-publisso-menue > div > ul > li > ul > li > a {
+  padding: 10px 20px;
+}
+#block-menu-menu-publisso-menue > div > ul > li > ul > li > ul > li > a {
+  padding: 10px 30px;
+}
 @media (min-width: 769px) {
   /* publisso menu */
   #block-menu-menu-publisso-menue h2.element-invisible {
