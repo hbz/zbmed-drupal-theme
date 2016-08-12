@@ -644,8 +644,10 @@ ul.edoweb-facets-available a:hover {
   content: "r";
 }
 #block-menu-menu-publisso-menue .content {
-  margin-top: 42px;
+  margin-top: 0px;
   display: none;
+  position: absolute;
+  top: 42px;
 }
 .region-header a {
   color: #4b4b4d;
@@ -701,6 +703,7 @@ ul.edoweb-facets-available a:hover {
   #block-menu-menu-publisso-menue .content {
     margin-top: 0px;
     display: block;
+    position: static;
   }
   .region-header {
     float: None;
