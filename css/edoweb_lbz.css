@@ -593,3 +593,14 @@ ul.edoweb-facets-available a:hover {
 .field-name-field-edoweb-identifier-ht{
 	display: none;
 }
+
+/* css for institution pages */ 
+
+div.inst_logo {
+  float:left;
+ }
+
+div.inst_logo .field-item{
+  margin-left:0;
+  margin-right: 3em;
+}
