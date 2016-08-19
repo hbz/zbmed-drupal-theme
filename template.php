@@ -27,7 +27,7 @@
   }
 
   // Look for an appropriate template file for content types
-  function edoweb_lbz_preprocess_page(&$variables) {
+  function zbmed_drupal_theme_preprocess_page(&$variables) {
   if (isset($variables['node']->type)) {
     // If the content type's machine name is "my_machine_name" the file
     // name will be "page--my-machine-name.tpl.php".
@@ -35,5 +35,13 @@
     }
   }
 
+  // Look for an appropriate template file for content types
+  function zbmed_drupal_theme_preprocess_node(&$variables) {
+  if (isset($variables['node']->type)) {
+    // If the content type's machine name is "my_machine_name" the file
+    // name will be "page--my-machine-name.tpl.php".
+    $variables['theme_hook_suggestions'][] = 'node__' . $variables['node']->type;
+    }
+  }
   
 ?> 
