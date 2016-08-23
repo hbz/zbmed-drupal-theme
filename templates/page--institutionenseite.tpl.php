@@ -85,6 +85,7 @@
  * @see html.tpl.php
  */
 ?>
+<?php print scripts; ?>
 <div id="page-wrapper"><div id="page">
 
   <div id="header" class="<?php print $secondary_menu ? 'with-secondary-menu': 'without-secondary-menu'; ?>"><div class="section clearfix">
@@ -187,13 +188,15 @@
     <div id="content" class="column"><p>Debug: Institutionen-Template</p><div class="section">
       <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
       <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
+<!--
+      <?php print render($title_prefix); ?> 
       <?php if ($title): ?>
         <h1 class="title" id="page-title">
           <?php print $title; ?>
         </h1>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
+-->
       <?php if ($tabs): ?>
         <div class="tabs">
           <?php print render($tabs); ?>
@@ -246,3 +249,4 @@
   </div></div> <!-- /.section, /#footer-wrapper -->
 
 </div></div> <!-- /#page, /#page-wrapper -->
+<?php print $page_bottom; ?>
