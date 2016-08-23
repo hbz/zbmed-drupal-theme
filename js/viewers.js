@@ -4,7 +4,9 @@
     attach: function (context, settings) {
       // Prepare Service
       //var viewer = null;
-      var serviceUrl = Drupal.settings.edoweb.deepzoomServiceUrl + '?imageUrl=';
+      if ( Drupal.settings.deepzoomServiceUrl ){
+        var serviceUrl = Drupal.settings.deepzoomServiceUrl + '?imageUrl=';
+      }
       var callbackString = "&callback=?";
       var imageUrl = null;
       //var viewer=null;
