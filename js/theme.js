@@ -30,7 +30,7 @@
     var serverUrl = 'https://' + window.location.hostname;
     
     // Drupal.settings.edoweb is needed and available in edoweb module only
-    if ( Drupal.settings.edoweb.thumbyServiceUrl ) {
+    if ( Drupal.settings.edoweb ) {
       var thumbyUrl =  Drupal.settings.edoweb.thumbyServiceUrl + '?url=';
     }
    

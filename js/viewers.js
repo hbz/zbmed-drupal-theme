@@ -6,7 +6,7 @@
       //var viewer = null;
       
       // Drupal.settings.edoweb is needed and available in module edoweb only
-      if ( Drupal.settings.edoweb.deepzoomServiceUrl ) {
+      if ( Drupal.settings.edoweb ) {
         var serviceUrl = Drupal.settings.edoweb.deepzoomServiceUrl + '?imageUrl=';
       }
       var callbackString = "&callback=?";
