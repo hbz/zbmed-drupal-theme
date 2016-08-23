@@ -18,6 +18,12 @@
   Drupal.behaviors.edoweb_drupal_theme_child = {
     attach: function (context, settings) {
 
+    $('div[property="regal:doi bibo:doi"]').each(function() {
+        var link = $(this).html();
+        $(this).contents().wrap('<a href="http://dx.doi.org/'+link+'" target="blank"></a>');
+    });
+
+
     var fieldLabelParent = 'Dateiliste:';
     var fieldLabel = 'Download:';
     var thumbyUrl =  Drupal.settings.edoweb.thumbyServiceUrl + '?url=';
