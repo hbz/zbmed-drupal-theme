@@ -4,7 +4,11 @@
     attach: function (context, settings) {
       // Prepare Service
       //var viewer = null;
-      var serviceUrl = Drupal.settings.edoweb.deepzoomServiceUrl + '?imageUrl=';
+      
+      // Drupal.settings.edoweb is needed and available in module edoweb only
+      if ( Drupal.settings.edoweb ) {
+        var serviceUrl = Drupal.settings.edoweb.deepzoomServiceUrl + '?imageUrl=';
+      }
       var callbackString = "&callback=?";
       var imageUrl = null;
       //var viewer=null;
