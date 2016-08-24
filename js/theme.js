@@ -29,16 +29,19 @@
     attach: function (context, settings) {
 
     $('div[property="regal:doi bibo:doi"]').each(function() {
-	var link = $(this).html();
-	$(this).contents().wrap('<a href="http://dx.doi.org/'+link+'" target="blank"></a>');
-    });	
+        var link = $(this).html();
+        $(this).contents().wrap('<a href="http://dx.doi.org/'+link+'" target="_blank"></a>');
+    });
 
     var fieldLabelParent = 'Dateiliste:';
     var fieldLabel = 'Download:';
-    var thumbyUrl =  Drupal.settings.edoweb.thumbyServiceUrl + '?url=';
     var thumbSize = '&size=250';
     var serverUrl = 'https://' + window.location.hostname;
-
+    
+    // Drupal.settings.edoweb is needed and available in edoweb module only
+    if ( Drupal.settings.edoweb ) {
+      var thumbyUrl =  Drupal.settings.edoweb.thumbyServiceUrl + '?url=';
+    }
    
     $('.field-name-field-edoweb-struct-child', context).ajaxComplete(function() {
 
