@@ -26,10 +26,13 @@
 
     var fieldLabelParent = 'Dateiliste:';
     var fieldLabel = 'Download:';
-    var thumbyUrl =  Drupal.settings.edoweb.thumbyServiceUrl + '?url=';
     var thumbSize = '&size=250';
     var serverUrl = 'https://' + window.location.hostname;
-
+    
+    // Drupal.settings.edoweb is needed and available in edoweb module only
+    if ( Drupal.settings.edoweb ) {
+      var thumbyUrl =  Drupal.settings.edoweb.thumbyServiceUrl + '?url=';
+    }
    
     $('.field-name-field-edoweb-struct-child', context).ajaxComplete(function() {
 
