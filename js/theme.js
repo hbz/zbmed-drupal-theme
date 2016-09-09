@@ -1,5 +1,15 @@
 (function($) {
 
+  Drupal.behaviors.edoweb_drupal_theme_toggle_publissomenu = {
+    attach: function (context, settings) {
+      $( "#block-menu-menu-publisso-menue h2" ).click(function() {
+        $( "#block-menu-menu-publisso-menue h2" ).toggleClass('open');
+        $( "#block-menu-menu-publisso-menue .content" ).toggle( "slow", function() {
+        });
+      });
+    }
+  };
+
   Drupal.behaviors.edoweb_drupal_theme_entity_minimize = {
     attach: function (context, settings) {
     	
@@ -22,7 +32,6 @@
         var link = $(this).html();
         $(this).contents().wrap('<a href="http://dx.doi.org/'+link+'" target="_blank"></a>');
     });
-
 
     var fieldLabelParent = 'Dateiliste:';
     var fieldLabel = 'Download:';
