@@ -621,7 +621,7 @@ ul.edoweb-facets-available a:hover {
 }
 
 /* publisso menu */
-#block-menu-menu-publisso-menue h2.element-invisible {
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- h2.element-invisible {
   height: auto;
   overflow: auto;
   position: relative;
@@ -635,15 +635,15 @@ ul.edoweb-facets-available a:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
-#block-menu-menu-publisso-menue h2.element-invisible::before {
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- h2.element-invisible::before {
   font-family: "Publisso";
   font-size: 19px;
   content: "f";
 }
-#block-menu-menu-publisso-menue h2.open::before {
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- h2.open::before {
   content: "r";
 }
-#block-menu-menu-publisso-menue .content {
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- .content {
   margin-top: 0px;
   display: none;
   position: absolute;
@@ -652,14 +652,14 @@ ul.edoweb-facets-available a:hover {
 .region-header a {
   color: #4b4b4d;
 }
-#block-menu-menu-publisso-menue  {
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men-  {
   position: absolute;
   z-index: 9999;
   top: 0;
   left: 0;
   background-color: #ffffff;
 }
-#block-menu-menu-publisso-menue > div > ul > li > a {
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > a {
   padding: 15px 20px;
   font-size: 18px;
   display: block;
@@ -667,40 +667,40 @@ ul.edoweb-facets-available a:hover {
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
-#block-menu-menu-publisso-menue > div > ul > li > ul > li {
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li {
   border-top: 1px solid #d9d9d9;
 }
-#block-menu-menu-publisso-menue > div > ul > li > ul {
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul {
     background-color: #f6f6f6;
     text-align: left;
     font-size: 16px;
  }
-#block-menu-menu-publisso-menue > div > ul > li:hover > a {
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li:hover > a {
   background-color: #375b9a;
   color: #ffffff;
 }
-#block-menu-menu-publisso-menue > div > ul > li > ul  a:hover {
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul  a:hover {
   text-decoration: underline;
 }
-#block-menu-menu-publisso-menue > div > ul > li > ul > li > a {
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li > a {
   padding: 10px 20px;
 }
-#block-menu-menu-publisso-menue > div > ul > li > ul > li > ul > li > a {
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li > ul > li > a {
   padding: 10px 30px;
 }
 @media (min-width: 769px) {
   /* publisso menu */
-  #block-menu-menu-publisso-menue h2.element-invisible {
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- h2.element-invisible {
     height: 1px;
     overflow: hidden;
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px);
   }
-  #block-menu-menu-publisso-menue {
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- {
   position: static;
   background-color: #ffffff;
   }
-  #block-menu-menu-publisso-menue .content {
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- .content {
     margin-top: 0px;
     display: block;
     position: static;
@@ -721,7 +721,7 @@ ul.edoweb-facets-available a:hover {
     display: inline-flex;
   }
   /* Level 2 */
-  #block-menu-menu-publisso-menue > div > ul > li > ul {
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul {
     display: inline;
     border-top: 5px solid #375b9a;
     background-color: #ffffff;
@@ -734,21 +734,21 @@ ul.edoweb-facets-available a:hover {
     width: 100%;
     z-index: 99999;
    }
-  #block-menu-menu-publisso-menue > div > ul > li > ul > li {
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li {
     display: inline;
   }
-  #block-menu-menu-publisso-menue > div > ul > li > ul > li > a {
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li > a {
     padding: 15px 20px;
     background-color: #ffffff;
     text-align: left;
     text-transform: None;
     width: 150px;
   }
-  #block-menu-menu-publisso-menue > div > ul > li > ul > li > a:hover {
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li > a:hover {
     text-decoration: underline
   }
   /* Level 3 */
-  #block-menu-menu-publisso-menue > div > ul > li > ul > li > ul {
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li > ul {
     font-size: 16px;
     display: inline;
     background-color: #ffffff;
@@ -756,23 +756,23 @@ ul.edoweb-facets-available a:hover {
     top: 45px;
     margin-left: -175px
   }
-  #block-menu-menu-publisso-menue > div > ul > li > ul > li > ul > li {
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li > ul > li {
     display: block;
     text-transform: None;
   }
   /* submenus only on hover */
   /* Level 2 */
-  #block-menu-menu-publisso-menue > div > ul > li > ul { 
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul { 
     display: none;
   }
-  #block-menu-menu-publisso-menue > div > ul > li:hover > ul { 
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li:hover > ul { 
     display: inline;
   }
   /* Level 3 */
-  #block-menu-menu-publisso-menue > div > ul > li > ul > li > ul { 
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li > ul { 
     display: none;
   }
-  #block-menu-menu-publisso-menue > div > ul > li > ul > li:hover > ul { 
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li:hover > ul { 
     display: inline;
   }
 }
