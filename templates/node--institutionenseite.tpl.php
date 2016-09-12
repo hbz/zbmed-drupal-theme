@@ -119,6 +119,12 @@
     ?>
   </div>
 
+  <?php  
+         $title = 'Hallo';
+         $items = array( 'Testnr. 1' => 'Durchgeführt', 'Testnr. 2' => 'Begonnen', 'Testnr. 3' => 'Wartend' );
+         $type = 'ul';
+         // print render theme_item_list(array('items' => $items, 'title' => $title, 'type' => $type)); ?>
+
   <?php
     // Remove the "Add new comment" link on the teaser page or if the comment
     // form is being displayed on the same page.

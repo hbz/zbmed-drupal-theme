@@ -85,7 +85,6 @@
  * @see html.tpl.php
  */
 ?>
-<?php print scripts; ?>
 <div id="page-wrapper"><div id="page">
 
   <div id="header" class="<?php print $secondary_menu ? 'with-secondary-menu': 'without-secondary-menu'; ?>"><div class="section clearfix">
@@ -249,4 +248,3 @@
   </div></div> <!-- /.section, /#footer-wrapper -->
 
 </div></div> <!-- /#page, /#page-wrapper -->
-<?php print $page_bottom; ?>
