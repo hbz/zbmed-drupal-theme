@@ -1,5 +1,17 @@
 /* $Id */
 
+@charset'UTF-8';
+@font-face{
+  font-family:'Publisso';
+  src:url('/sites/all/themes/zbmed-drupal-theme/publisso-icons/publisso-icons.eot');
+  src:url('/sites/all/themes/zbmed-drupal-theme/publisso-icons/publisso-icons.eot?#iefix') format('embedded-opentype'),
+      url('/sites/all/themes/zbmed-drupal-theme/publisso-icons/publisso-icons.woff') format('woff'),
+      url('/sites/all/themes/zbmed-drupal-theme/publisso-icons/publisso-icons.ttf') format('truetype'),
+      url('/sites/all/themes/zbmed-drupal-theme/publisso-icons/publisso-icons.svg#zbmed-icons') format('svg');
+  font-weight:normal;
+  font-style:normal
+}
+
 #header {
   /* background: url("../images/muehlenfeldtrans3.jpg") no-repeat; */
   background-position: 140px -40px;
@@ -607,4 +619,175 @@ div.inst_logo .field-item{
 
 div.inst_title h1{
   padding-top: 40px;
+}
+
+/* Suche im Header */
+/*
+*/
+#block-edoweb-edoweb-search-block {
+  position: absolute;
+  top: 100px;
+  right: -60px;
+  width: 350px;
+}
+#edoweb-basic-search-entities-form,
+#edoweb-basic-search-entities-form--2 {
+  margin-bottom: 0;
+}
+
+/* publisso menu */
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- h2.element-invisible {
+  height: auto;
+  overflow: auto;
+  position: relative;
+  clip: auto;
+  color: #4b4b4d;
+  display: block;
+  font-size: 0px;
+  padding: 10px 12px 1px 12px;
+  margin-top: 0px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- h2.element-invisible::before {
+  font-family: "Publisso";
+  font-size: 19px;
+  content: "f";
+}
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- h2.open::before {
+  content: "r";
+}
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- .content {
+  margin-top: 0px;
+  display: none;
+  position: absolute;
+  top: 42px;
+}
+.region-header a {
+  color: #4b4b4d;
+}
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men-  {
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+}
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > a {
+  padding: 15px 20px;
+  font-size: 18px;
+  display: block;
+  background-color: #ffffff;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li {
+  border-top: 1px solid #d9d9d9;
+}
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul {
+    background-color: #f6f6f6;
+    text-align: left;
+    font-size: 16px;
+ }
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li:hover > a {
+  background-color: #375b9a;
+  color: #ffffff;
+}
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul  a:hover {
+  text-decoration: underline;
+}
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li > a {
+  padding: 10px 20px;
+}
+#block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li > ul > li > a {
+  padding: 10px 30px;
+}
+@media (min-width: 769px) {
+  /* publisso menu */
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- h2.element-invisible {
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- {
+  position: static;
+  background-color: #ffffff;
+  }
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- .content {
+    margin-top: 0px;
+    display: block;
+    position: static;
+  }
+  .region-header {
+    float: None;
+    width: 100%;
+  }
+  .region-header .content {
+    float: right;
+  }
+  .region-header .block-menu {
+    width: 100%;
+    text-rendering: optimizelegibility;
+  }
+  .region-header .block-menu ul > li,
+  .region-header .block-menu ul > li > a {
+    display: inline-flex;
+  }
+  /* Level 2 */
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul {
+    display: inline;
+    border-top: 5px solid #375b9a;
+    background-color: #ffffff;
+    min-height: 78px;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    font-size: 16px;
+    top: 225px;
+    width: 100%;
+    z-index: 99999;
+   }
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li {
+    display: inline;
+  }
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li > a {
+    padding: 15px 20px;
+    background-color: #ffffff;
+    text-align: left;
+    text-transform: None;
+    width: 150px;
+  }
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li > a:hover {
+    text-decoration: underline
+  }
+  /* Level 3 */
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li > ul {
+    font-size: 16px;
+    display: inline;
+    background-color: #ffffff;
+    position:absolute;
+    top: 45px;
+    margin-left: -175px
+  }
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li > ul > li {
+    display: block;
+    text-transform: None;
+  }
+  /* submenus only on hover */
+  /* Level 2 */
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul { 
+    display: none;
+  }
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li:hover > ul { 
+    display: inline;
+  }
+  /* Level 3 */
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li > ul { 
+    display: none;
+  }
+  #block-menu-menu-publisso-menue, #block-menu-menu-publisso-men- > div > ul > li > ul > li:hover > ul { 
+    display: inline;
+  }
 }
