@@ -85,6 +85,8 @@
  * @see html.tpl.php
  */
 ?>
+<?php print scripts; ?>
+>>>>>>> defd7b0972e8e42858919b5fd70205b15632a0f0
 <div id="page-wrapper"><div id="page">
 
   <div id="header" class="<?php print $secondary_menu ? 'with-secondary-menu': 'without-secondary-menu'; ?>"><div class="section clearfix">
