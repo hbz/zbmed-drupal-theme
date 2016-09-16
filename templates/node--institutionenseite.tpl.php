@@ -88,7 +88,7 @@
   <?php endif; ?>
 
  <div class="inst_header">
- <?php if ($content['field_logo']): ?>
+ <?php if (array_key_exists('field_logo', $content)): ?>
     <div class="inst_logo">
        <?php print render($content['field_logo']); ?> 
     </div>
