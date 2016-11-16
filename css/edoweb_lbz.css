@@ -791,3 +791,148 @@ div.inst_title h1{
     display: inline;
   }
 }
+
+div.warning {
+    background-image: url("../../misc/message-24-warning.png");
+    border-color: #ed5;
+   background-repeat:no-repeat ;
+}
+
+/* css based reduced information set: get rid of unessessary fields */
+.default .field-name-field-edoweb-title {
+	display: none;
+}
+
+.field-name-field-edoweb-identifier-ht {
+	display: none;
+}
+
+div.field.field-name-field-edoweb-struct-child.field-type-edoweb-ld-reference.field-label-above th
+	{
+	display: none;
+}
+.fileInfo .fileMimetype
+	{
+	display: none;
+}
+.fileInfo .fileSize
+	{
+	display: none;
+}
+.fileInfo .accessRights
+	{
+	display: none;
+}
+
+.fileInfo .accessRights
+	{
+	display: none;
+}
+
+.fileInfo .downloadUrl
+{
+ 
+}
+
+.field-name-field-mab-710 .field-item{
+float:left;
+margin-left: 0em !important;
+margin-right: 0.2em;
+}
+
+.field-name-field-mab-710 .field-items{
+margin-left: 12em;
+}
+
+.field-name-field-edoweb-institution{
+display: none;
+}
+
+.field-name-field-edoweb-collected-by{
+display: none;
+}
+
+.item-list .edoweb.entity.compact.jquery-once-2-processed .title {
+  display:none !important;
+} 
+ 
+.field-name-field-edoweb-datastream .field-label {
+   display:none !important;
+ }
+ 
+.field-name-field-edoweb-struct-child .entity-label-file {
+   display:none !important;
+ }
+
+.field-name-field-edoweb-identifier-ht{
+        display: none;
+}
+
+/* hide all forms for object types not supported by edoweb */ 
+
+
+.form-type-item a[data-bundle=volume]{
+    display: none;
+}
+
+.form-type-item a[data-bundle=proceeding]{
+    display: none;
+}
+
+.form-type-item a[data-bundle=issue]{
+    display: none;
+}
+
+.form-type-item a[data-bundle=article]{
+    display: none;
+}
+
+.form-type-item a[data-bundle=version]{
+    display: none;
+}
+.form-type-item a[data-bundle=webpage]{
+    display: none;
+}
+.form-type-item a[data-bundle=journal]{
+    display: none;
+}
+
+
+#edoweb-tree-menu a[data-bundle=volume]{
+    display: none;
+}
+
+#edoweb-tree-menu a[data-bundle=proceeding]{
+    display: none;
+}
+
+#edoweb-tree-menu a[data-bundle=issue]{
+    display: none;
+}
+
+#edoweb-tree-menu a[data-bundle=article]{
+    display: none;
+}
+
+#edoweb-tree-menu a[data-bundle=version]{
+    display: none;
+}
+
+#edoweb-tree-menu a[data-bundle=webpage]{
+    display: none;
+}
+#edoweb-tree-menu a[data-bundle=journal]{
+    display: none;
+}
+
+#edoweb-basic-crawler-form .form-item{
+display:block;
+clear:both;
+}
+ 
+a[href*="regal"] span.octicon.octicon-link-external{
+  display: none;	
+}
+a[href^="http://dewey.info"] span.octicon.octicon-link-external{
+  display: none;	
+}
