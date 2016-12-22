@@ -883,10 +883,6 @@ display: none;
     display: none;
 }
 
-.form-type-item a[data-bundle=article]{
-    display: none;
-}
-
 .form-type-item a[data-bundle=version]{
     display: none;
 }
@@ -907,10 +903,6 @@ display: none;
 }
 
 #edoweb-tree-menu a[data-bundle=issue]{
-    display: none;
-}
-
-#edoweb-tree-menu a[data-bundle=article]{
     display: none;
 }
 
@@ -936,3 +928,21 @@ a[href*="regal"] span.octicon.octicon-link-external{
 a[href^="http://dewey.info"] span.octicon.octicon-link-external{
   display: none;	
 }
+#example tr td, tr {
+	background-color:#ffffff !important;
+	
+}
+
+#example th {
+	display:none;
+	
+}
+#example .isDescribedBy , #example .primaryTopic ,#example .itemID , #example .title{
+	display:none;
+}
+
+.field-label{
+	font-weight:bold;
+}
+
+

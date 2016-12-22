@@ -12,6 +12,7 @@ stylesheets[all][] = livivo-icons/livivoicons.css
 stylesheets[all][] = batch-icons/batch-icons.css
 stylesheets[all][] = robotocondensed/stylesheet.css
 stylesheets[all][] = TabletGothicNarrow/stylesheet.css
+stylesheets[all][] = bootstrap/css/bootstrap.css
 scripts[] = js/theme.js
 scripts[] = js/viewers.js
 scripts[] = js/facets.js
@@ -20,6 +21,7 @@ scripts[] = js/searchbutton.js
 scripts[] = lib/jquery.cookie.js
 scripts[] = lib/openseadragon.min.js
 scripts[] = lib/jquery-ui.min.js
+scripts[] = js/jquery.dataTables.min.js
 
 regions[header] = Header
 regions[help] = Help
