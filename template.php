@@ -23,7 +23,9 @@
 
   // Add Font-Awesome
   drupal_add_css('css/font-awesome.min.css');
-
+  
+  drupal_add_css('bootstrap/css/bootstrap.css');
+ // drupal_add_css('bootstrap/css/bootstrap-theme.min.css');
   }
 
   // Look for an appropriate template file for content types

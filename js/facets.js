@@ -105,7 +105,9 @@
         'av': 'livivoicon-doctype-av',
         'conf': 'livivoicon-doctype-conf',
         'part': 'livivoicon-doctype-collection',
-        'researchData':'livivoicon-doctype-conf'	
+        'researchData':'livivoicon-doctype-conf',
+        'chapter':'livivoicon-doctype-article',
+        'proceeding':'livivoicon-doctype-article'
       }
       
       for (var bundle in icons) {

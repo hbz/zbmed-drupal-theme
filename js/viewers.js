@@ -2,64 +2,76 @@
 
     Drupal.behaviors.edoweb_drupal_image_viewer = {
     attach: function (context, settings) {
-      // Prepare Service
-      //var viewer = null;
+
       
-      // Drupal.settings.edoweb is needed and available in module edoweb only
-      if ( Drupal.settings.edoweb ) {
-        var serviceUrl = Drupal.settings.edoweb.deepzoomServiceUrl + '?imageUrl=';
-      }
-      var callbackString = "&callback=?";
-      var imageUrl = null;
-      //var viewer=null;
-      var tileSourcesFn = null;
-      var imagethumb = $('.field-item[property:dc-format]:contains("image")', context);
-      var thumbreference = imagethumb.parent().parent().parent().find('.thumb a');
-      imageUrl = thumbreference.attr('href');
-      //alert(imagethumb.html() + "\n" + thumbreference.html() + "\n"  + imageUrl);
-      var thumb = imagethumb.parent().parent().parent().find('.thumb a');
-      imagethumb.parent().parent().once('viewerDiv', function(){ 
-        $(this).append('<div class="viewer" id="osd_view" style="width: 800px; height: 600px; background:#ccc;"></div>');
+      // Mimetype selection
+      // Query for mediatype image
+      $('.fileDetails:first .mimeType:contains("image")', context).once(function(){
+        var mediaThumb = $(this);
+        var mediaUrl = null;
+        var playerElement = 'video';
+
+        appendDzViewer(mediaThumb);
       });
 
-      //alert(thumbreference.html());
-
-      // initialize and hide dialog-window for OpenSeaDragon viewer
-      $('#osd_view', context).once('dialogDiv', function() {
-        $(this).dialog({
-        modal: true,
-        autoOpen: false,
-        height: ($(window).height() -20),
-        width: ($(window).width() -20),
-        buttons: {
-          Ok: function() {
-            $( this ).dialog( "close" );
-          }
-        },
-        close: function() {
-          //if(viewer){
-            //viewer.destroy();
-            //alert('viewer zertört');
-          //}
-        }
-      });
-      });
-
-
-      thumbreference.click(function(){
-        //alert('added click');
-        if(typeof viewer != "undefined"){
-          //alert(viewer);
-          viewer.destroy();
-        }
-        deepZoomService();
-        $("#osd_view").dialog("open");
-        return false;
-      });
-
-      function deepZoomService (){
-        var url = serviceUrl + imageUrl + callbackString;
+      
+      function appendDzViewer(mediaThumb){
         
+        // Prepare Viewer
+        // Drupal.settings.edoweb is needed and available in module edoweb only
+        if ( Drupal.settings.edoweb ) {
+          var serviceUrl = Drupal.settings.edoweb.deepzoomServiceUrl + '?imageUrl=';
+        }
+        var callbackString = "&callback=?";
+        var mediaUrl = null;
+        var tileSourcesFn = null;
+        
+        var thumbreference = $('.field-name-field-edoweb-preview .thumb a', context);
+        mediaUrl = thumbreference.attr('href');
+        var mime = mediaThumb.html();
+        
+        thumbreference.append('<div class="viewer" id="osd_view" style="width: 800px; height: 600px; background:#ccc;"></div>');
+
+        // initialize and hide dialog-window for OpenSeaDragon
+        $('#osd_view', context).once('dialogDiv', function() {
+          $(this).dialog({
+            modal: true,
+            autoOpen: false,
+            height: ($(window).height() -20),
+            width: ($(window).width() -20),
+            buttons: {
+              Ok: function() {
+                $( this ).dialog( "close" );
+              }
+            },
+            close: function() {
+              //if(viewer){
+                //viewer.destroy();
+                //alert('viewer zertört');
+              //}
+            }
+          });
+        });  
+        
+        // bind click event to thumbreference
+        thumbreference.click(function(){
+          //alert('added click');
+          if(typeof viewer != "undefined"){
+            //alert(viewer);
+            viewer.destroy();
+          }
+          deepZoomService(serviceUrl, mediaUrl, callbackString);
+          $("#osd_view").dialog("open");
+          return false;
+        });
+        
+      };
+
+      // ajax request to deepZoomService
+      function deepZoomService (serviceUrl, mediaUrl, callbackString){
+        var url = serviceUrl + mediaUrl + callbackString;
+	console.log(url);
+        var tileSourcesFn = null; 
         $.getJSON(url, function(json){
         tileSourcesFn = json;
          viewer = OpenSeadragon({
@@ -89,47 +101,50 @@
   Drupal.behaviors.edoweb_drupal_video_html5_viewer = {
     attach: function (context, settings) {
 
-      var videoUrl = null;
-      var videothumb = $('.field-item[property:dc-format]:contains("video/mp4")', context);
-      var mime = videothumb.html();
-      var thumbreference = videothumb.parent().parent().parent().find('.thumb a');
-      videoUrl = thumbreference.attr('href');
-      thumbreference.parent().html('<div><video width="500" controls><source src="' 
-        + videoUrl + '" type="' + mime + '"></video></div>');
-      
-      var videoUrl = null;
-      var videothumb = $('.field-item[property:dc-format]:contains("video/webm")', context);
-      var mime = videothumb.html();
-      var thumbreference = videothumb.parent().parent().parent().find('.thumb a');
-      videoUrl = thumbreference.attr('href');
-      thumbreference.parent().html('<div><video width="500" controls><source src="' 
-        + videoUrl + '" type="' + mime + '"></video></div>');
 
-      
-    }
-  };
+      // Mimetype selection
+      // Query for mimetype mp4
+      $('.fileDetails:first .mimeType:contains("video/mp4")', context).once(function(){
+        var mediaThumb = $(this);
+        var mediaUrl = null;
+        var playerElement = 'video';
 
-  Drupal.behaviors.edoweb_drupal_audio_html5_player = {
-    attach: function (context, settings) {
+        appendHtml5Viewer(mediaThumb, playerElement);
+      });
 
-      var audioUrl = null;
-      var audiothumb = $('.field-item[property:dc-format]:contains("audio/mpeg")', context);
-      var mime = audiothumb.html();
-      var thumbreference = audiothumb.parent().parent().parent().find('.thumb a');
-      audioUrl = thumbreference.attr('href');
-      thumbreference.parent().html('<div><audio width="500" controls><source src="' 
-        + audioUrl + '" type="' + mime + '"></audio></div>');
-      
-      var audioUrl = null;
-      var audiothumb = $('.field-item[property:dc-format]:contains("audio/ogg")', context);
-      var mime = audiothumb.html();
-      var thumbreference = audiothumb.parent().parent().parent().find('.thumb a');
-      audioUrl = thumbreference.attr('href');
-      thumbreference.parent().html('<div><audio width="500" controls><source src="' 
-        + audioUrl + '" type="' + mime + '"></audio></div>');
-      
+      // Query for mimetype webm
+      $('.fileDetails:first .mimeType:contains("video/webm")', context).once(function(){
+        var mediaThumb = $(this);
+        var mediaUrl = null;
+        var playerElement = 'video';
+
+        appendHtml5Viewer(mediaThumb, playerElement);
+      });
+
+      // Query for mimetype mpeg
+      $('.fileDetails:first .mimeType:contains("video/webm")', context).once(function(){
+        var mediaThumb = $(this);
+        var mediaUrl = null;
+        var playerElement = 'audio';
+
+        appendHtml5Viewer(mediaThumb, playerElement);
+      });
+
+  
+      // append appropriate player
+      // add code for html5 av-player
+     function appendHtml5Viewer(mediaThumb, playerElement){
+
+        var thumbreference = $('.field-name-field-edoweb-preview .thumb a', context);
+        mediaUrl = thumbreference.attr('href');
+        var mime = mediaThumb.html();
+
+        thumbreference.parent().html('<div><' + playerElement + ' width="500" controls><source src="' 
+        + mediaUrl + '" type="' + mime + '"></' + playerElement + '></div>');
+     };
     }
   };
   
   
-})(jQuery);
+})(jQuery); 
+
