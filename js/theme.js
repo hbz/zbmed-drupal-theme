@@ -29,7 +29,7 @@
     attach: function (context, settings) {
 
     	
-    $('div[property="regal:doi bibo:doi"]').each(function() {
+    $('td[property="http://purl.org/ontology/bibo/doi"]').each(function() {
         var link = $(this).html();
         $(this).contents().wrap('<a href="http://dx.doi.org/'+link+'" target="_blank"></a>');
     });
