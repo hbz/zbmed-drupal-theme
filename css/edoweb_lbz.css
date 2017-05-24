@@ -1010,10 +1010,10 @@ tr.volumeIn tr.rdftype,tr.volumeIn td.numbering,tr.volumeIn td.multiVolumeWork {
    cursor: default;
    color:rgb(75, 75, 77);
 }
-#example .medium  a:not([title]), #example .subject a:not([title]), #example .rdftype a:not([title]), #example .nwbibsubject a:not([title]), #example .nwbibspatial a:not([title]), #example .language a:not([title]){ 
+#example .medium  a:not([title]), #example .subject a:not([title]), #example .rdftype a:not([title]), #example .nwbibsubject a:not([title]), #example .nwbibspatial a:not([title]), #example .language a:not([title]), #example .ddc a:not([title]), #example .reviewStatus a:not([title]), #example .publicationStatus a:not([title]){ 
   display:none;                                                                                                                                                                             
 }                                                                                                                                                                                                                                                                                 
-#example .medium .separator, #example .subject .separator, #example .rdftype .separator, #example .nwbibsubject .separator, #example .nwbibspatial .separator, #example .language .separator{
+#example .medium .separator, #example .subject .separator, #example .rdftype .separator, #example .nwbibsubject .separator, #example .nwbibspatial .separator, #example .language .separator, #example .ddc .separator, #example .reviewStatus .separator, #example .publicationStatus .separator{
   display:none;
 }
 
