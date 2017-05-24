@@ -1005,4 +1005,20 @@ tr.inSeries tr.rdftype, tr.inSeries td.numbering,tr.inSeries td.series {
 tr.volumeIn tr.rdftype,tr.volumeIn td.numbering,tr.volumeIn td.multiVolumeWork {
 	display:none;
 }
+#example .catalogLink a[title], #example .parallelEdition a[title]{
+   pointer-events: none;
+   cursor: default;
+   color:rgb(75, 75, 77);
+}
+#example .medium  a:not([title]), #example .subject a:not([title]), #example .rdftype a:not([title]), #example .nwbibsubject a:not([title]), #example .nwbibspatial a:not([title]), #example .language a:not([title]){ 
+  display:none;                                                                                                                                                                             
+}                                                                                                                                                                                                                                                                                 
+#example .medium .separator, #example .subject .separator, #example .rdftype .separator, #example .nwbibsubject .separator, #example .nwbibspatial .separator, #example .language .separator{
+  display:none;
+}
 
+#example ul,#example ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
