@@ -1022,3 +1022,24 @@ tr.volumeIn tr.rdftype,tr.volumeIn td.numbering,tr.volumeIn td.multiVolumeWork {
     margin: 0;
     padding: 0;
 }
+
+
+#author-title-list {
+  display: inline;
+  list-style: none;
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#author-title-list li {
+  display: inline;
+}
+
+#author-title-list li:after {
+  content: ", ";
+}
+
+#author-title-list li:last-child:after {
+    content: "";
+}
