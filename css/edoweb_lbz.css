@@ -1031,15 +1031,27 @@ tr.volumeIn tr.rdftype,tr.volumeIn td.numbering,tr.volumeIn td.multiVolumeWork {
     margin: 0;
     padding: 0;
 }
+#author-title-list, .componentList {
+  display: inline;
+  list-style: none;
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
 
-#author-title-list li {
+#author-title-list li, .componentList li {
   display: inline;
 }
 
-#author-title-list li:after {
+#author-title-list li:after, .componentList li:after {
   content: ", ";
 }
 
-#author-title-list li:last-child:after {
+#author-title-list li:last-child:after , .componentList li:last-child:after{
     content: "";
+}
+
+.contribution tr td, .contribution tr th {
+	margin: 0;
+    padding: 0;
 }
