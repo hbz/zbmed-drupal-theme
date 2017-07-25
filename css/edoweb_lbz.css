@@ -926,13 +926,24 @@ a[href^="http://dewey.info"] span.octicon.octicon-link-external{
 }
 #example tr td, tr {
 	background-color:#ffffff !important;
-	
+	 border-spacing: 0;
+    border-collapse: collapse;
+    padding-top: 0px;
+    padding-right: 20px;
+    padding-bottom: 2px;
+    padding-left: 0px;
+    margin:0;
 }
 
-#example th {
+#example th ul li p  {
 	display:none;
 	
 }
+#example td {
+    vertical-align:top;
+}
+
+
 #example .isDescribedBy , #example .primaryTopic ,#example .itemID , 
 #example .title, #example .hbzId, #example .contributorOrder, 
 #example .fulltextOnline, #example .contributingCorporateBodyLabel,
@@ -1054,4 +1065,7 @@ tr.volumeIn tr.rdftype,tr.volumeIn td.numbering,tr.volumeIn td.multiVolumeWork {
 .contribution tr td, .contribution tr th {
 	margin: 0;
     padding: 0;
+}
+div.form-item.form-type-item {
+ display:none;
 }
