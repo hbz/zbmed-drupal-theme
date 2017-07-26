@@ -1066,6 +1066,7 @@ tr.volumeIn tr.rdftype,tr.volumeIn td.numbering,tr.volumeIn td.multiVolumeWork {
 	margin: 0;
     padding: 0;
 }
-.not-front .form-item.form-type-item {
+
+body.html.not-front div.form-item.form-type-item {
  display:none;
 }
