@@ -972,7 +972,8 @@ a[href^="http://dewey.info"] span.octicon.octicon-link-external{
 #example .hasItem,                                                                                                                                                                                                   
 #example .doi,                                                                                                                                                                                                       
 #example .predecessor,                                                                                                                                                                                               
-#example .successor  {
+#example .successor,
+#example .subjectAltLabel  {
     display:none;
 }
 
@@ -1089,6 +1090,9 @@ tr.volumeIn tr.rdftype,tr.volumeIn td.numbering,tr.volumeIn td.multiVolumeWork {
 }
 
 body[class^="entity-type"] div.form-item.form-type-item {
+ display:none;
+}
+body.not-front div.form-item.form-type-item {
  display:none;
 }
 
