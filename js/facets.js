@@ -107,9 +107,11 @@
         'part': 'livivoicon-doctype-collection',
         'researchData':'livivoicon-doctype-conf',
         'chapter':'livivoicon-doctype-article',
-        'proceeding':'livivoicon-doctype-article'
+        'proceeding':'livivoicon-doctype-article',
+	'link':'octicon-link-external'
       }
-      
+      $('.glyphicon-link').removeClass('glyphicon').removeClass('glyphicon-link').addClass('octicon '+icons['link']);
+
       for (var bundle in icons) {
         var icon = icons[bundle];
         $('#content .form-type-item a[data-bundle="' + bundle + '"]', context).prepend($('<span>&nbsp;</span>').addClass('livivoicon ' + icon));
