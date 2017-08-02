@@ -34,7 +34,7 @@
         $(this).contents().wrap('<a href="http://dx.doi.org/'+link+'" target="_blank"></a>');
     });
     
-    $('tr.urn td.field-item').each(function() {
+    $('tr.urn td.field-item ul li').each(function() {
         var link = $(this).html();
         $(this).contents().wrap('<a href="http://nbn-resolving.de/'+link+'" target="_blank"></a>');
     });
