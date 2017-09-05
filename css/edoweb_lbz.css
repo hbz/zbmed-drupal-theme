@@ -926,21 +926,55 @@ a[href^="http://dewey.info"] span.octicon.octicon-link-external{
 }
 #example tr td, tr {
 	background-color:#ffffff !important;
-	
+	 border-spacing: 0;
+    border-collapse: collapse;
+    padding-top: 0px;
+    padding-right: 20px;
+    padding-bottom: 2px;
+    padding-left: 0px;
+    margin:0;
 }
 
-#example th {
+#example th ul li p  {
 	display:none;
 	
 }
-#example .isDescribedBy , #example .primaryTopic ,#example .itemID , 
-#example .title, #example .hbzId, #example .contributorOrder, 
-#example .fulltextOnline, #example .contributingCorporateBodyLabel,
-#example .isPrimaryTopicOf,#example .hasVersion,
-#example .isLike,#example .exemplar,#example .subjectOrder,#example .seeAlso,
-#example .subjectLabel, #example .creator,
-#example .contributor, #example .volume, #example .externalParent{
-	display:none;
+#example td {
+    vertical-align:top;
+}
+
+#example .isDescribedBy ,
+#example .primaryTopic ,
+#example .itemID ,
+#example .title,
+#example .hbzId,
+#example .contributorOrder,
+#example .fulltextOnline,
+#example .contributingCorporateBodyLabel,
+#example .isPrimaryTopicOf,
+#example .hasVersion,
+#example .isLike,
+#example .exemplar,
+#example .subjectOrder,
+#example .seeAlso,
+#example .subjectLabel,
+#example .creator,
+#example .contributor,
+#example .volume,
+#example .externalParent,
+#example .collectionOne,
+#example .accessScheme,
+#example .publishScheme,
+#example .contentType,
+#example .sameAs,
+#example .describedby,
+#example .parallelEdition,                                                                                                                                                                                           
+#example .hasItem,                                                                                                                                                                                                   
+#example .doi,                                                                                                                                                                                                       
+#example .predecessor,                                                                                                                                                                                               
+#example .successor,
+#example .subjectAltLabel  {
+    display:none;
 }
 
 .field-label{
@@ -1022,3 +1056,70 @@ tr.volumeIn tr.rdftype,tr.volumeIn td.numbering,tr.volumeIn td.multiVolumeWork {
     margin: 0;
     padding: 0;
 }
+
+.subjectAltLabelList {
+  display: inline;
+  list-style: none;
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.componentList , .subjectAltLabelList {
+  display: inline;
+  list-style: none;
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.componentList li , .subjectAltLabelList li {
+  display: inline;
+}
+
+.componentList li:after, .subjectAltLabelList li:after {
+  content: ", ";
+}
+
+.componentList li:last-child:after, .subjectAltLabelList li:last-child:after{
+    content: "";
+}
+
+#author-title-list{
+  display: inline;
+  list-style: none;
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#author-title-list {
+  display: inline;
+  list-style: none;
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#author-title-list li{
+  display: inline;
+}
+
+#author-title-list li:after{
+  content: "| ";
+}
+
+#author-title-list li:last-child:after {
+    content: "";
+}
+
+.contribution tr td, .contribution tr th {
+	margin: 0;
+    padding: 0;
+}
+
+body[class^="entity-type"] div.form-item.form-type-item {
+ display:none;
+}
+body.not-front div.form-item.form-type-item {
+// display:none;
+}
+
