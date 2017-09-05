@@ -27,6 +27,7 @@
 
   Drupal.behaviors.edoweb_drupal_theme_child = {
     attach: function (context, settings) {
+
     var fieldLabel = 'Download:';
     var thumbSize = '&size=250';
     var serverUrl = 'https://' + window.location.hostname;
