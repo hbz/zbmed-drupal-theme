@@ -1123,9 +1123,6 @@ body.not-front div.form-item.form-type-item {
 // display:none;
 }
 
-/**
-Hack um das "zuletzt hinzugefügte Label" aus zu blenden
-*/
-div[style="text-align:right;"]{
-display:none;
+.lastModifiedLabel{
+   display:none;
 }
