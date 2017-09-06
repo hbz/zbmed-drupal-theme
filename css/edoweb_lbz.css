@@ -970,7 +970,6 @@ a[href^="http://dewey.info"] span.octicon.octicon-link-external{
 #example .describedby,
 #example .parallelEdition,                                                                                                                                                                                           
 #example .hasItem,                                                                                                                                                                                                   
-#example .doi,                                                                                                                                                                                                       
 #example .predecessor,                                                                                                                                                                                               
 #example .successor,
 #example .subjectAltLabel  {
@@ -1123,3 +1122,9 @@ body.not-front div.form-item.form-type-item {
 // display:none;
 }
 
+/**
+Hack um das "zuletzt hinzugefügte Label" aus zu blenden
+*/
+div[style="text-align:right;"]{
+display:none;
+}
