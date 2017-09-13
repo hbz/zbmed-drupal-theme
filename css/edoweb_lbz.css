@@ -972,7 +972,6 @@ a[href^="http://dewey.info"] span.octicon.octicon-link-external{
 #example .hasItem,                                                                                                                                                                                                   
 #example .predecessor,                                                                                                                                                                                               
 #example .successor,
-#example .subjectAltLabel,
 #example .corporateBodyForTitle  {
     display:none;
 }
