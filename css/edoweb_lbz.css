@@ -1125,3 +1125,25 @@ body.not-front div.form-item.form-type-item {
 .lastModifiedLabel{
    display:none;
 }
+
+
+
+ .titleMain, .otherTitle{
+	color:#375b9a;
+	font-size: .5em;
+  font-family: "TabletGothicNarrow", "roboto_condensedregular",sans-serif;
+	font-weight:200;
+ }
+ 
+ 
+ .titlePost ol{
+ 	margin: 0em 0;
+ 	padding: 0 0 0em 0em;
+ 	color:#000000;
+ 	
+	font-size: .8em;
+}
+
+.titlePost a{
+	color:#000000;
+}
