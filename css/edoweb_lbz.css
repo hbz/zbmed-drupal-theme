@@ -924,7 +924,7 @@ a[href*="regal"] span.octicon.octicon-link-external{
 a[href^="http://dewey.info"] span.octicon.octicon-link-external{
   display: none;	
 }
-#example tr td, tr {
+.resourceTable tr td, tr {
 	background-color:#ffffff !important;
 	 border-spacing: 0;
     border-collapse: collapse;
@@ -935,44 +935,44 @@ a[href^="http://dewey.info"] span.octicon.octicon-link-external{
     margin:0;
 }
 
-#example th ul li p  {
+.resourceTable th ul li p  {
 	display:none;
 	
 }
-#example td {
+.resourceTable td {
     vertical-align:top;
 }
 
-#example .isDescribedBy ,
-#example .primaryTopic ,
-#example .itemID ,
-#example .title,
-#example .hbzId,
-#example .contributorOrder,
-#example .fulltextOnline,
-#example .contributingCorporateBodyLabel,
-#example .isPrimaryTopicOf,
-#example .hasVersion,
-#example .isLike,
-#example .exemplar,
-#example .subjectOrder,
-#example .seeAlso,
-#example .subjectLabel,
-#example .creator,
-#example .contributor,
-#example .volume,
-#example .externalParent,
-#example .collectionOne,
-#example .accessScheme,
-#example .publishScheme,
-#example .contentType,
-#example .sameAs,
-#example .describedby,
-#example .parallelEdition,                                                                                                                                                                                           
-#example .hasItem,                                                                                                                                                                                                   
-#example .predecessor,                                                                                                                                                                                               
-#example .successor,
-#example .corporateBodyForTitle  {
+.resourceTable .isDescribedBy ,
+.resourceTable .primaryTopic ,
+.resourceTable .itemID ,
+.resourceTable .title,
+.resourceTable .hbzId,
+.resourceTable .contributorOrder,
+.resourceTable .fulltextOnline,
+.resourceTable .contributingCorporateBodyLabel,
+.resourceTable .isPrimaryTopicOf,
+.resourceTable .hasVersion,
+.resourceTable .isLike,
+.resourceTable .exemplar,
+.resourceTable .subjectOrder,
+.resourceTable .seeAlso,
+.resourceTable .subjectLabel,
+.resourceTable .creator,
+.resourceTable .contributor,
+.resourceTable .volume,
+.resourceTable .externalParent,
+.resourceTable .collectionOne,
+.resourceTable .accessScheme,
+.resourceTable .publishScheme,
+.resourceTable .contentType,
+.resourceTable .sameAs,
+.resourceTable .describedby,
+.resourceTable .parallelEdition,                                                                                                                                                                                           
+.resourceTable .hasItem,                                                                                                                                                                                                   
+.resourceTable .predecessor,                                                                                                                                                                                               
+.resourceTable .successor,
+.resourceTable .corporateBodyForTitle  {
     display:none;
 }
 
@@ -1038,19 +1038,19 @@ tr.inSeries tr.rdftype, tr.inSeries td.numbering,tr.inSeries td.series {
 tr.volumeIn tr.rdftype,tr.volumeIn td.numbering,tr.volumeIn td.multiVolumeWork {
 	display:none;
 }
-#example .catalogLink a[title], #example .parallelEdition a[title]{
+.resourceTable .catalogLink a[title], .resourceTable .parallelEdition a[title]{
    pointer-events: none;
    cursor: default;
    color:rgb(75, 75, 77);
 }
-#example .medium  a:not([title]), #example .subject a:not([title]), #example .rdftype a:not([title]), #example .nwbibsubject a:not([title]), #example .nwbibspatial a:not([title]), #example .language a:not([title]), #example .ddc a:not([title]), #example .reviewStatus a:not([title]), #example .publicationStatus a:not([title]){ 
+.resourceTable .medium  a:not([title]), .resourceTable .subject a:not([title]), .resourceTable .rdftype a:not([title]), .resourceTable .nwbibsubject a:not([title]), .resourceTable .nwbibspatial a:not([title]), .resourceTable .language a:not([title]), .resourceTable .ddc a:not([title]), .resourceTable .reviewStatus a:not([title]), .resourceTable .publicationStatus a:not([title]){ 
   display:none;                                                                                                                                                                             
 }                                                                                                                                                                                                                                                                                 
-#example .medium .separator, #example .subject .separator, #example .rdftype .separator, #example .nwbibsubject .separator, #example .nwbibspatial .separator, #example .language .separator, #example .ddc .separator, #example .reviewStatus .separator, #example .publicationStatus .separator{
+.resourceTable .medium .separator, .resourceTable .subject .separator, .resourceTable .rdftype .separator, .resourceTable .nwbibsubject .separator, .resourceTable .nwbibspatial .separator, .resourceTable .language .separator, .resourceTable .ddc .separator, .resourceTable .reviewStatus .separator, .resourceTable .publicationStatus .separator{
   display:none;
 }
 
-#example ul,#example ol {
+.resourceTable ul,.resourceTable ol {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -1083,14 +1083,14 @@ tr.volumeIn tr.rdftype,tr.volumeIn td.numbering,tr.volumeIn td.multiVolumeWork {
     content: "";
 }
 
-#author-title-list{
+.author-title-list{
   display: inline;
   list-style: none;
   list-style-type: none;
     margin: 0;
     padding: 0;
 }
-#author-title-list {
+.author-title-list {
   display: inline;
   list-style: none;
   list-style-type: none;
@@ -1098,15 +1098,15 @@ tr.volumeIn tr.rdftype,tr.volumeIn td.numbering,tr.volumeIn td.multiVolumeWork {
     padding: 0;
 }
 
-#author-title-list li{
+.author-title-list li{
   display: inline;
 }
 
-#author-title-list li:after{
+.author-title-list li:after{
   content: "| ";
 }
 
-#author-title-list li:last-child:after {
+.author-title-list li:last-child:after {
     content: "";
 }
 
@@ -1124,4 +1124,31 @@ body.not-front div.form-item.form-type-item {
 
 .lastModifiedLabel{
    display:none;
+}
+
+
+
+.item-list .titleMain,.item-list .otherTitle, .item-list .corporateBodyForTitle{
+	color:#375b9a;
+	font-size: 0.5em;
+        font-family: "TabletGothicNarrow", "roboto_condensedregular",sans-serif;
+	font-weight:200;
+	line-height: 1.5em; 
+}
+ 
+.item-list .titlePost ol{
+ 	margin: 0em 0;
+ 	padding: 0 0 0em 0em;
+ 	color:#000000;
+       
+        font-family: "TabletGothicNarrow", "roboto_condensedregular",sans-serif;
+        font-weight:200;
+       
+line-height: 1em;
+
+font-size: .9em;
+}
+
+.item-list .titlePost a{
+	color:#000000;
 }
