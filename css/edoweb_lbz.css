@@ -942,38 +942,83 @@ a[href^="http://dewey.info"] span.octicon.octicon-link-external{
 .resourceTable td {
     vertical-align:top;
 }
-
-.resourceTable .isDescribedBy ,
-.resourceTable .primaryTopic ,
-.resourceTable .itemID ,
-.resourceTable .title,
+/**
+do not display this fields
+**/
+.resourceTable .isDescribedBy, 
+.resourceTable .primaryTopic,
+.resourceTable .itemID, 
+.resourceTable .title, 
 .resourceTable .hbzId,
-.resourceTable .contributorOrder,
+.resourceTable .contributorOrder, 
 .resourceTable .fulltextOnline,
-.resourceTable .contributingCorporateBodyLabel,
+.resourceTable .contributingCorporateBodyLabel, 
 .resourceTable .isPrimaryTopicOf,
-.resourceTable .hasVersion,
-.resourceTable .isLike,
+.resourceTable .hasVersion, 
+.resourceTable .isLike, 
 .resourceTable .exemplar,
-.resourceTable .subjectOrder,
-.resourceTable .seeAlso,
+.resourceTable .subjectOrder, 
+.resourceTable .seeAlso, 
 .resourceTable .subjectLabel,
-.resourceTable .creator,
-.resourceTable .contributor,
+.resourceTable .creator, 
+.resourceTable .contributor, 
 .resourceTable .volume,
-.resourceTable .externalParent,
+.resourceTable .externalParent, 
 .resourceTable .collectionOne,
-.resourceTable .accessScheme,
+.resourceTable .accessScheme, 
 .resourceTable .publishScheme,
-.resourceTable .contentType,
-.resourceTable .sameAs,
+.resourceTable .contentType, 
+.resourceTable .sameAs, 
 .resourceTable .describedby,
-.resourceTable .parallelEdition,                                                                                                                                                                                           
-.resourceTable .hasItem,                                                                                                                                                                                                   
-.resourceTable .predecessor,                                                                                                                                                                                               
-.resourceTable .successor,
-.resourceTable .corporateBodyForTitle  {
-    display:none;
+.resourceTable .parallelEdition, 
+.resourceTable .hasItem,
+.resourceTable .predecessor, 
+.resourceTable .successor, 
+.resourceTable .corporateBodyForTitle
+{ 
+	display: none;
+}
+
+/**
+do not show external links on this fields
+**/
+.resourceTable .medium a span, 
+.resourceTable .subject a span,
+.resourceTable .rdftype a span, 
+.resourceTable .nwbibsubject a span,
+.resourceTable .nwbibspatial a span, 
+.resourceTable .language a span,
+.resourceTable .ddc a span, 
+.resourceTable .reviewStatus a span,
+.resourceTable .publicationStatus a span,
+.resourceTable .ddc a span,
+.resourceTable .subjectName a span,
+.resourceTable .language a span,
+.resourceTable .reviewStatus a span,
+.resourceTable .publicationStatus a span, 
+.resourceTable .professionalGroup a span{
+	display: none;
+}
+
+/**
+do not show separator before external links
+**/
+.resourceTable .medium .separator, 
+.resourceTable .subject .separator,
+.resourceTable .rdftype .separator, 
+.resourceTable .nwbibsubject .separator,
+.resourceTable .nwbibspatial .separator, 
+.resourceTable .language .separator,
+.resourceTable .ddc .separator, 
+.resourceTable .reviewStatus .separator,
+.resourceTable .publicationStatus .separator,
+ .resourceTable .ddc .separator,
+ .resourceTable .subjectName .separator,
+ .resourceTable .language .separator,
+ .resourceTable .reviewStatus .separator,
+ .resourceTable .publicationStatus .separator,
+ .resourceTable .professionalGroup .separator {
+	display: none;
 }
 
 .field-label{
@@ -1042,12 +1087,6 @@ tr.volumeIn tr.rdftype,tr.volumeIn td.numbering,tr.volumeIn td.multiVolumeWork {
    pointer-events: none;
    cursor: default;
    color:rgb(75, 75, 77);
-}
-.resourceTable .medium  a:not([title]), .resourceTable .subject a:not([title]), .resourceTable .rdftype a:not([title]), .resourceTable .nwbibsubject a:not([title]), .resourceTable .nwbibspatial a:not([title]), .resourceTable .language a:not([title]), .resourceTable .ddc a:not([title]), .resourceTable .reviewStatus a:not([title]), .resourceTable .publicationStatus a:not([title]){ 
-  display:none;                                                                                                                                                                             
-}                                                                                                                                                                                                                                                                                 
-.resourceTable .medium .separator, .resourceTable .subject .separator, .resourceTable .rdftype .separator, .resourceTable .nwbibsubject .separator, .resourceTable .nwbibspatial .separator, .resourceTable .language .separator, .resourceTable .ddc .separator, .resourceTable .reviewStatus .separator, .resourceTable .publicationStatus .separator{
-  display:none;
 }
 
 .resourceTable ul,.resourceTable ol {
