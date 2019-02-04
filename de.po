@@ -16057,7 +16057,7 @@ msgstr "Version"
 
 #: edoweb/edoweb.module:1167; sites/all/modules/regal-drupal/edoweb/edoweb.js
 msgid "Add monograph"
-msgstr "Neue Monografie"
+msgstr "Neuer Katalogimport"
 
 #: edoweb/edoweb.module:1169; sites/all/modules/regal-drupal/edoweb/edoweb.js
 msgid "Add journal"
@@ -16073,7 +16073,7 @@ msgstr "Neues Heft"
 
 #: edoweb/edoweb.module:1175; sites/all/modules/regal-drupal/edoweb/edoweb.js
 msgid "Add article"
-msgstr "Neuer Artikel"
+msgstr "Neue Publikation"
 
 #: edoweb/edoweb.module:1177; sites/all/modules/regal-drupal/edoweb/edoweb.js
 msgid "Add file"
@@ -37411,7 +37411,7 @@ msgid "Konferenzband"
 msgstr "Konferenzbeitrag"
 
 #: sites/all/modules/regal-drupal/edoweb/edoweb.js
-msgid "Add research data"
+msgid "Add researchData"
 msgstr "Neue Forschungsdaten"
 
 #: /admin/people
