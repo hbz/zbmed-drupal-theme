@@ -974,7 +974,11 @@ do not display this fields
 .resourceTable .hasItem,
 .resourceTable .predecessor, 
 .resourceTable .successor, 
-.resourceTable .corporateBodyForTitle
+.resourceTable .corporateBodyForTitle,
+.resourceTable .funding, 
+.resourceTable .fundingProgram, 
+.resourceTable .projectId,
+.resourceTable .fundingId
 { 
 	display: none;
 }
