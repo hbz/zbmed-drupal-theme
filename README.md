@@ -2,6 +2,9 @@
 
 zbmed-drupal-theme is a Drupal theme based on Bartik.
 
+![Screenshot](screenshot.png "Screenshot")
+
+
 # Installation
 
 Clone the repository to Drupal's theme directory:
