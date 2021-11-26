@@ -16683,7 +16683,7 @@ msgid "Log out"
 msgstr "Abmelden"
 
 msgid "Home"
-msgstr "Startseite Fachrepositorium"
+msgstr "Bestand"
 
 msgid "You are here"
 msgstr "Sie sind hier"
