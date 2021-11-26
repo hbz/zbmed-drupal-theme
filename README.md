@@ -1,6 +1,6 @@
 # About
 
-edoweb_lbz is a Drupal theme based on Bartik.
+zbmed-drupal-theme is a Drupal theme based on Bartik.
 
 # Installation
 
