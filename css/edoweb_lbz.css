@@ -951,7 +951,7 @@ do not display this fields
 .resourceTable .title, 
 .resourceTable .hbzId,
 .resourceTable .contributorOrder, 
-.resourceTable .fulltextOnline,
+/** .resourceTable .fulltextOnline, **/
 .resourceTable .contributingCorporateBodyLabel, 
 .resourceTable .isPrimaryTopicOf,
 .resourceTable .hasVersion, 
@@ -1205,4 +1205,7 @@ font-size: .9em;
 .orcid-pic{
     height:12px;
     width:12px;
+}
+.subjectSource{
+    display:none;
 }
