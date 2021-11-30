@@ -3,7 +3,7 @@ description = A fluid width subtheme for Bartik, based on Antonelli
 core = 7.x
 base theme = bartik
 engine = phptemplate
-version = 1.0
+version = 1.1
 
 stylesheets[all][] = css/layout.css
 stylesheets[all][] = css/edoweb_lbz.css
