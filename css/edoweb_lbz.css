@@ -1125,30 +1125,27 @@ tr.volumeIn tr.rdftype,tr.volumeIn td.numbering,tr.volumeIn td.multiVolumeWork {
     content: "";
 }
 
-.author-title-list{
-  display: inline;
-  list-style: none;
-  list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-.author-title-list {
-  display: inline;
-  list-style: none;
-  list-style-type: none;
+.author-title-list, .contributors-title-list, .creators-title-list {
+    display: inline;
+    list-style: none;
+    list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.author-title-list li{
+.author-title-list li, .contributors-title-list li, .creators-title-list li {
   display: inline;
 }
 
-.author-title-list li:after{
-  content: "| ";
+.author-title-list li:after, .contributors-title-list li:after, .creators-title-list li:after {
+  content: " | ";
 }
 
 .author-title-list li:last-child:after {
+    content: " . ";
+}
+
+.contributors-title-list li:last-child:after, .creators-title-list li:last-child:after {
     content: "";
 }
 
@@ -1161,7 +1158,7 @@ body[class^="entity-type"] div.form-item.form-type-item {
  display:none;
 }
 body.not-front div.form-item.form-type-item {
-// display:none;
+  /*display:none;*/
 }
 
 .lastModifiedLabel{
