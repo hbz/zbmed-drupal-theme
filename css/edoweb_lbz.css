@@ -1098,10 +1098,14 @@ tr.volumeIn tr.rdftype,tr.volumeIn td.numbering,tr.volumeIn td.multiVolumeWork {
     padding: 0;
 }
 
-.resourceTable li. pre.usageManual {
+.resourceTable li pre.usageManual {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 7;
+    white-space: pre-line;
+}
+
+.resourceTable li span.description {
     white-space: pre-line;
 }
 
