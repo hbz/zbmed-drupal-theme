@@ -1098,6 +1098,13 @@ tr.volumeIn tr.rdftype,tr.volumeIn td.numbering,tr.volumeIn td.multiVolumeWork {
     padding: 0;
 }
 
+.resourceTable li. pre.usageManual {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    white-space: pre-line;
+}
+
 .subjectAltLabelList {
   display: inline;
   list-style: none;
