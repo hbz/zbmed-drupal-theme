@@ -1104,7 +1104,7 @@ tr.volumeIn tr.rdftype,tr.volumeIn td.numbering,tr.volumeIn td.multiVolumeWork {
     white-space: pre-line;
 }
 
-.resourceTable p.usageManual {
+.resourceTable p.description {
     margin: 0;
     padding: 0 1em 0 1em;
     white-space: pre-line;
