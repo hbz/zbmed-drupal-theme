@@ -1117,7 +1117,7 @@ div.ktbl_md {
   display: none;
 }
 
-div.ktbl_md:hover {
+span.ktbl_md:hover + div.ktbl_md {
   display: block;
   white-space: pre-line;
 }
