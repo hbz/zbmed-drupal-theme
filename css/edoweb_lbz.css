@@ -1098,10 +1098,13 @@ tr.volumeIn tr.rdftype,tr.volumeIn td.numbering,tr.volumeIn td.multiVolumeWork {
     padding: 0;
 }
 
-.resourceTable span.usageManual {
+.resourceTable pre.usageManual {
     margin: 0;
     padding: 0 0 0 0;
     white-space: pre-line;
+    font-size: 1em;
+    color: black
+    background-color: white
 }
 
 .resourceTable span.description {
@@ -1109,6 +1112,17 @@ tr.volumeIn tr.rdftype,tr.volumeIn td.numbering,tr.volumeIn td.multiVolumeWork {
     padding: 0 1em 0 1em;
     white-space: pre-line;
 }
+
+div.ktbl_md {
+  display: none;
+}
+
+div.ktbl_md:hover {
+  display: block;
+  white-space: pre-line;
+}
+
+
 
 .subjectAltLabelList {
   display: inline;
