@@ -37426,3 +37426,6 @@ msgstr "Sacherschließung"
 msgid "Überordnung"
 msgstr "Quelle"
 
+#: sites/all/modules/regal-drupal/edoweb/edoweb.js
+msgid "Add ktblData"
+msgstr "Neue EmiMin Daten"
