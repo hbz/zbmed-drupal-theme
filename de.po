@@ -37429,3 +37429,8 @@ msgstr "Quelle"
 #: sites/all/modules/regal-drupal/edoweb/edoweb.js
 msgid "Add ktblData"
 msgstr "Neue EmiMin Daten"
+
+#: /admin/people
+msgid "edoweb_basic entity js create ktblData"
+msgstr "Neue Emimin Daten"
+
