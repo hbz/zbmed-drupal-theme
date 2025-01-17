@@ -107,7 +107,7 @@
         'part': 'livivoicon-doctype-collection',
         'researchData':'livivoicon-doctype-conf',
         'chapter':'livivoicon-doctype-article',
-        'ktblData':'livivoicon-doctype-flow',
+        'ktblData':'livivoicon-doctype-ktbl',
         'proceeding':'livivoicon-doctype-article',
 	'link':'octicon-link-external'
       }
