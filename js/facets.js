@@ -122,7 +122,7 @@
         $('body.entity-type-' + bundle + ' h1.title', context).prepend($('<span>&nbsp;</span>'). addClass('mega-livivicon ' + icon));
       }
  
-	  $('a[.form-type-item a[data-bundle="ktblData]').attr("href", Drupal.settings.edoweb.formsServiceUrl + 'researchdataktbl/');
+	  $('.form-type-item a[data-bundle="ktblData"]').attr("href", Drupal.settings.edoweb.formsServiceUrl + 'researchdataktbl/');
 	  
       replaceWithIcon($('label a[href="#"]'), 'batch-icons batch-icon-plus', context);
       replaceWithIcon($('label[for="edit-field-edoweb-parent-und"] a[href="#"]', context), 'batch-icons batch-icon-concat');
