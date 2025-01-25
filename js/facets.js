@@ -109,7 +109,7 @@
         'chapter':'livivoicon-doctype-article',
         'ktblData':'livivoicon-doctype-ktbl',
         'proceeding':'livivoicon-doctype-article',
-	'link':'octicon-link-external'
+		'link':'octicon-link-external'
       }
       $('.glyphicon-link').removeClass('glyphicon').removeClass('glyphicon-link').addClass('octicon '+icons['link']);
 
