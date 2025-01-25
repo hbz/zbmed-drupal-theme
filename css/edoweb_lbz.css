@@ -1230,7 +1230,7 @@ font-size: .9em;
      display:none;
 }
 
-.manual .description{
+.manual, .description{
 	white-space: pre-line;
 }
 
