@@ -123,7 +123,7 @@
       }
  
 	  // Call for the new forms-API
-	  $('.form-type-item a[data-bundle="ktblData"]').attr("href", Drupal.settings.edoweb.formsServiceUrl + '/researchdataktbl/');
+	  $('.form-type-item a[data-bundle="ktblData"]').attr("href", Drupal.settings.edoweb.formsServiceUrl + '/ktbldata/');
 	  $('.form-type-item a[data-bundle="ktblData"]').hide();
 	  
       replaceWithIcon($('label a[href="#"]'), 'batch-icons batch-icon-plus', context);
