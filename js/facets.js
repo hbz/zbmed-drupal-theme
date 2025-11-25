@@ -124,7 +124,11 @@
  
 	  // Call for the new forms-API
 	  $('.form-type-item a[data-bundle="ktblData"]').attr("href", Drupal.settings.edoweb.formsServiceUrl + '/ktbldata/');
-	  $('.form-type-item a[data-bundle="ktblData"]').hide();
+	  $('.form-type-item a[data-bundle="researchData"]').attr("href", Drupal.settings.edoweb.formsServiceUrl + '/researchdata/');
+	  $('.form-type-item a[data-bundle="monograph"]').attr("href", Drupal.settings.edoweb.formsServiceUrl + '/monograph/');
+	  $('.form-type-item a[data-bundle="article"]').attr("href", Drupal.settings.edoweb.formsServiceUrl + '/article/');
+	  $('.form-type-item a[data-bundle="journal"]').attr("href", Drupal.settings.edoweb.formsServiceUrl + '/journal/');
+	  //$('.form-type-item a[data-bundle="ktblData"]').hide();
 	  
       replaceWithIcon($('label a[href="#"]'), 'batch-icons batch-icon-plus', context);
       replaceWithIcon($('label[for="edit-field-edoweb-parent-und"] a[href="#"]', context), 'batch-icons batch-icon-concat');
